@@ -12,8 +12,153 @@ const embedCode = ref(`
 
 <template>
   <base-container>
-    <!-- Tentative Program -->
+
+    <!-- Scientific Program -->
     <small-card>
+      <base-paragraph class="hero-title text-center">
+        <b>Scientific Program</b>
+      </base-paragraph>
+    </small-card>
+    <base-card class="mt-5">
+      <base-paragraph>
+        On October 1st, plenary lecturers will give introductory overviews on topics of the Congress. In addition,
+        parallel sessions beginning from Thursday to Saturday, October 2-4, will provide an exceptional platform for
+        enrichment of knowledge and exchange of experience among participants from academia, industry and practitioners.
+      </base-paragraph>
+    </base-card>
+
+    <!-- Important Dates -->
+    <small-card class="mt-10">
+      <base-paragraph class="hero-title text-center">
+        <b>Important dates</b>
+      </base-paragraph>
+    </small-card>
+    <base-card class="mt-5">
+      <v-list density="compact" class="date-list">
+        <v-list-item>
+          <v-list-item-title><b>March 1st, 2026</b></v-list-item-title>
+          <v-list-item-subtitle>Second Announcement, Call for short papers, Early Registration</v-list-item-subtitle>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title><b>May 1st, 2026</b></v-list-item-title>
+          <v-list-item-subtitle>Closing of Early Registration</v-list-item-subtitle>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title><b>May 31st, 2026</b></v-list-item-title>
+          <v-list-item-subtitle>Closing of Registration and Short paper Submission Deadline</v-list-item-subtitle>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title><b>July 1st, 2026</b></v-list-item-title>
+          <v-list-item-subtitle>Short paper Acceptance Notification</v-list-item-subtitle>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-title><b>October 1-4, 2026</b></v-list-item-title>
+          <v-list-item-subtitle>8th Congress of Pharmacy in North Macedonia with international
+            participation</v-list-item-subtitle>
+        </v-list-item>
+      </v-list>
+    </base-card>
+
+    <!-- Congress Sessions -->
+    <small-card class="mt-10">
+      <base-paragraph class="hero-title text-center">
+        <b>Congress Sessions</b>
+      </base-paragraph>
+    </small-card>
+    <base-card class="mt-5">
+      <v-row>
+        <v-col cols="12" md="6">
+          <ul class="session-list">
+            <li>Plenary Session</li>
+            <li>Pharmaceutical Analysis / Quality Assurance / Pharmaceutical Legislation</li>
+            <li>Social Pharmacy / Pharmaceutical Law</li>
+            <li>Pharmacoeconomics / Drug Information</li>
+            <li>Clinical Biochemistry / Toxicology / Food and Nutrition</li>
+          </ul>
+        </v-col>
+        <v-col cols="12" md="6">
+          <ul class="session-list">
+            <li>Pharmaceutical Technology and Biotechnology / Biopharmaceutics / Cosmetology</li>
+            <li>Pharmaceutical Chemistry / Biomolecular Sciences</li>
+            <li>Community and Clinical Pharmacy</li>
+            <li>Natural Products and Phytotherapy</li>
+            <li>Student Section</li>
+          </ul>
+        </v-col>
+      </v-row>
+    </base-card>
+
+    <!-- Guiding Keywords -->
+    <small-card class="mt-10">
+      <base-paragraph class="hero-title text-center">
+        <b>Guiding Keywords for the Congress</b>
+      </base-paragraph>
+    </small-card>
+    <base-card class="mt-5">
+      <v-row>
+        <v-col cols="12" md="4">
+          <ul class="session-list">
+            <li>Pharmaceutical Education and Career Development</li>
+            <li>Pharmaceutical Practice, Pharmaceutical Care and Hospital Pharmacy</li>
+            <li>Clinical Pharmacy</li>
+            <li>Interprofessional Collaboration in Healthcare</li>
+            <li>Rational Use of Medicines</li>
+            <li>Medication Therapy Management (MTM)</li>
+            <li>Molecular, Biomolecular, and Clinical Pharmacology</li>
+            <li>Novel Drug Targets and Biomarkers</li>
+            <li>Rational Drug Design, Synthesis, and Development</li>
+            <li>In silico Design and Computational Modeling in Drug Development</li>
+            <li>Biopharmaceutics and Pharmacokinetics</li>
+            <li>Toxicology</li>
+            <li>Drug Delivery Systems</li>
+            <li>Micro/Nanotechnology</li>
+            <li>Personalized Medicine</li>
+            <li>Advanced Therapies: Gene, Cell, and Tissue Therapy</li>
+          </ul>
+        </v-col>
+        <v-col cols="12" md="4">
+          <ul class="session-list">
+            <li>Pharmaceutical Biotechnology</li>
+            <li>Industrial Pharmacy</li>
+            <li>Quality by Design (QbD) and Risk Management</li>
+            <li>Pharmaceutical Analysis</li>
+            <li>Digital Health (eHealth)</li>
+            <li>Artificial Intelligence and Machine Learning in Pharmacy</li>
+            <li>Big Data, Real-World Data, Real-World Evidence</li>
+            <li>Pharmacoeconomics</li>
+            <li>Health Technology Assessment</li>
+            <li>Therapeutic Outcomes and Outcomes Research</li>
+            <li>Pharmacovigilance</li>
+            <li>Pharmacoepidemiology</li>
+            <li>Pharmaceutical Legislation</li>
+            <li>Pharmaceutical Law and Intellectual Property</li>
+            <li>Falsified Pharmaceutical Products</li>
+            <li>Regulatory Aspects of Advanced Therapies and Nanomedicines</li>
+          </ul>
+        </v-col>
+        <v-col cols="12" md="4">
+          <ul class="session-list">
+            <li>Public Health</li>
+            <li>Clinical Biochemistry</li>
+            <li>Food, Nutrition, and Health</li>
+            <li>Diet therapy</li>
+            <li>Medical Devices</li>
+            <li>Sustainable and Green Pharmacy</li>
+            <li>Ethics in Pharmaceutical and Clinical Research</li>
+            <li>Pharmacognosy and Natural Medicinal Raw Materials</li>
+            <li>Biologically Active Compounds of Natural Origin</li>
+            <li>Phytochemical Characterization and Standardization</li>
+            <li>Quality, Safety and Efficacy of Herbal Medicinal Products</li>
+            <li>New Medicine Service</li>
+            <li>Bioanalytical Methods</li>
+            <li>Drug metabolism</li>
+          </ul>
+        </v-col>
+      </v-row>
+    </base-card>
+
+    <!-- Tentative Program -->
+    <small-card class="mt-10">
       <base-paragraph class="hero-title text-center">
         <b>TENTATIVE PROGRAM</b>
       </base-paragraph>
@@ -223,150 +368,6 @@ const embedCode = ref(`
         </v-row>
       </base-card>
     </div>
-
-    <!-- Scientific Program -->
-    <small-card>
-      <base-paragraph class="hero-title text-center">
-        <b>Scientific Program</b>
-      </base-paragraph>
-    </small-card>
-    <base-card class="mt-5">
-      <base-paragraph>
-        On October 1st, plenary lecturers will give introductory overviews on topics of the Congress. In addition,
-        parallel sessions beginning from Thursday to Saturday, October 2-4, will provide an exceptional platform for
-        enrichment of knowledge and exchange of experience among participants from academia, industry and practitioners.
-      </base-paragraph>
-    </base-card>
-
-    <!-- Important Dates -->
-    <small-card class="mt-10">
-      <base-paragraph class="hero-title text-center">
-        <b>Important dates</b>
-      </base-paragraph>
-    </small-card>
-    <base-card class="mt-5">
-      <v-list density="compact" class="date-list">
-        <v-list-item>
-          <v-list-item-title><b>March 1st, 2026</b></v-list-item-title>
-          <v-list-item-subtitle>Second Announcement, Call for short papers, Early Registration</v-list-item-subtitle>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-title><b>May 1st, 2026</b></v-list-item-title>
-          <v-list-item-subtitle>Closing of Early Registration</v-list-item-subtitle>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-title><b>May 31st, 2026</b></v-list-item-title>
-          <v-list-item-subtitle>Closing of Registration and Short paper Submission Deadline</v-list-item-subtitle>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-title><b>July 1st, 2026</b></v-list-item-title>
-          <v-list-item-subtitle>Short paper Acceptance Notification</v-list-item-subtitle>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-title><b>October 1-4, 2026</b></v-list-item-title>
-          <v-list-item-subtitle>8th Congress of Pharmacy in North Macedonia with international
-            participation</v-list-item-subtitle>
-        </v-list-item>
-      </v-list>
-    </base-card>
-
-    <!-- Congress Sessions -->
-    <small-card class="mt-10">
-      <base-paragraph class="hero-title text-center">
-        <b>Congress Sessions</b>
-      </base-paragraph>
-    </small-card>
-    <base-card class="mt-5">
-      <v-row>
-        <v-col cols="12" md="6">
-          <ul class="session-list">
-            <li>Plenary Session</li>
-            <li>Pharmaceutical Analysis / Quality Assurance / Pharmaceutical Legislation</li>
-            <li>Social Pharmacy / Pharmaceutical Law</li>
-            <li>Pharmacoeconomics / Drug Information</li>
-            <li>Clinical Biochemistry / Toxicology / Food and Nutrition</li>
-          </ul>
-        </v-col>
-        <v-col cols="12" md="6">
-          <ul class="session-list">
-            <li>Pharmaceutical Technology and Biotechnology / Biopharmaceutics / Cosmetology</li>
-            <li>Pharmaceutical Chemistry / Biomolecular Sciences</li>
-            <li>Community and Clinical Pharmacy</li>
-            <li>Natural Products and Phytotherapy</li>
-            <li>Student Section</li>
-          </ul>
-        </v-col>
-      </v-row>
-    </base-card>
-
-    <!-- Guiding Keywords -->
-    <small-card class="mt-10">
-      <base-paragraph class="hero-title text-center">
-        <b>Guiding Keywords for the Congress</b>
-      </base-paragraph>
-    </small-card>
-    <base-card class="mt-5">
-      <v-row>
-        <v-col cols="12" md="4">
-          <ul class="session-list">
-            <li>Pharmaceutical Education and Career Development</li>
-            <li>Pharmaceutical Practice, Pharmaceutical Care and Hospital Pharmacy</li>
-            <li>Clinical Pharmacy</li>
-            <li>Interprofessional Collaboration in Healthcare</li>
-            <li>Rational Use of Medicines</li>
-            <li>Medication Therapy Management (MTM)</li>
-            <li>Molecular, Biomolecular, and Clinical Pharmacology</li>
-            <li>Novel Drug Targets and Biomarkers</li>
-            <li>Rational Drug Design, Synthesis, and Development</li>
-            <li>In silico Design and Computational Modeling in Drug Development</li>
-            <li>Biopharmaceutics and Pharmacokinetics</li>
-            <li>Toxicology</li>
-            <li>Drug Delivery Systems</li>
-            <li>Micro/Nanotechnology</li>
-            <li>Personalized Medicine</li>
-            <li>Advanced Therapies: Gene, Cell, and Tissue Therapy</li>
-          </ul>
-        </v-col>
-        <v-col cols="12" md="4">
-          <ul class="session-list">
-            <li>Pharmaceutical Biotechnology</li>
-            <li>Industrial Pharmacy</li>
-            <li>Quality by Design (QbD) and Risk Management</li>
-            <li>Pharmaceutical Analysis</li>
-            <li>Digital Health (eHealth)</li>
-            <li>Artificial Intelligence and Machine Learning in Pharmacy</li>
-            <li>Big Data, Real-World Data, Real-World Evidence</li>
-            <li>Pharmacoeconomics</li>
-            <li>Health Technology Assessment</li>
-            <li>Therapeutic Outcomes and Outcomes Research</li>
-            <li>Pharmacovigilance</li>
-            <li>Pharmacoepidemiology</li>
-            <li>Pharmaceutical Legislation</li>
-            <li>Pharmaceutical Law and Intellectual Property</li>
-            <li>Falsified Pharmaceutical Products</li>
-            <li>Regulatory Aspects of Advanced Therapies and Nanomedicines</li>
-          </ul>
-        </v-col>
-        <v-col cols="12" md="4">
-          <ul class="session-list">
-            <li>Public Health</li>
-            <li>Clinical Biochemistry</li>
-            <li>Food, Nutrition, and Health</li>
-            <li>Diet therapy</li>
-            <li>Medical Devices</li>
-            <li>Sustainable and Green Pharmacy</li>
-            <li>Ethics in Pharmaceutical and Clinical Research</li>
-            <li>Pharmacognosy and Natural Medicinal Raw Materials</li>
-            <li>Biologically Active Compounds of Natural Origin</li>
-            <li>Phytochemical Characterization and Standardization</li>
-            <li>Quality, Safety and Efficacy of Herbal Medicinal Products</li>
-            <li>New Medicine Service</li>
-            <li>Bioanalytical Methods</li>
-            <li>Drug metabolism</li>
-          </ul>
-        </v-col>
-      </v-row>
-    </base-card>
   </base-container>
 </template>
 

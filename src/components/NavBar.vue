@@ -27,7 +27,7 @@
     <v-container class="d-flex align-center">
       <!-- Desktop Navigation -->
       <v-tabs v-model="activeTab" class="d-none d-md-flex" align-tabs="center" color="accent" slider-color="accent"
-        @update:model-value="handleTabChange">
+        show-arrows @update:model-value="handleTabChange">
         <v-tab v-for="(tab, index) in tabs" :key="index" :value="index" class="nav-tab pa-3" :prepend-icon="tab.icon">
           {{ tab.label }}
         </v-tab>
@@ -71,14 +71,14 @@ const drawer = ref(false)
 const activeTab = ref(0)
 
 const tabs = [
-  { label: 'Home', icon: 'mdi-chair-school', route: 'SymposiumPage' },
-  { label: 'Commitees', icon: 'mdi-file-document', route: 'OrganizationPage' },
-  { label: 'Programme', icon: 'mdi-cash', route: 'ProgramPage' },
-  { label: 'Abstracts', icon: 'mdi-cash', route: 'AbstractPage' },
-  { label: 'Registration', icon: 'mdi-cash', route: 'FeePage' },
-  { label: 'Presentations', icon: 'mdi-cash', route: 'PresentationPage' },
+  { label: 'Home', icon: 'mdi-home', route: 'SymposiumPage' },
+  { label: 'Commitees', icon: 'mdi-account-group', route: 'OrganizationPage' },
+  { label: 'Programme', icon: 'mdi-calendar-text', route: 'ProgramPage' },
+  { label: 'Abstracts', icon: 'mdi-file-document-edit', route: 'AbstractPage' },
+  { label: 'Registration', icon: 'mdi-account-plus', route: 'FeePage' },
+  { label: 'Presentations', icon: 'mdi-presentation', route: 'PresentationPage' },
   { label: 'Accommodation', icon: 'mdi-bed', route: 'HotelPage' },
-  { label: 'Contact', icon: 'mdi-bed', route: 'ContactPage' },
+  { label: 'Contact', icon: 'mdi-email', route: 'ContactPage' },
 ]
 
 // Watch route changes to update active tab
@@ -134,6 +134,14 @@ const logoWidth = computed(() => {
   border-radius: 20px !important;
   margin: 0 10px !important;
   transition: all 0.3s ease !important;
+}
+
+.nav-tab:deep(.v-slide-group__prev),
+.nav-tab:deep(.v-slide-group__next),
+:deep(.v-slide-group__prev),
+:deep(.v-slide-group__next) {
+  color: #1c5a6d !important;
+  opacity: 1 !important;
 }
 
 .nav-tab:hover {
