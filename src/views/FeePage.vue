@@ -9,7 +9,7 @@ import { useI18n } from "vue-i18n";
 import { ref } from "vue";
 import { v4 as uuidv4 } from "uuid";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import { supabase } from "@/supabase/supabase.js";
+// import { supabase } from "@/supabase/supabase.js";
 
 const { t } = useI18n();
 
@@ -43,78 +43,78 @@ const fileRule = [
   () => form.value.category !== 4 || !!file.value || 'Select a document!',
 ];
 
-async function handleSubmit() {
-  try {
-    message.value = '';
-    success.value = false;
-    loading.value = true;
+// async function handleSubmit() {
+//   try {
+//     message.value = '';
+//     success.value = false;
+//     loading.value = true;
 
-    if (!formRef.value) {
-      message.value = 'Form reference is not available.';
-      loading.value = false;
-      return;
-    }
+//     if (!formRef.value) {
+//       message.value = 'Form reference is not available.';
+//       loading.value = false;
+//       return;
+//     }
 
-    const isValid = await formRef.value.validate();
-    if (!isValid.valid) {
-      message.value = 'An unexpected error occurred';
-      loading.value = false;
-      return;
-    }
+//     const isValid = await formRef.value.validate();
+//     if (!isValid.valid) {
+//       message.value = 'An unexpected error occurred';
+//       loading.value = false;
+//       return;
+//     }
 
-    let fileName = null;
+//     let fileName = null;
 
-    if (form.value.category === 3) {
-      if (!file.value) {
-        message.value = 'Select a document';
-        loading.value = false;
-        return;
-      }
+//     if (form.value.category === 3) {
+//       if (!file.value) {
+//         message.value = 'Select a document';
+//         loading.value = false;
+//         return;
+//       }
 
-      const fileExtension = file.value.name.match(/\.[^.]+$/)[0].toLowerCase();
-      fileName = `congressmfd-documents/${Date.now()}_${uuidv4()}${fileExtension}`;
+//       const fileExtension = file.value.name.match(/\.[^.]+$/)[0].toLowerCase();
+//       fileName = `congressmfd-documents/${Date.now()}_${uuidv4()}${fileExtension}`;
 
-      const { error: uploadError } = await supabase.storage
-        .from('projects')
-        .upload(fileName, file.value);
+//       const { error: uploadError } = await supabase.storage
+//         .from('projects')
+//         .upload(fileName, file.value);
 
-      if (uploadError) {
-        message.value = `File upload failed: ${uploadError.message}`;
-        loading.value = false;
-        return;
-      }
+//       if (uploadError) {
+//         message.value = `File upload failed: ${uploadError.message}`;
+//         loading.value = false;
+//         return;
+//       }
 
-    }
+//     }
 
-    const { error: dbError } = await supabase.from('document_submissions_congressmfd').insert({
-      name: form.value.name,
-      email: form.value.email,
-      phone: form.value.phone,
-      institution: form.value.institution,
-      category: form.value.category,
-      file_name: fileName,
-    });
+//     const { error: dbError } = await supabase.from('document_submissions_congressmfd').insert({
+//       name: form.value.name,
+//       email: form.value.email,
+//       phone: form.value.phone,
+//       institution: form.value.institution,
+//       category: form.value.category,
+//       file_name: fileName,
+//     });
 
-    if (dbError) {
-      message.value = `Failed to save submission: ${dbError.message}`;
-      loading.value = false;
-      return;
-    }
+//     if (dbError) {
+//       message.value = `Failed to save submission: ${dbError.message}`;
+//       loading.value = false;
+//       return;
+//     }
 
-    message.value = 'Successfully submitted!';
-    success.value = true;
-    loading.value = false;
+//     message.value = 'Successfully submitted!';
+//     success.value = true;
+//     loading.value = false;
 
-    form.value = { name: '', email: '', phone: '', institution: '', category: null };
-    file.value = null;
+//     form.value = { name: '', email: '', phone: '', institution: '', category: null };
+//     file.value = null;
 
-    formRef.value?.resetValidation();
-    formRef.value?.reset();
-  } catch (error) {
-    message.value = 'An unexpected error occurred';
-    loading.value = false;
-  }
-}
+//     formRef.value?.resetValidation();
+//     formRef.value?.reset();
+//   } catch (error) {
+//     message.value = 'An unexpected error occurred';
+//     loading.value = false;
+//   }
+// }
 </script>
 
 <template>
@@ -291,7 +291,7 @@ async function handleSubmit() {
         <b>All payments must be completed before the start of the event!</b>
       </paragraph-no-indent>
     </base-card>
-    <small-card class="mt-10" v-if="!hide">
+    <!-- <small-card class="mt-10" v-if="!hide">
       <v-form @submit.prevent="handleSubmit" ref="formRef">
         <v-text-field variant="outlined" density="comfortable" v-model="form.name" label="Name" required
           :rules="validRule" />
@@ -313,7 +313,7 @@ async function handleSubmit() {
           {{ message }}
         </v-alert>
       </v-form>
-    </small-card>
+    </small-card> -->
   </base-container>
 </template>
 
