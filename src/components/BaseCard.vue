@@ -1,0 +1,18 @@
+<script setup>
+</script>
+
+<template>
+  <v-card class="base-card" :elevation="8" rounded="xl">
+    <v-card-text class="text-center">
+      <slot></slot>
+    </v-card-text>
+  </v-card>
+</template>
+
+<style scoped>
+.base-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+</style>
