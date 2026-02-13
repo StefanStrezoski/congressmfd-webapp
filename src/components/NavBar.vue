@@ -4,7 +4,10 @@
       <v-app-bar-title>
         <div class="d-flex align-center">
           <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block mr-2" />
-          <span class="logo-text">Pharmacy of the new era - <br />Innovative solutions for future challenges</span>
+          <span class="logo-text"><b>8th Congress of Pharmacy in North Macedonia</b> <br />
+            Pharmacy of the new era -
+            <br />Innovative solutions for future challenges
+          </span>
         </div>
       </v-app-bar-title>
 
@@ -15,7 +18,7 @@
       </div>
 
       <a href="https://maps.app.goo.gl/cMzvrKf9S9DRb9cr5" target="_blank"
-        class="text-caption text-white text-decoration-none location-link">
+        class="text-caption text-teal text-decoration-none location-link">
         📍 Location
       </a>
     </v-container>
@@ -31,7 +34,7 @@
       </v-tabs>
       <v-spacer></v-spacer>
       <!-- Mobile Menu -->
-      <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" color="teal"></v-app-bar-nav-icon>
     </v-container>
   </v-app-bar>
 
@@ -106,13 +109,14 @@ const logoHeight = computed(() => {
 });
 
 const logoWidth = computed(() => {
-  return xs.value || sm.value ? 60 : 100;
+  return xs.value || sm.value ? 60 : 120;
 });
 </script>
 
 <style scoped>
 .app-bar {
-  background: linear-gradient(135deg, #1c5a6d 0%, #6ba2a3 100%) !important;
+  background: white !important;
+  border-top: 2px solid #1c5a6d !important;
 }
 
 .logo {
@@ -124,7 +128,7 @@ const logoWidth = computed(() => {
 }
 
 .nav-tab {
-  color: white !important;
+  color: #1c5a6d !important;
   font-weight: 500 !important;
   text-transform: uppercase !important;
   border-radius: 20px !important;
@@ -155,8 +159,8 @@ const logoWidth = computed(() => {
 }
 
 .top-info-bar {
-  background: #1c5a6d !important;
-  color: white !important;
+  background: white !important;
+  color: #1c5a6d !important;
   font-size: 0.875rem;
   z-index: 10;
 }

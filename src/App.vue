@@ -30,7 +30,7 @@ const bannerHeight = computed(() => {
 
 <style scoped>
 .main-content {
-  background-color: #e4f0f1;
+  background-color: white;
   min-height: 100vh;
 }
 

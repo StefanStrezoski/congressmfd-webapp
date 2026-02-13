@@ -1,6 +1,5 @@
 <script setup>
 import BaseContainer from "@/components/BaseContainer.vue";
-import BaseCard from "@/components/BaseCard.vue";
 import SmallCard from "@/components/SmallCard.vue";
 </script>
 

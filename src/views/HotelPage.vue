@@ -1,7 +1,6 @@
 <script setup>
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
-import SmallCard from "@/components/SmallCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import brandLogo from "@/assets/LogoGNA.png";
 import metropolImage from "@/assets/metropol.png";
