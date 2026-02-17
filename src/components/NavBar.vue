@@ -26,7 +26,7 @@
   <v-app-bar elevation="0" class="app-bar" height="60" fixed density="compact">
     <v-container class="d-flex align-center">
       <!-- Desktop Navigation -->
-      <v-tabs v-model="activeTab" class="d-none d-md-flex" align-tabs="center" color="accent" slider-color="accent"
+      <v-tabs v-model="activeTab" class="d-none d-md-flex" align-tabs="center" color="accent" slider-color="primary"
         show-arrows @update:model-value="handleTabChange">
         <v-tab v-for="(tab, index) in tabs" :key="index" :value="index" class="nav-tab pa-3" :prepend-icon="tab.icon">
           {{ tab.label }}
@@ -74,9 +74,9 @@ const tabs = [
   { label: 'Home', icon: 'mdi-home', route: 'SymposiumPage' },
   { label: 'Commitees', icon: 'mdi-account-group', route: 'OrganizationPage' },
   { label: 'Programme', icon: 'mdi-calendar-text', route: 'ProgramPage' },
-  { label: 'Abstracts', icon: 'mdi-file-document-edit', route: 'AbstractPage' },
+  { label: 'Short Paper Submissions', icon: 'mdi-file-document-edit', route: 'AbstractPage' },
   { label: 'Registration', icon: 'mdi-account-plus', route: 'FeePage' },
-  { label: 'Presentations', icon: 'mdi-presentation', route: 'PresentationPage' },
+  { label: 'Sponsors', icon: 'mdi-hand-heart', route: 'PresentationPage' },
   { label: 'Accommodation', icon: 'mdi-bed', route: 'HotelPage' },
   { label: 'Contact', icon: 'mdi-email', route: 'ContactPage' },
 ]

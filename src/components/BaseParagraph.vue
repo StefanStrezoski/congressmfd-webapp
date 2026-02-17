@@ -11,7 +11,7 @@
 <style scoped>
 .hero-subtitle {
   text-indent: 10px;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   margin-bottom: 6px;
   color: #1c5a6d;
   text-align: left;

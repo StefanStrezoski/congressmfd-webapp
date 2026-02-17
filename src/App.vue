@@ -3,7 +3,6 @@
     <NavBar />
     <!-- Main Content -->
     <v-main class="main-content">
-      <v-img :src="banner" width="100%" cover :height="bannerHeight" alt="Farm Banner"></v-img>
       <v-container fluid class="pa-0">
         <router-view v-slot="slotProps">
           <transition name="route" mode="out-in">
@@ -16,16 +15,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
 import NavBar from "@/components/NavBar.vue";
-import banner from "@/assets/Farm26.jpg";
-import { useDisplay } from "vuetify";
-
-const { xs, sm } = useDisplay();
-
-const bannerHeight = computed(() => {
-  return xs.value || sm.value ? 40 : 160;
-});
 </script>
 
 <style scoped>
