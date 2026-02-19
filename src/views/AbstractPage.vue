@@ -21,7 +21,8 @@ import BannerImage from "@/components/BannerImage.vue";
           The Scientific committee of <b>8th Congress of Pharmacy in North Macedonia</b> with international
           participation
           decided that submitted scientific works should be in form of short communications (papers) as they will be
-          published in a special issue of Macedonian Pharmaceutical Bulletin, vol. 72 (Suppl 1), 2026. Short papers will
+          published in a special issue of <i>Macedonian Pharmaceutical Bulletin</i>, vol. 72 (Suppl 1), 2026. Short
+          papers will
           be labelled with a Digital Object Identification Number (DOI).
         </base-paragraph>
         <base-paragraph>
@@ -98,7 +99,7 @@ import BannerImage from "@/components/BannerImage.vue";
           <base-card>
             <base-paragraph>
               Posters will be presented during poster sessions. The posters should be in form of a Power point slide,
-              <b>A4 landscape format (4:3)</b>.
+              <b>A4 landscape format (4:3)</b> and be sent on link by September 1st, 2026 at the latest.
             </base-paragraph>
           </base-card>
         </v-col>
@@ -118,11 +119,11 @@ import BannerImage from "@/components/BannerImage.vue";
           First of all, authors should submit their short paper by <b>May 31st, 2026</b> (<a href="#"
             class="submission-link">Call for short papers</a>). During the short paper submission process, please select
           the option <b>Poster type of presentation</b>. Short papers will be published in a special issue of the
-          Macedonian Pharmaceutical Bulletin, vol. 72 (Suppl 1), 2026.
+          <i>Macedonian Pharmaceutical Bulletin</i>, vol. 72 (Suppl 1), 2026.
         </base-paragraph>
         <base-paragraph>
           E-Posters should be in form of a Power point slide, <b>A4 landscape format (4:3)</b> and be sent on mail, by
-          <b>July 15th, 2026</b> at the latest.
+          <b>September 1st, 2026</b> at the latest.
         </base-paragraph>
         <base-paragraph class="mt-4 text-center">
           <b>Publication of short papers and presentation of E-Posters is dependent upon payment of registration

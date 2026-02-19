@@ -3,7 +3,7 @@
     <v-container class="d-flex justify-space-between align-center pl-0">
       <v-app-bar-title>
         <div class="d-flex align-center">
-          <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block mr-2" />
+          <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block" />
           <span class="logo-text"><b>8th Congress of Pharmacy in North Macedonia</b> <br />
             Pharmacy of the new era -
             <br />Innovative solutions for future challenges
@@ -60,7 +60,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from "vue-router";
-import logo from '@/assets/Farm 26 Logo www.png'
+import logo from '@/assets/mfdlogo.png'
 import { useDisplay } from "vuetify/lib/composables/index.js";
 
 const router = useRouter()
@@ -101,15 +101,15 @@ const navigateToTab = (routeName) => {
 }
 
 const barHeight = computed(() => {
-  return xs.value || sm.value ? 70 : 90;
+  return xs.value || sm.value ? 60 : 90;
 });
 
 const logoHeight = computed(() => {
-  return xs.value || sm.value ? 40 : 60;
+  return xs.value || sm.value ? 40 : 70;
 });
 
 const logoWidth = computed(() => {
-  return xs.value || sm.value ? 60 : 120;
+  return xs.value || sm.value ? 40 : 80;
 });
 </script>
 

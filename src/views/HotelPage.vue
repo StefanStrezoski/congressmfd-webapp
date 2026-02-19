@@ -67,10 +67,14 @@ import BannerImage from '@/components/BannerImage.vue';
       <base-card class="mt-5 mb-10">
         <h3 class="subtitle mb-3">CANCELLATION OF ACCOMMODATION</h3>
         <ul class="mb-5 text-left custom-list">
-          <li>For cancellation <b>UNTIL 15.08.2026</b>, payments will be fully refunded, minus bank fees.</li>
-          <li>For cancellation <b>UNTIL 01.09.2026</b>, up to 50% of the paid amount will be refunded, minus bank fees.
+          <li>For cancellation <b class="date-color">UNTIL August 15th, 2026</b>, payments will be fully refunded, minus
+            bank fees.</li>
+          <li>For cancellation <b class="date-color">UNTIL September 1st, 2026</b>, up to 50% of the paid amount will be
+            refunded, minus
+            bank fees.
           </li>
-          <li>For cancellation <b>AFTER 01.09.2026</b>, no refund of the paid amount will be issued.</li>
+          <li>For cancellation <b class="date-color">AFTER September 1st, 2026</b>, no refund of the paid amount will be
+            issued.</li>
         </ul>
 
         <base-paragraph class="text-left mt-4 lh-lg">
@@ -120,23 +124,26 @@ import BannerImage from '@/components/BannerImage.vue';
       </v-card>
       <base-card>
         <div class="text-center">
-          <h4 class="subtitle mb-3 text-center text-h5">Hotel reservations and transportation</h4>
-          <base-paragraph class="text-center text-h6">
+          <base-paragraph class="text-center text-h6 subtitle-main mb-6">
             For all information and details about accommodation and transportation, please contact the agency:
           </base-paragraph>
 
-          <div class="contact-block-centered mt-4">
-            <p class="agency-name mb-1 text-h5">GLOBAL NET ADV</p>
-            <p class="text-h6">Contact person: <b>Marjan Dimeski</b></p>
-            <div class="mt-3">
-              <p class="text-h6"><v-icon size="small" class="mr-2">mdi-phone</v-icon><b>Mobile:</b> +389(0) 71 317 377
-              </p>
-              <p class="text-h6"><v-icon size="small" class="mr-2">mdi-email</v-icon><b>Email:</b>
-                <a href="mailto:globalneta@gmail.com">globalneta@gmail.com</a> &
-                <a href="mailto:globalneta@gmail.com">globalneta@gmail.com</a>
-              </p>
-            </div>
-          </div>
+          <v-row justify="center">
+            <v-col cols="12" md="6">
+              <small-card>
+                <h3 class="contact-header font-weight-bold mb-3 text-h5">Global Net Adv</h3>
+                <div class="contact-info text-center">
+                  <p><b class="text-h6">Marjan Dimeski</b></p>
+                  <v-divider class="my-2"></v-divider>
+                  <p><v-icon size="small" class="mr-2">mdi-phone</v-icon> +389(0) 71 317 377</p>
+                  <p><v-icon size="small" class="mr-2">mdi-email</v-icon> <a
+                      href="mailto:globalnetadv@globalnetadv.mk">globalnetadv@globalnetadv.mk</a></p>
+                  <p><v-icon size="small" class="mr-2">mdi-email</v-icon> <a
+                      href="mailto:[EMAIL_ADDRESS]">globalneta@gmail.com</a></p>
+                </div>
+              </small-card>
+            </v-col>
+          </v-row>
           <v-img :src="brandLogo" width="140" class="mx-auto mt-6"></v-img>
         </div>
       </base-card>
@@ -228,11 +235,36 @@ import BannerImage from '@/components/BannerImage.vue';
   text-align: left;
 }
 
-.subtitle {
+.subtitle-main {
   color: #d37315;
   font-weight: bold;
   font-size: 1.1rem;
-  text-align: left;
+  text-align: center;
+}
+
+.contact-header {
+  color: #1c5a6d;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.subtitle-small {
+  color: #d37315;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.contact-info p {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #125280;
+}
+
+.caption {
+  font-style: italic;
+  font-size: 0.85rem !important;
+  color: #6ba2a3 !important;
 }
 
 .location-details p,
@@ -300,6 +332,10 @@ import BannerImage from '@/components/BannerImage.vue';
 
 .lh-lg {
   line-height: 1.8;
+}
+
+.date-color {
+  color: #d37315;
 }
 
 @media (max-width: 768px) {

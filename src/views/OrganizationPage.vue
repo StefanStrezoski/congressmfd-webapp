@@ -45,6 +45,7 @@ import BannerImage from "@/components/BannerImage.vue";
                   <li>Aleksandar Dimovski – N. Macedonia</li>
                   <li>Aneta Dimitrovska – N. Macedonia</li>
                   <li>Biljana Bauer – N. Macedonia</li>
+                  <li>Borut Božic – Slovenia</li>
                   <li>Georgi Momekov - Bulgaria</li>
                   <li>Kristina Mladenovska – N. Macedonia</li>
                   <li>Katerina Goracinova – N. Macedonia</li>
@@ -125,6 +126,7 @@ import BannerImage from "@/components/BannerImage.vue";
                   <li>Sharareh Salar-Behzadi – Austria</li>
                   <li>Slavica Tudzarova-Trajkovska – USA</li>
                   <li>Tanja Petreska – North Macedonia</li>
+                  <li>Vladimir Dobričič – Serbia</li>
                   <li>Vladimír Wsól – Czech Republic</li>
                   <li>Zaneta Nikolovska-Coleska – USA</li>
                   <li>Zorica Naumovska – N. Macedonia</li>

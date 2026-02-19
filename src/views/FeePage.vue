@@ -322,6 +322,7 @@ const fileRule = [
 <style scoped>
 .cell-bg {
   background-color: #d0ece9;
+  font-size: 1rem;
 }
 
 .title-card {

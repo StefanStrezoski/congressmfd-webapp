@@ -143,7 +143,6 @@ import globalnetadv from "@/assets/LogoGNA.png";
 
 .subtitle-small {
   font-size: 0.85rem;
-  font-style: italic;
   color: #6ba2a3;
 }
 

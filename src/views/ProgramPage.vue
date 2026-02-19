@@ -3,12 +3,12 @@ import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import SmallCard from "@/components/SmallCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import BannerImage from "@/components/BannerImage.vue";
+import homeimg from "@/assets/pozadinahome.jpg";
 </script>
 
 <template>
   <div>
-    <banner-image />
+    <v-img :src="homeimg" :height="bannerHeight" cover alt="Banner Image" width="100%" />
     <base-container>
 
       <!-- Scientific Program -->
@@ -24,38 +24,6 @@ import BannerImage from "@/components/BannerImage.vue";
           enrichment of knowledge and exchange of experience among participants from academia, industry and
           practitioners.
         </base-paragraph>
-      </base-card>
-
-      <!-- Important Dates -->
-      <small-card class="mt-10">
-        <base-paragraph class="hero-title text-center">
-          <b>Important dates</b>
-        </base-paragraph>
-      </small-card>
-      <base-card class="mt-5">
-        <v-list density="compact" class="date-list">
-          <v-list-item>
-            <v-list-item-title class="hall-info"><b>March 1st, 2026</b></v-list-item-title>
-            <v-list-item-subtitle>Second Announcement, Call for short papers, Early Registration</v-list-item-subtitle>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title class="hall-info"><b>May 1st, 2026</b></v-list-item-title>
-            <v-list-item-subtitle>Closing of Early Registration</v-list-item-subtitle>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title class="hall-info"><b>May 31st, 2026</b></v-list-item-title>
-            <v-list-item-subtitle>Closing of Registration and Short paper Submission Deadline</v-list-item-subtitle>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title class="hall-info"><b>July 1st, 2026</b></v-list-item-title>
-            <v-list-item-subtitle>Short paper Acceptance Notification</v-list-item-subtitle>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-title class="hall-info"><b>October 1-4, 2026</b></v-list-item-title>
-            <v-list-item-subtitle>8th Congress of Pharmacy in North Macedonia with international
-              participation</v-list-item-subtitle>
-          </v-list-item>
-        </v-list>
       </base-card>
 
       <!-- Congress Sessions -->
@@ -94,7 +62,7 @@ import BannerImage from "@/components/BannerImage.vue";
         </base-paragraph>
         <v-row class="mt-2">
           <v-col cols="12" md="4">
-            <ul class="session-list">
+            <ul class="session-list reduce-text">
               <li>Pharmaceutical Education and Career Development</li>
               <li>Pharmaceutical Practice, Pharmaceutical Care and Hospital Pharmacy</li>
               <li>Clinical Pharmacy</li>
@@ -114,7 +82,7 @@ import BannerImage from "@/components/BannerImage.vue";
             </ul>
           </v-col>
           <v-col cols="12" md="4">
-            <ul class="session-list">
+            <ul class="session-list reduce-text">
               <li>Pharmaceutical Biotechnology</li>
               <li>Industrial Pharmacy</li>
               <li>Quality by Design (QbD) and Risk Management</li>
@@ -134,7 +102,7 @@ import BannerImage from "@/components/BannerImage.vue";
             </ul>
           </v-col>
           <v-col cols="12" md="4">
-            <ul class="session-list">
+            <ul class="session-list reduce-text">
               <li>Public Health</li>
               <li>Clinical Biochemistry</li>
               <li>Food, Nutrition, and Health</li>
@@ -365,6 +333,93 @@ import BannerImage from "@/components/BannerImage.vue";
           </v-row>
         </base-card>
       </div>
+
+      <!-- Invited Lecturers -->
+      <small-card class="mt-10">
+        <base-paragraph class="hero-title text-center">
+          <b>INVITED LECTURERS</b>
+        </base-paragraph>
+      </small-card>
+
+      <base-card class="mt-5 mb-10">
+        <h3 class="program-date mb-4">Plenary speakers</h3>
+        <div class="speaker-item mb-4">
+          <div class="speaker-name">Prof. Zaneta Nikolovska-Coleska, USA</div>
+          <div class="speaker-affiliation">University of Michigan Medical School</div>
+        </div>
+        <div class="speaker-item mb-6">
+          <div class="speaker-name">Prof. Borut Božič, Slovenia</div>
+          <div class="speaker-affiliation">Faculty of Pharmacy, University of Ljubljana</div>
+        </div>
+
+        <h3 class="program-date mb-4">Session speakers</h3>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Pharmaceutical Technology and Biotechnology / Biopharmaceutics /
+            Cosmetology</div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Prof. Mario Jug, Croatia</div>
+            <div class="speaker-affiliation">Department of Pharmaceutical Technology, Faculty of Pharmacy and
+              Biochemistry, University of Zagreb</div>
+          </div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Prof. Rita Ambrus, Hungary</div>
+            <div class="speaker-affiliation">Institute of Pharmaceutical Technology and Regulatory Affairs, Faculty of
+              Pharmacy, University of Szeged</div>
+          </div>
+        </div>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Clinical Biochemistry / Toxicology / Food and Nutrition</div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Prof. Dusan Misic, Poland</div>
+            <div class="speaker-affiliation">Department of Functional Food Products Development, Faculty of
+              Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences</div>
+          </div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Assoc. Prof. Marijana Curcic, Serbia</div>
+            <div class="speaker-affiliation">Department of Toxicology "Akademik Danilo Soldatovic", Centre for
+              Toxicological Risk Assessment, University of Belgrade</div>
+          </div>
+        </div>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Community and Clinical Pharmacy</div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Anita Hogg, Northern Ireland</div>
+            <div class="speaker-affiliation">Lead for Medicines Optimisation Resource Efficiency, Medicines Optimisation
+              Innovation Centre (MOIC) Northern Health and Social Care Trust (NHSCT)</div>
+          </div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Assoc. Prof. Maja Ortner Hadziabdic, Croatia</div>
+            <div class="speaker-affiliation">Centre of Applied Pharmacy, Faculty of Pharmacy and Biochemistry,
+              University of Zagreb</div>
+          </div>
+        </div>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Pharmaceutical Chemistry / Biomolecular Sciences</div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Prof. Ing. Vladimír Wsól, Czech Republic</div>
+            <div class="speaker-affiliation">Department of Biochemical Sciences, Faculty of Pharmacy, Charles University
+            </div>
+          </div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Prof. Vladimir Dobričić, Serbia</div>
+            <div class="speaker-affiliation">Department of Pharmaceutical Chemistry, Faculty of Pharmacy, University of
+              Belgrade</div>
+          </div>
+        </div>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Natural Products and Phytotherapy</div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-name">Dr. Danijela Mišić, Serbia</div>
+            <div class="speaker-affiliation">Department of Plant Physiology, Institute for Biological Research "Siniša
+              Stanković"- National Institute of the Republic of Serbia, University of Belgrade</div>
+          </div>
+        </div>
+      </base-card>
     </base-container>
   </div>
 </template>
@@ -409,6 +464,35 @@ import BannerImage from "@/components/BannerImage.vue";
 .session-list li {
   margin-bottom: 8px;
   font-size: 1.1rem;
+}
+
+.reduce-text li {
+  font-size: 0.95rem
+}
+
+.speaker-item {
+  text-align: left;
+}
+
+.speaker-name {
+  font-weight: bold;
+  color: #125280;
+  font-size: 1.15rem;
+}
+
+.speaker-affiliation {
+  color: #1c5a6d;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.session-name {
+  font-weight: bold;
+  color: #d37315;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  border-left: 4px solid #d37315;
+  padding-left: 10px;
 }
 
 @media (max-width: 768px) {
