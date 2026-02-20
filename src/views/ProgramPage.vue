@@ -8,7 +8,7 @@ import homeimg from "@/assets/pozadinahome.jpg";
 
 <template>
   <div>
-    <v-img :src="homeimg" :height="bannerHeight" cover alt="Banner Image" width="100%" />
+    <v-img :src="homeimg" cover alt="Banner Image" width="100%" />
     <base-container>
 
       <!-- Scientific Program -->

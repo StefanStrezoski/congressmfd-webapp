@@ -20,7 +20,7 @@ import NavBar from "@/components/NavBar.vue";
 
 <style scoped>
 .main-content {
-  background-color: white;
+  background-color: #F9FBFA;
   min-height: 100vh;
 }
 

@@ -109,14 +109,6 @@ import twoSignature from "@/assets/potpis2.png";
 import ffLogo from "@/assets/ffl.png";
 import mfdLogo from "@/assets/mfdlogo.png";
 import homeimg from "@/assets/pozadinahome.jpg"
-import { useDisplay } from "vuetify";
-import { computed } from "vue";
-
-const { xs, sm } = useDisplay();
-
-const bannerHeight = computed(() => {
-  return xs.value || sm.value ? 40 : 160;
-});
 </script>
 
 <style scoped>
