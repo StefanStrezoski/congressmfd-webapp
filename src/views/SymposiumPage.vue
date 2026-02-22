@@ -78,7 +78,8 @@
         </base-paragraph>
         <v-row class="mt-2">
           <v-col cols="6">
-            <base-paragraph class="text-center">
+            <base-paragraph class="text-center mb-0">
+              <br />
               <b> Macedonian Pharmaceutical Association </b>
             </base-paragraph>
             <div class="d-flex flex-column align-center">
@@ -91,7 +92,7 @@
               <b> Ss. Cyril and Methodius University in Skopje </b>
             </base-paragraph>
             <div class="d-flex flex-column align-center">
-              <v-img :width="200" :src="ffLogo"></v-img>
+              <v-img :width="170" :src="ffLogo"></v-img>
             </div>
           </v-col>
         </v-row>
@@ -106,7 +107,7 @@ import BaseContainer from "@/components/BaseContainer.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import oneSignature from "@/assets/potpis1.png";
 import twoSignature from "@/assets/potpis2.png";
-import ffLogo from "@/assets/FF logo N.png";
+import ffLogo from "@/assets/FFlogo.png";
 import mfdLogo from "@/assets/mfdlogo.png";
 import homeimg from "@/assets/pozadinahome.jpg"
 </script>

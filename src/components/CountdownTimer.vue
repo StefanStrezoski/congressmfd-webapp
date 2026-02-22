@@ -1,6 +1,6 @@
 <template>
-  <div class="countdown-timer d-flex align-center" :class="{ 'mobile-style': isMobile }">
-    <div class="countdown-label d-none d-sm-block mr-2">
+  <div class="countdown-timer d-flex align-center">
+    <div class="countdown-label d-sm-block mr-2">
       Countdown to second announcement:
     </div>
     <div class="countdown-values d-flex align-center">
@@ -24,13 +24,6 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-
-defineProps({
-  isMobile: {
-    type: Boolean,
-    default: false
-  }
-});
 
 const targetDate = new Date('2026-03-01T00:00:00');
 const days = ref(0);
@@ -109,25 +102,11 @@ onUnmounted(() => {
   opacity: 0.5;
 }
 
-.mobile-style {
-  color: white;
-  padding: 16px;
-  width: 100%;
-  justify-content: center;
-}
-
-.mobile-style .countdown-values {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  width: 100%;
-  justify-content: center;
-}
-
-.mobile-style .unit {
-  color: #81e6d9;
-}
-
-.mobile-style .value {
-  color: white;
+@media (max-width: 768px) {
+  .countdown-label {
+    font-size: 0.7rem;
+    margin-right: 0;
+    text-align: right;
+  }
 }
 </style>

@@ -2,10 +2,8 @@
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import SmallCard from "@/components/SmallCard.vue";
 import BannerImage from "@/components/BannerImage.vue";
 import { ref } from "vue";
-import { v4 as uuidv4 } from 'uuid';
 import { supabase } from "@/supabase/supabase.js";
 
 const formRef = ref(null);
@@ -252,40 +250,40 @@ async function handleSubmit() {
         <v-form ref="formRef" @submit.prevent="handleSubmit">
           <v-row>
             <v-col cols="12">
-              <v-text-field v-model="formData.abstractTitle" label="Abstract title"
+              <v-text-field v-model="formData.abstractTitle" label="Abstract title" clearable
                 placeholder="Enter the title of your abstract" variant="outlined" density="comfortable"
                 :rules="[rules.required]" required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
               <v-text-field v-model="formData.firstName" label="First Name" variant="outlined" density="comfortable"
-                :rules="[rules.required]" required></v-text-field>
+                clearable :rules="[rules.required]" required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
               <v-text-field v-model="formData.lastName" label="Last Name" variant="outlined" density="comfortable"
-                :rules="[rules.required]" required></v-text-field>
+                clearable :rules="[rules.required]" required></v-text-field>
             </v-col>
 
             <v-col cols="12">
-              <v-text-field v-model="formData.institution" label="Institution"
+              <v-text-field v-model="formData.institution" label="Institution" clearable
                 placeholder="Enter your affiliated institution" variant="outlined" density="comfortable"
                 :rules="[rules.required]" required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
               <v-text-field v-model="formData.country" label="Country" variant="outlined" density="comfortable"
-                :rules="[rules.required]" required></v-text-field>
+                clearable :rules="[rules.required]" required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="formData.email" label="Author's E-mail" type="email" variant="outlined"
+              <v-text-field v-model="formData.email" label="Author's E-mail" type="email" variant="outlined" clearable
                 density="comfortable" :rules="[rules.required, rules.email]" required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
               <v-text-field v-model="formData.phone" label="Phone number" variant="outlined" density="comfortable"
-                :rules="[rules.required]" required></v-text-field>
+                clearable :rules="[rules.required]" required></v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">

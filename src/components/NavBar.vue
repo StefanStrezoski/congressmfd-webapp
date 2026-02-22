@@ -72,7 +72,7 @@ import CountdownTimer from './CountdownTimer.vue';
 
 const router = useRouter()
 const route = useRoute()
-const { xs, sm, mdAndUp } = useDisplay();
+const { xs, sm } = useDisplay();
 
 const drawer = ref(false)
 const activeTab = ref(0)
