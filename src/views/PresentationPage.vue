@@ -5,7 +5,6 @@ import SmallCard from "@/components/SmallCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import platinumSponsor from "@/assets/alakloid.png";
 import BannerImage from "@/components/BannerImage.vue";
-
 </script>
 
 <template>
@@ -19,7 +18,7 @@ import BannerImage from "@/components/BannerImage.vue";
         <base-paragraph class="text-center">
           <b class="text-h6 font-weight-bold">PLATINUM SPONSOR</b>
         </base-paragraph>
-        <v-img :src="platinumSponsor" width="20%" class="d-inline-block"></v-img>
+        <v-img :src="platinumSponsor" width="30%" class="d-inline-block"></v-img>
       </base-card>
       <!-- Page Title -->
       <v-card rounded="xl" class="mb-5 pa-2 mt-5 text-center title-card">

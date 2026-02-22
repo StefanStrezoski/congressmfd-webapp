@@ -23,7 +23,7 @@ import globalnetadv from "@/assets/LogoGNA.png";
               <span class="font-weight-bold">Scientific Committee</span>
             </div>
             <div class="contact-body text-left">
-              <p class="org-name mb-3">Ss. Cyril and Methodius University in Skopje, Faculty of Pharmacy</p>
+              <p class="org-name mb-3">Faculty of Pharmacy, <br />Ss. Cyril and Methodius University in Skopje</p>
               <div class="person-info">
                 <p><b>Marija Glavas Dodov</b></p>
                 <p class="role mb-2">Chair of Scientific Committee</p>

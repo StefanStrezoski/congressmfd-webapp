@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-img :src="homeimg" :height="bannerHeight" cover alt="Banner Image" width="100%" />
+    <v-img :src="homeimg" cover alt="Banner Image" width="100%" />
     <base-container>
       <base-card class="mt-5">
         <base-paragraph class="text-center hero-title">
@@ -76,22 +76,22 @@
             CONGRESS HOSTS
           </b>
         </base-paragraph>
-        <v-row class="mt-5">
+        <v-row class="mt-2">
           <v-col cols="6">
             <base-paragraph class="text-center">
               <b> Macedonian Pharmaceutical Association </b>
             </base-paragraph>
             <div class="d-flex flex-column align-center">
-              <v-img :width="200" :src="mfdLogo"></v-img>
+              <v-img :width="180" :src="mfdLogo"></v-img>
             </div>
           </v-col>
           <v-col cols="6">
             <base-paragraph class="text-center">
-              <b> Faculty of Pharmacy </b>
+              <b> Faculty of Pharmacy </b> <br />
               <b> Ss. Cyril and Methodius University in Skopje </b>
             </base-paragraph>
-            <div class="d-flex flex-column align-center mt-5">
-              <v-img :width="170" :src="ffLogo"></v-img>
+            <div class="d-flex flex-column align-center">
+              <v-img :width="200" :src="ffLogo"></v-img>
             </div>
           </v-col>
         </v-row>
@@ -106,7 +106,7 @@ import BaseContainer from "@/components/BaseContainer.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import oneSignature from "@/assets/potpis1.png";
 import twoSignature from "@/assets/potpis2.png";
-import ffLogo from "@/assets/ffl.png";
+import ffLogo from "@/assets/FF logo N.png";
 import mfdLogo from "@/assets/mfdlogo.png";
 import homeimg from "@/assets/pozadinahome.jpg"
 </script>
@@ -118,7 +118,7 @@ import homeimg from "@/assets/pozadinahome.jpg"
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
   .list-title {

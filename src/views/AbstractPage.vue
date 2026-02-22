@@ -144,8 +144,9 @@ async function handleSubmit() {
           For successful on-line submission of your paper, we kindly ask you to complete the instructions given in:
         </base-paragraph>
         <ul class="submission-links-list">
-          <li><a href="#" class="submission-link">TEMPLATE submission document</a></li>
-          <li><a href="#" class="submission-link">How to Prepare a Short paper – Examples</a></li>
+          <li><a href="/files/Template-8CPM-Ohrid.doc" class="submission-link">TEMPLATE submission document</a></li>
+          <li><a href="/files/ShortPaperExamples.zip" class="submission-link">How to Prepare a Short paper –
+              Examples</a></li>
         </ul>
         <base-paragraph class="mt-4">
           For submission of your short papers, use only the prepared <b>TEMPLATE document</b>, fulfilled with your
@@ -158,15 +159,15 @@ async function handleSubmit() {
         <v-list density="compact" class="info-list">
           <v-list-item>
             <v-list-item-title><b>Deadline for short paper submission and registration</b></v-list-item-title>
-            <v-list-item-subtitle class="text-red">May 31st, 2026</v-list-item-subtitle>
+            <v-list-item-subtitle class="text-orange">May 31st, 2026</v-list-item-subtitle>
           </v-list-item>
           <v-list-item>
             <v-list-item-title><b>Acceptance of the short paper</b></v-list-item-title>
-            <v-list-item-subtitle class="text-red">July 1st, 2026</v-list-item-subtitle>
+            <v-list-item-subtitle class="text-orange">July 1st, 2026</v-list-item-subtitle>
           </v-list-item>
           <v-list-item>
             <v-list-item-title><b>Presentation Dates</b></v-list-item-title>
-            <v-list-item-subtitle>October 2-4, 2026 (Oral or Poster form)</v-list-item-subtitle>
+            <v-list-item-subtitle class="text-orange">October 2-4, 2026 (Oral or Poster form)</v-list-item-subtitle>
           </v-list-item>
         </v-list>
         <base-paragraph class="pa-2 text-center" style="font-size: 0.9rem;">
@@ -227,8 +228,9 @@ async function handleSubmit() {
           sessions on multi-media screens situated in the poster area.
         </base-paragraph>
         <base-paragraph>
-          First of all, authors should submit their short paper by <b>May 31st, 2026</b> (<a href="#"
-            class="submission-link">Call for short papers</a>). During the short paper submission process, please select
+          First of all, authors should submit their short paper by <b>May 31st, 2026</b> (<a
+            href="/files/Template-8CPM-Ohrid.doc" class="submission-link">TEMPLATE submission document</a>). During the
+          short paper submission process, please select
           the option <b>Poster type of presentation</b>. Short papers will be published in a special issue of the
           <i>Macedonian Pharmaceutical Bulletin</i>, vol. 72 (Suppl 1), 2026.
         </base-paragraph>
@@ -361,8 +363,8 @@ async function handleSubmit() {
   text-align: left;
 }
 
-.text-red {
-  color: #e53935 !important;
+.text-orange {
+  color: #d37315 !important;
   font-weight: bold;
 }
 

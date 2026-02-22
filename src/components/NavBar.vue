@@ -3,13 +3,18 @@
     <v-container class="d-flex justify-space-between align-center pl-0">
       <v-app-bar-title>
         <div class="d-flex align-center">
-          <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block" />
+          <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block mr-2" />
           <span class="logo-text"><b>8th Congress of Pharmacy in North Macedonia</b> <br />
             Pharmacy of the new era -
             <br />Innovative solutions for future challenges
           </span>
         </div>
       </v-app-bar-title>
+
+
+      <div class="d-none d-md-block mr-5">
+        <CountdownTimer />
+      </div>
 
       <div class="text-right pr-5 mr-4 info-section" style="border-right: 1px solid black">
         <p>
@@ -34,6 +39,7 @@
       </v-tabs>
       <v-spacer></v-spacer>
       <!-- Mobile Menu -->
+      <CountdownTimer class="d-md-none" />
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" color="teal"></v-app-bar-nav-icon>
     </v-container>
   </v-app-bar>
@@ -60,8 +66,9 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from "vue-router";
-import logo from '@/assets/mfdlogo.png'
+import logo from '@/assets/MFD i FF logo header.png'
 import { useDisplay } from "vuetify/lib/composables/index.js";
+import CountdownTimer from './CountdownTimer.vue';
 
 const router = useRouter()
 const route = useRoute()
@@ -105,11 +112,11 @@ const barHeight = computed(() => {
 });
 
 const logoHeight = computed(() => {
-  return xs.value || sm.value ? 40 : 70;
+  return xs.value || sm.value ? 40 : 90;
 });
 
 const logoWidth = computed(() => {
-  return xs.value || sm.value ? 40 : 80;
+  return xs.value || sm.value ? 40 : 140;
 });
 </script>
 

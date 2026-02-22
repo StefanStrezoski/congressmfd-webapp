@@ -77,12 +77,12 @@ import homeimg from "@/assets/pozadinahome.jpg";
               <li>Toxicology</li>
               <li>Drug Delivery Systems</li>
               <li>Micro/Nanotechnology</li>
-              <li>Personalized Medicine</li>
-              <li>Advanced Therapies: Gene, Cell, and Tissue Therapy</li>
             </ul>
           </v-col>
           <v-col cols="12" md="4">
             <ul class="session-list reduce-text">
+              <li>Personalized Medicine</li>
+              <li>Advanced Therapies: Gene, Cell, and Tissue Therapy</li>
               <li>Pharmaceutical Biotechnology</li>
               <li>Industrial Pharmacy</li>
               <li>Quality by Design (QbD) and Risk Management</li>
@@ -98,11 +98,11 @@ import homeimg from "@/assets/pozadinahome.jpg";
               <li>Pharmaceutical Legislation</li>
               <li>Pharmaceutical Law and Intellectual Property</li>
               <li>Falsified Pharmaceutical Products</li>
-              <li>Regulatory Aspects of Advanced Therapies and Nanomedicines</li>
             </ul>
           </v-col>
           <v-col cols="12" md="4">
             <ul class="session-list reduce-text">
+              <li>Regulatory Aspects of Advanced Therapies and Nanomedicines</li>
               <li>Public Health</li>
               <li>Clinical Biochemistry</li>
               <li>Food, Nutrition, and Health</li>
