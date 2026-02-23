@@ -1,17 +1,20 @@
 <template>
   <v-app-bar flat density="compact" :height="barHeight" class="top-info-bar" elevation="0">
-    <v-container class="d-flex justify-space-between align-center pl-0">
+    <div class="d-flex align-center px-4 w-100">
       <v-app-bar-title>
         <div class="d-flex align-center">
-          <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" alt="Logo" class="d-inline-block mr-2" />
-          <span class="logo-text"><b>8th Congress of Pharmacy in North Macedonia</b> <br />
-            Pharmacy of the new era -
-            <br />Innovative solutions for future challenges
-          </span>
+          <!-- Step 1: Wrap logo and text in a div to manage space -->
+          <div class="d-flex align-center flex-shrink-1">
+            <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" :min-width="logoWidth" alt="Logo" class="d-inline-block mr-2" />
+            <span class="logo-text"><b>8th Congress of Pharmacy in North Macedonia</b> <br />
+              Pharmacy of the new era -
+              <br />Innovative solutions for future challenges
+            </span>
+          </div>
         </div>
       </v-app-bar-title>
 
-
+      <!-- Step 3: Hide CountdownTimer on small screens in the top bar -->
       <div class="d-none d-md-block mr-5">
         <CountdownTimer />
       </div>
@@ -26,7 +29,7 @@
         class="text-caption text-teal text-decoration-none location-link">
         📍 Location
       </a>
-    </v-container>
+    </div>
   </v-app-bar>
   <v-app-bar elevation="0" class="app-bar" height="60" fixed density="compact">
     <v-container class="d-flex align-center">
@@ -66,7 +69,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from "vue-router";
-import logo from '@/assets/MFD i FF logo header.png'
+import logo from '@/assets/logoheader.png'
 import { useDisplay } from "vuetify/lib/composables/index.js";
 import CountdownTimer from './CountdownTimer.vue';
 
@@ -115,7 +118,9 @@ const logoHeight = computed(() => {
   return xs.value || sm.value ? 40 : 90;
 });
 
+// Step 1: Ensure logoWidth has a minimum value to prevent it from collapsing
 const logoWidth = computed(() => {
+  // Set a minimum width (e.g., 40px) to prevent it from disappearing
   return xs.value || sm.value ? 40 : 140;
 });
 </script>
@@ -202,11 +207,23 @@ const logoWidth = computed(() => {
   text-transform: none;
 }
 
-@media (min-width: 768px) {
-  .mobile-nav {
-    display: none;
-  }
+/* Step 2: Apply responsive font sizing to the CountdownTimer's label */
+/* Target the .countdown-label inside the CountdownTimer component */
+.top-info-bar :deep(.countdown-label) {
+  font-size: 0.9rem; /* Default for larger screens */
+  line-height: 1.1; /* Adjust line height for better appearance */
+}
 
+@media (max-width: 1200px) {
+  .top-info-bar :deep(.countdown-label) {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .top-info-bar :deep(.countdown-label) {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 768px) {

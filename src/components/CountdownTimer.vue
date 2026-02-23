@@ -1,7 +1,7 @@
 <template>
   <div class="countdown-timer d-flex align-center">
     <div class="countdown-label d-sm-block mr-2">
-      Countdown to second announcement:
+      Countdown to <br /> second announcement:
     </div>
     <div class="countdown-values d-flex align-center">
       <div class="countdown-item">
@@ -61,14 +61,14 @@ onUnmounted(() => {
 <style scoped>
 .countdown-timer {
   font-family: 'Roboto', sans-serif;
-  color: #1c5a6d;
+  color: #d37315;
 }
 
 .countdown-label {
   font-weight: 500;
   font-size: 0.9rem;
   text-transform: uppercase;
-  color: #6ba2a3;
+  color: #d37315;
 }
 
 .countdown-values {
@@ -92,7 +92,7 @@ onUnmounted(() => {
 .unit {
   font-size: 0.7rem;
   font-weight: 400;
-  color: #6ba2a3;
+  color: #d37315;
   margin-left: 1px;
 }
 
