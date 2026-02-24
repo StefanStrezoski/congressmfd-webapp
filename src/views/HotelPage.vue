@@ -165,10 +165,7 @@ import BannerImage from '@/components/BannerImage.vue';
           one of only 28 cities that are part of the UNESCO World Heritage Site and are both cultural and natural
           heritage. Ohrid is one of the leading tourist cities in North Macedonia.
         </base-paragraph>
-        <base-paragraph class="mt-4">
-          More information can be downloaded on: <a href="http://localhost/mfdk/wp-content/uploads/2019/07/ohrid.pdf"
-            class="link-text">ohrid.pdf</a>
-        </base-paragraph>
+
 
         <!-- Images Grid -->
         <v-row class="mt-5" justify="center">
@@ -187,14 +184,14 @@ import BannerImage from '@/components/BannerImage.vue';
           <v-col cols="12" md="6">
             <h4 class="link-group-title mb-2">General Information</h4>
             <ul class="link-list text-left">
-              <li><a href="http://www.ohrid.com.mk/" target="_blank">Ohrid.com.mk</a></li>
-              <li><a href="http://visitohrid.org/" target="_blank">VisitOhrid.org</a></li>
-              <li><a href="http://www.exploringmacedonia.com/ohrid.nspx" target="_blank">Exploring Macedonia - Ohrid</a>
+              <li><a href="https://www.exploringmacedonia.com/ohrid.nspx" target="_blank">Ohrid - Exploring
+                  Macedonia</a>
               </li>
-              <li><a href="http://www.lonelyplanet.com/macedonia/southern-macedonia/ohrid" target="_blank">Lonely Planet
-                  Guide</a></li>
-              <li><a href="http://www.tripadvisor.com/Attractions-g303864-Activities-Ohrid_Southwestern_Region.html"
-                  target="_blank">TripAdvisor Attractions</a></li>
+              <li><a href="https://www.lonelyplanet.com/destinations/macedonia/southern-macedonia/ohrid"
+                  target="_blank">Lonely Planet - Ohrid</a></li>
+              <li><a href="https://www.tripadvisor.com/Attractions-g303864-Activities-Ohrid_Southwestern_Region.html"
+                  target="_blank">TripAdvisor - Ohrid</a>
+              </li>
             </ul>
           </v-col>
           <v-col cols="12" md="6">
@@ -203,11 +200,7 @@ import BannerImage from '@/components/BannerImage.vue';
               <li><v-icon size="small" class="mr-1">mdi-youtube</v-icon><a
                   href="https://www.youtube.com/watch?v=n20H9YcYrAE" target="_blank">Ohrid Video 1</a></li>
               <li><v-icon size="small" class="mr-1">mdi-youtube</v-icon><a
-                  href="https://www.youtube.com/watch?v=CRgLmCQzEAo" target="_blank">Ohrid Video 2</a></li>
-              <li><v-icon size="small" class="mr-1">mdi-youtube</v-icon><a
-                  href="https://www.youtube.com/watch?v=shPgaUHCHFc" target="_blank">Ohrid Video 3</a></li>
-              <li><v-icon size="small" class="mr-1">mdi-youtube</v-icon><a
-                  href="https://www.youtube.com/watch?v=ig83XA3dDGw" target="_blank">Ohrid Video 4</a></li>
+                  href="https://www.youtube.com/watch?v=QcIqMdjvO7s" target="_blank">Ohrid Video 2</a></li>
             </ul>
           </v-col>
         </v-row>

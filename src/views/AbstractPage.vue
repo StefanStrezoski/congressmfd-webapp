@@ -209,7 +209,8 @@ async function handleSubmit() {
           <base-card>
             <base-paragraph>
               Posters will be presented during poster sessions. The posters should be in form of a Power point slide,
-              <b>A4 landscape format (4:3)</b> and be sent on link by September 1st, 2026 at the latest.
+              <b>A4 landscape format (4:3)</b> and be uploaded on the Congress web-page (upon receiving submission
+              details in the acceptance e-mail) by September 1st, 2026 at the latest.
             </base-paragraph>
           </base-card>
         </v-col>
@@ -233,8 +234,9 @@ async function handleSubmit() {
           <i>Macedonian Pharmaceutical Bulletin</i>, vol. 72 (Suppl 1), 2026.
         </base-paragraph>
         <base-paragraph>
-          E-Posters should be in form of a Power point slide, <b>A4 landscape format (4:3)</b> and be sent on mail, by
-          <b>September 1st, 2026</b> at the latest.
+          E-Posters should be in form of a Power point slide, <b>A4 landscape format (4:3)</b> and be uploaded on the
+          Congress web-page (upon receiving submission details in the acceptance e-mail) by <b>September 1st, 2026</b>
+          at the latest.
         </base-paragraph>
         <base-paragraph class="mt-4 text-center">
           <b>Publication of short papers and presentation of E-Posters is dependent upon payment of registration
@@ -250,61 +252,103 @@ async function handleSubmit() {
         <v-form ref="formRef" @submit.prevent="handleSubmit">
           <v-row>
             <v-col cols="12">
-              <v-text-field v-model="formData.abstractTitle" label="Abstract title" clearable
-                placeholder="Enter the title of your abstract" variant="outlined" density="comfortable"
-                :rules="[rules.required]" required></v-text-field>
+              <v-text-field v-model="formData.abstractTitle" clearable placeholder="Enter the title of your paper"
+                variant="outlined" density="comfortable" :rules="[rules.required]" required>
+                <template v-slot:label>
+                  Title <span class="text-orange">*</span>
+                </template>
+              </v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="formData.firstName" label="First Name" variant="outlined" density="comfortable"
-                clearable :rules="[rules.required]" required></v-text-field>
+              <v-text-field v-model="formData.firstName" variant="outlined" density="comfortable" clearable
+                :rules="[rules.required]" required>
+                <template v-slot:label>
+                  First Name <span class="text-orange">*</span>
+                </template>
+              </v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="formData.lastName" label="Last Name" variant="outlined" density="comfortable"
-                clearable :rules="[rules.required]" required></v-text-field>
+              <v-text-field v-model="formData.lastName" variant="outlined" density="comfortable" clearable
+                :rules="[rules.required]" required>
+                <template v-slot:label>
+                  Last Name <span class="text-orange">*</span>
+                </template>
+              </v-text-field>
             </v-col>
 
             <v-col cols="12">
-              <v-text-field v-model="formData.institution" label="Institution" clearable
-                placeholder="Enter your affiliated institution" variant="outlined" density="comfortable"
-                :rules="[rules.required]" required></v-text-field>
+              <v-text-field v-model="formData.institution" clearable placeholder="Enter your affiliated institution"
+                variant="outlined" density="comfortable" :rules="[rules.required]" required>
+                <template v-slot:label>
+                  Institution <span class="text-orange">*</span>
+                </template>
+              </v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="formData.country" label="Country" variant="outlined" density="comfortable"
-                clearable :rules="[rules.required]" required></v-text-field>
+              <v-text-field v-model="formData.country" variant="outlined" density="comfortable" clearable
+                :rules="[rules.required]" required>
+                <template v-slot:label>
+                  Country <span class="text-orange">*</span>
+                </template>
+              </v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="formData.email" label="Author's E-mail" type="email" variant="outlined" clearable
-                density="comfortable" :rules="[rules.required, rules.email]" required></v-text-field>
+              <v-text-field v-model="formData.email" type="email" variant="outlined" clearable density="comfortable"
+                :rules="[rules.required, rules.email]" required>
+                <template v-slot:label>
+                  Author's E-mail <span class="text-orange">*</span>
+                </template>
+              </v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-text-field v-model="formData.phone" label="Phone number" variant="outlined" density="comfortable"
-                clearable :rules="[rules.required]" required></v-text-field>
+              <v-text-field v-model="formData.phone" variant="outlined" density="comfortable" clearable
+                :rules="[rules.required]" required>
+                <template v-slot:label>
+                  Phone number <span class="text-orange">*</span>
+                </template>
+              </v-text-field>
             </v-col>
 
             <v-col cols="12" md="6">
-              <v-select v-model="formData.category" :items="categories" label="Select Category" variant="outlined"
-                density="comfortable" :rules="[rules.required]" required></v-select>
+              <v-select v-model="formData.category" :items="categories" variant="outlined" density="comfortable"
+                :rules="[rules.required]" required>
+                <template v-slot:label>
+                  Select Category <span class="text-orange">*</span>
+                </template>
+              </v-select>
             </v-col>
 
             <v-col cols="12">
-              <v-select v-model="formData.presentationType" :items="presentationTypes"
-                label="Preference of presentation type" variant="outlined" density="comfortable"
-                :rules="[rules.required]" required></v-select>
+              <v-select v-model="formData.presentationType" :items="presentationTypes" variant="outlined"
+                density="comfortable" :rules="[rules.required]" required>
+                <template v-slot:label>
+                  Preference of presentation type <span class="text-orange">*</span>
+                </template>
+              </v-select>
             </v-col>
 
             <v-col cols="12">
-              <p class="font-weight-bold mb-2">Statement of Consent for Publication:*</p>
+              <p class="mb-4">
+                Attach your PAPER in .doc or docx (Word) format.
+                <a href="mailto:8CPM.secretary@ff.ukim.edu.mk" class="submission-link">LINK</a>
+              </p>
+              <p class="mb-2">Statement of Consent for Publication:<span class="text-orange">*</span></p>
               <v-radio-group v-model="formData.consent" :rules="[rules.required]" required>
-                <v-radio label="I agree to the publication of my short paper in the Macedonian Pharmaceutical Bulletin"
-                  value="agree"></v-radio>
-                <v-radio
-                  label="I do not agree to the publication of my short paper in the Macedonian Pharmaceutical Bulletin"
-                  value="disagree"></v-radio>
+                <v-radio value="agree">
+                  <template v-slot:label>
+                    I agree to the publication of my short paper in the <i>Macedonian Pharmaceutical Bulletin</i>
+                  </template>
+                </v-radio>
+                <v-radio value="disagree">
+                  <template v-slot:label>
+                    I do not agree to the publication of my short paper in the <i>Macedonian Pharmaceutical Bulletin</i>
+                  </template>
+                </v-radio>
               </v-radio-group>
             </v-col>
 

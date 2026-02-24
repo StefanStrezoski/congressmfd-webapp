@@ -211,7 +211,7 @@ import homeimg from "@/assets/pozadinahome.jpg";
               </v-list>
             </v-col>
             <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Business Hall (Hall 4)</b></div>
+              <div class="hall-info mb-1"><b>Business Hall</b></div>
               <v-list density="compact" class="program-list">
                 <v-list-item>
                   <div class="d-flex">
@@ -274,7 +274,7 @@ import homeimg from "@/assets/pozadinahome.jpg";
               </v-list>
             </v-col>
             <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Business Hall (Hall 4)</b></div>
+              <div class="hall-info mb-1"><b>Business Hall</b></div>
               <v-list density="compact" class="program-list">
                 <v-list-item>
                   <div class="d-flex">
@@ -314,7 +314,7 @@ import homeimg from "@/assets/pozadinahome.jpg";
               </v-list>
             </v-col>
             <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Business Hall (Hall 4)</b></div>
+              <div class="hall-info mb-1"><b>Business Hall</b></div>
               <v-list density="compact" class="program-list">
                 <v-list-item>
                   <div class="d-flex">
@@ -418,6 +418,32 @@ import homeimg from "@/assets/pozadinahome.jpg";
             <div class="speaker-affiliation">Department of Plant Physiology, Institute for Biological Research "Siniša
               Stanković"- National Institute of the Republic of Serbia, University of Belgrade</div>
           </div>
+        </div>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Pharmaceutical Analysis / Quality Assurance / Pharmaceutical Legislation
+          </div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-affiliation">The names will be announced shortly</div>
+          </div>
+        </div>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Social Pharmacy / Pharmaceutical Law</div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-affiliation">The names will be announced shortly</div>
+          </div>
+        </div>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Pharmacoeconomics / Drug Information</div>
+          <div class="speaker-item mt-2">
+            <div class="speaker-affiliation">The names will be announced shortly</div>
+          </div>
+        </div>
+
+        <div class="session-group mb-6">
+          <div class="session-name">Session: Student Section</div>
         </div>
       </base-card>
     </base-container>

@@ -100,7 +100,7 @@ import globalnetadv from "@/assets/LogoGNA.png";
                 <p class="contact-link ml-4">
                   <a href="mailto:globalnetadv@globalnetadv.mk">globalnetadv@globalnetadv.mk</a>
                 </p>
-                <v-img :src="globalnetadv" width="120" class="mt-4"></v-img>
+                <v-img :src="globalnetadv" width="120" class="mt-4 mx-auto"></v-img>
               </div>
             </div>
           </small-card>

@@ -29,10 +29,10 @@ const loading = ref(false);
 const hide = ref(false);
 
 const categoryOptions = [
-  { title: '1', value: 1 },
-  { title: '2', value: 2 },
-  { title: '3', value: 3 },
-  { title: '4', value: 4 },
+  { title: '1. ⭐MPA members ', value: 1 },
+  { title: '2. Non-MPA members', value: 2 },
+  { title: '3. ⭐⭐Students', value: 3 },
+  { title: '4. E-Poster', value: 4 },
 ];
 
 const validRule = [value => !!value || 'Required field!'];
@@ -293,11 +293,11 @@ async function handleSubmit() {
         </paragraph-no-indent>
       </base-card>
       <v-card rounded="xl" class="mt-10 mb-5 pa-1 text-center title-card">
-        <v-card-text class="text-h6 font-weight-bold">Contestant registration</v-card-text>
+        <v-card-text class="text-h6 font-weight-bold">REGISTRATION</v-card-text>
       </v-card>
       <small-card class="mt-5" v-if="!hide">
         <v-form @submit.prevent="handleSubmit" ref="formRef">
-          <v-text-field variant="outlined" density="comfortable" v-model="form.name" label="Name" required
+          <v-text-field variant="outlined" density="comfortable" v-model="form.name" label="Name and surname" required
             :rules="validRule" />
           <v-text-field variant="outlined" density="comfortable" v-model="form.email" label="Email" required
             type="email" :rules="validRule" />
@@ -307,9 +307,9 @@ async function handleSubmit() {
             :rules="validRule" />
           <v-select variant="outlined" density="comfortable" v-model="form.category" label="Category"
             :items="categoryOptions" item-title="title" item-value="value" required :rules="validRule" />
-          <v-file-input v-if="form.category === 3" v-model="file" label="Upload document (JPG, JPEG)"
-            accept="image/jpeg,image/png,image/heic" :rules="fileRule" variant="outlined" density="comfortable"
-            show-size />
+          <v-file-input v-if="form.category === 3" v-model="file" label="Upload document (JPG, JPEG, PNG, PDF)"
+            accept="image/jpeg,image/png,image/heic,application/pdf" :rules="fileRule" variant="outlined"
+            density="comfortable" show-size />
           <v-btn type="submit" color="primary" class="mt-4" :loading="loading">
             Submit
           </v-btn>

@@ -97,6 +97,21 @@
           </v-col>
         </v-row>
       </base-card>
+
+      <base-card class="mt-5 text-center justify-center">
+        <base-paragraph class="text-center hero-title">
+          <b>
+            2nd Announcement
+          </b>
+        </base-paragraph>
+        <base-paragraph class="text-center">
+          Please download the 2nd Announcement here.
+        </base-paragraph>
+        <v-btn color="orange-darken-2" prepend-icon="mdi-file-pdf-box" href="#" target="_blank" variant="elevated"
+          rounded="pill">
+          Download PDF
+        </v-btn>
+      </base-card>
     </base-container>
   </div>
 </template>

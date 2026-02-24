@@ -5,7 +5,8 @@
         <div class="d-flex align-center">
           <!-- Step 1: Wrap logo and text in a div to manage space -->
           <div class="d-flex align-center flex-shrink-1">
-            <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" :min-width="logoWidth" alt="Logo" class="d-inline-block mr-2" />
+            <v-img :src="logo" :height="logoHeight" :max-width="logoWidth" :min-width="logoWidth" alt="Logo"
+              class="d-inline-block mr-2" />
             <span class="logo-text"><b>8th Congress of Pharmacy in North Macedonia</b> <br />
               Pharmacy of the new era -
               <br />Innovative solutions for future challenges
@@ -115,13 +116,13 @@ const barHeight = computed(() => {
 });
 
 const logoHeight = computed(() => {
-  return xs.value || sm.value ? 40 : 90;
+  return xs.value || sm.value ? 60 : 70;
 });
 
 // Step 1: Ensure logoWidth has a minimum value to prevent it from collapsing
 const logoWidth = computed(() => {
   // Set a minimum width (e.g., 40px) to prevent it from disappearing
-  return xs.value || sm.value ? 40 : 140;
+  return xs.value || sm.value ? 60 : 140;
 });
 </script>
 
@@ -210,8 +211,10 @@ const logoWidth = computed(() => {
 /* Step 2: Apply responsive font sizing to the CountdownTimer's label */
 /* Target the .countdown-label inside the CountdownTimer component */
 .top-info-bar :deep(.countdown-label) {
-  font-size: 0.9rem; /* Default for larger screens */
-  line-height: 1.1; /* Adjust line height for better appearance */
+  font-size: 0.9rem;
+  /* Default for larger screens */
+  line-height: 1.1;
+  /* Adjust line height for better appearance */
 }
 
 @media (max-width: 1200px) {
