@@ -46,7 +46,7 @@ import BannerImage from "@/components/BannerImage.vue";
                   <li>Aneta Dimitrovska – N. Macedonia</li>
                   <li>Biljana Bauer – N. Macedonia</li>
                   <li>Borut Božic – Slovenia</li>
-                  <li>Georgi Momekov - Bulgaria</li>
+                  <li>Nataša Bogavac-Stanojević - Serbia</li>
                   <li>Kristina Mladenovska – N. Macedonia</li>
                   <li>Katerina Goracinova – N. Macedonia</li>
                   <li>Lidija Petrusevska Tozi – N. Macedonia</li>

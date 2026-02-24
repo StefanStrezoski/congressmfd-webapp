@@ -157,15 +157,16 @@ async function handleSubmit() {
         <v-list density="compact" class="info-list">
           <v-list-item>
             <v-list-item-title><b>Deadline for short paper submission and registration</b></v-list-item-title>
-            <v-list-item-subtitle class="text-orange">May 31st, 2026</v-list-item-subtitle>
+            <v-list-item-subtitle opacity="100" class="text-orange">May 31st, 2026</v-list-item-subtitle>
           </v-list-item>
           <v-list-item>
             <v-list-item-title><b>Acceptance of the short paper</b></v-list-item-title>
-            <v-list-item-subtitle class="text-orange">July 1st, 2026</v-list-item-subtitle>
+            <v-list-item-subtitle opacity="100" class="text-orange">July 1st, 2026</v-list-item-subtitle>
           </v-list-item>
           <v-list-item>
             <v-list-item-title><b>Presentation Dates</b></v-list-item-title>
-            <v-list-item-subtitle class="text-orange">October 2-4, 2026 (Oral or Poster form)</v-list-item-subtitle>
+            <v-list-item-subtitle opacity="100" class="text-orange">October 2-4, 2026 (Oral or Poster
+              form)</v-list-item-subtitle>
           </v-list-item>
         </v-list>
         <base-paragraph class="pa-2 text-center" style="font-size: 0.9rem;">
@@ -333,11 +334,11 @@ async function handleSubmit() {
             </v-col>
 
             <v-col cols="12">
-              <p class="mb-4">
+              <p class="mb-4 text-md-body-1">
                 Attach your PAPER in .doc or docx (Word) format.
                 <a href="mailto:8CPM.secretary@ff.ukim.edu.mk" class="submission-link">LINK</a>
               </p>
-              <p class="mb-2">Statement of Consent for Publication:<span class="text-orange">*</span></p>
+              <p class="mb-2 text-md-body-1">Statement of Consent for Publication:<span class="text-orange">*</span></p>
               <v-radio-group v-model="formData.consent" :rules="[rules.required]" required>
                 <v-radio value="agree">
                   <template v-slot:label>
