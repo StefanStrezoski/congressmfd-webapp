@@ -108,7 +108,7 @@
           Please download the 2nd Announcement here.
         </base-paragraph>
         <v-btn color="orange-darken-2" prepend-icon="mdi-file-pdf-box" href="#" target="_blank" variant="elevated"
-          rounded="pill">
+          disabled rounded="pill">
           Download PDF
         </v-btn>
       </base-card>
