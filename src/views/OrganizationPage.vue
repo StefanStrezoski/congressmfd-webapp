@@ -13,7 +13,7 @@ import BannerImage from "@/components/BannerImage.vue";
       <v-row>
         <v-col cols="12">
           <v-card rounded="xl" class="mb-2 pa-1 text-center title-card">
-            <v-card-text><span class="text-h5">Organizing Committee</span></v-card-text>
+            <v-card-text><span class="text-h5 font-weight-bold">Organizing Committee</span></v-card-text>
           </v-card>
           <small-card>
             <base-list class="org-items">
@@ -36,7 +36,7 @@ import BannerImage from "@/components/BannerImage.vue";
       <v-row class="mt-5">
         <v-col cols="12">
           <v-card rounded="xl" class="mb-2 pa-1 text-center title-card">
-            <v-card-text><span class="text-h5">Advisory Committee</span></v-card-text>
+            <v-card-text><span class="text-h5 font-weight-bold">Advisory Committee</span></v-card-text>
           </v-card>
           <small-card>
             <v-row>
@@ -46,16 +46,16 @@ import BannerImage from "@/components/BannerImage.vue";
                   <li>Aneta Dimitrovska – N. Macedonia</li>
                   <li>Biljana Bauer – N. Macedonia</li>
                   <li>Borut Božic – Slovenia</li>
-                  <li>Nataša Bogavac-Stanojević - Serbia</li>
                   <li>Kristina Mladenovska – N. Macedonia</li>
                   <li>Katerina Goracinova – N. Macedonia</li>
                   <li>Lidija Petrusevska Tozi – N. Macedonia</li>
                   <li>Ljubica Suturkova – N. Macedonia</li>
+                  <li>Mirza Dedic – Bosnia and Herzegovina</li>
                 </base-list>
               </v-col>
               <v-col cols="12" md="6">
                 <base-list class="org-items">
-                  <li>Mirza Dedic – Bosnia and Herzegovina</li>
+                  <li>Nataša Bogavac-Stanojević - Serbia</li>
                   <li>Renata Slaveska Raicki – N. Macedonia</li>
                   <li>Rumenka Petkovska – N. Macedonia</li>
                   <li>Suzana Trajkovic Jolevska – N. Macedonia</li>
@@ -75,7 +75,7 @@ import BannerImage from "@/components/BannerImage.vue";
       <v-row class="mt-5">
         <v-col cols="12">
           <v-card rounded="xl" class="mb-2 pa-1 text-center title-card">
-            <v-card-text><span class="text-h5">Scientific Committee</span></v-card-text>
+            <v-card-text><span class="text-h5 font-weight-bold">Scientific Committee</span></v-card-text>
           </v-card>
           <small-card>
             <v-row>
