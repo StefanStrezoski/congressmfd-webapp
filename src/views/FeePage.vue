@@ -140,11 +140,11 @@ async function handleSubmit() {
                   </th>
                   <th class="text-center bg-teal-lighten-2 border">
                     Early registration fee <br />
-                    (up to May 1st 2026)
-
+                    (up to May 31st 2026)
                   </th>
                   <th class="text-center bg-teal-lighten-2 border">
-                    Registration fee
+                    Registration fee <br />
+                    (after June 1st 2026)
                   </th>
                   <th class="text-center bg-teal-lighten-2 border">
                     On-site registration fee

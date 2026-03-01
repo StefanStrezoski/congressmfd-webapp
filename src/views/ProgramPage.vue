@@ -3,7 +3,7 @@ import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import SmallCard from "@/components/SmallCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import homeimg from "@/assets/pozadinahome.jpg";
+import homeimg from "@/assets/dates.png";
 </script>
 
 <template>
@@ -12,11 +12,9 @@ import homeimg from "@/assets/pozadinahome.jpg";
     <base-container>
 
       <!-- Scientific Program -->
-      <small-card>
-        <base-paragraph class="hero-title text-center">
-          <b>Scientific Program</b>
-        </base-paragraph>
-      </small-card>
+      <v-card rounded="xl" class="mt-10 mb-5 pa-1 text-center hero-title">
+        <v-card-text class="text-h6 font-weight-bold">Scientific Program</v-card-text>
+      </v-card>
       <base-card class="mt-5">
         <base-paragraph>
           On October 1st, plenary lecturers will give introductory overviews on topics of the Congress. In addition,
@@ -27,11 +25,9 @@ import homeimg from "@/assets/pozadinahome.jpg";
       </base-card>
 
       <!-- Congress Sessions -->
-      <small-card class="mt-10">
-        <base-paragraph class="hero-title text-center">
-          <b>Congress Sessions</b>
-        </base-paragraph>
-      </small-card>
+      <v-card rounded="xl" class="mt-10 mb-5 pa-1 text-center hero-title">
+        <v-card-text class="text-h6 font-weight-bold">Congress Sessions</v-card-text>
+      </v-card>
       <base-card class="mt-5">
         <v-row>
           <v-col cols="12" md="6">
@@ -56,10 +52,10 @@ import homeimg from "@/assets/pozadinahome.jpg";
       </base-card>
 
       <!-- Guiding Keywords -->
+      <v-card rounded="xl" class="mt-10 mb-5 pa-1 text-center hero-title">
+        <v-card-text class="text-h6 font-weight-bold">Guiding Keywords for the Congress</v-card-text>
+      </v-card>
       <base-card class="mt-5">
-        <base-paragraph class="text-center">
-          <b class="text-h5 font-weight-bold">Guiding Keywords for the Congress</b>
-        </base-paragraph>
         <v-row class="mt-2">
           <v-col cols="12" md="4">
             <ul class="session-list reduce-text">
@@ -123,11 +119,9 @@ import homeimg from "@/assets/pozadinahome.jpg";
       </base-card>
 
       <!-- Tentative Program -->
-      <small-card class="mt-10">
-        <base-paragraph class="hero-title text-center">
-          <b>TENTATIVE PROGRAM</b>
-        </base-paragraph>
-      </small-card>
+      <v-card rounded="xl" class="mt-10 mb-5 pa-1 text-center hero-title">
+        <v-card-text class="text-h6 font-weight-bold">TENTATIVE PROGRAM</v-card-text>
+      </v-card>
 
       <div class="mt-5">
         <!-- Thursday -->
@@ -335,11 +329,9 @@ import homeimg from "@/assets/pozadinahome.jpg";
       </div>
 
       <!-- Invited Lecturers -->
-      <small-card class="mt-10">
-        <base-paragraph class="hero-title text-center">
-          <b>INVITED LECTURERS</b>
-        </base-paragraph>
-      </small-card>
+      <v-card rounded="xl" class="mt-10 mb-5 pa-1 text-center hero-title">
+        <v-card-text class="text-h6 font-weight-bold">INVITED LECTURERS</v-card-text>
+      </v-card>
 
       <base-card class="mt-5 mb-10">
         <h3 class="program-date mb-4">Plenary speakers</h3>
@@ -453,6 +445,8 @@ import homeimg from "@/assets/pozadinahome.jpg";
 <style scoped>
 .hero-title {
   font-size: 1.8rem;
+  background-color: #1c5a6d;
+  color: white;
 }
 
 .program-date {

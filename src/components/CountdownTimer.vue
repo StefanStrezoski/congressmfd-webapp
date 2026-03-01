@@ -1,7 +1,7 @@
 <template>
   <div class="countdown-timer d-flex align-center">
     <div class="countdown-label d-sm-block mr-2">
-      Countdown to <br /> second announcement:
+      Countdown to <br /> Early registration:
     </div>
     <div class="countdown-values d-flex align-center">
       <div class="countdown-item">
@@ -25,7 +25,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const targetDate = new Date('2026-03-01T00:00:00');
+const targetDate = new Date('2026-05-31T00:00:00');
 const days = ref(0);
 const hours = ref(0);
 const minutes = ref(0);

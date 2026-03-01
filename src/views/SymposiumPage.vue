@@ -107,8 +107,8 @@
         <base-paragraph class="text-center">
           Please download the 2nd Announcement here.
         </base-paragraph>
-        <v-btn color="orange-darken-2" prepend-icon="mdi-file-pdf-box" href="#" target="_blank" variant="elevated"
-          disabled rounded="pill">
+        <v-btn color="orange-darken-2" prepend-icon="mdi-file-pdf-box" href="/files/secondannouncment.pdf"
+          target="_blank" variant="elevated" rounded="pill">
           Download PDF
         </v-btn>
       </base-card>
@@ -124,7 +124,7 @@ import oneSignature from "@/assets/potpis1.png";
 import twoSignature from "@/assets/potpis2.png";
 import ffLogo from "@/assets/FFlogo.png";
 import mfdLogo from "@/assets/mfdlogo.png";
-import homeimg from "@/assets/pozadinahome.jpg"
+import homeimg from "@/assets/dates.png"
 </script>
 
 <style scoped>

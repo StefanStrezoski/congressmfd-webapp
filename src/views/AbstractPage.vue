@@ -170,7 +170,8 @@ async function handleSubmit() {
           </v-list-item>
         </v-list>
         <base-paragraph class="pa-2 text-center" style="font-size: 0.9rem;">
-          <i>*Publication is dependent upon payment of registration fee.</i>
+          <i><b>The fee for the accepted short paper will be charged at the early registration rate.</b><br />
+            *Publication is dependent upon payment of registration fee.</i>
         </base-paragraph>
       </small-card>
 
@@ -342,12 +343,13 @@ async function handleSubmit() {
               <v-radio-group v-model="formData.consent" :rules="[rules.required]" required>
                 <v-radio value="agree">
                   <template v-slot:label>
-                    I agree to the publication of my short paper in the <i>Macedonian Pharmaceutical Bulletin</i>
+                    I agree to the publication of my short paper in the&nbsp;<i>Macedonian Pharmaceutical Bulletin</i>
                   </template>
                 </v-radio>
                 <v-radio value="disagree">
                   <template v-slot:label>
-                    I do not agree to the publication of my short paper in the <i>Macedonian Pharmaceutical Bulletin</i>
+                    I do not agree to the publication of my short paper in the&nbsp;<i>Macedonian Pharmaceutical
+                      Bulletin</i>
                   </template>
                 </v-radio>
               </v-radio-group>
