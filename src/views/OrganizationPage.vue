@@ -101,6 +101,7 @@ import BannerImage from "@/components/BannerImage.vue";
                   <li>Betul Arica Yegin - Turkey</li>
                   <li>Dusan Misic – Poland</li>
                   <li>Edina Vranic – Bosnia and Herzegovina</li>
+                  <li>Eric Deconinck – Belgium</li>
                   <li>Gjose Stefkov – N. Macedonia</li>
                   <li>Ivana Cvetkovikj Karanfilova – N. Macedonia</li>
                   <li>Jasmina Tonic Ribarska – N. Macedonia</li>
@@ -124,6 +125,7 @@ import BannerImage from "@/components/BannerImage.vue";
                   <li>Natalija Nakov – N. Macedonia</li>
                   <li>Nikola Geskovski – N. Macedonia</li>
                   <li>Sharareh Salar-Behzadi – Austria</li>
+                  <li>Slaveyko Djambazov – Bulgaria</li>
                   <li>Slavica Tudzarova-Trajkovska – USA</li>
                   <li>Tanja Petreska – North Macedonia</li>
                   <li>Vladimir Dobričič – Serbia</li>

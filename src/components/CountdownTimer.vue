@@ -25,7 +25,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const targetDate = new Date('2026-05-31T00:00:00');
+const targetDate = new Date('2026-06-01T00:00:00+02:00');
 const days = ref(0);
 const hours = ref(0);
 const minutes = ref(0);
