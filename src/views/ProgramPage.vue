@@ -56,18 +56,18 @@ const toggleBio = (id) => {
           <v-col cols="12" md="6">
             <ul class="session-list">
               <li>Plenary Session</li>
-              <li>Pharmaceutical Analysis / Quality Assurance / Pharmaceutical Legislation</li>
+              <li>Pharmaceutical Technology and Biotechnology / Biopharmaceutics / Cosmetology</li>
+              <li>Pharmaceutical Chemistry / Biomolecular Sciences</li>
               <li>Social Pharmacy / Pharmaceutical Law</li>
-              <li>Pharmacoeconomics / Drug Information</li>
-              <li>Clinical Biochemistry / Toxicology / Food and Nutrition</li>
+              <li>Pharmaceutical Analysis / Quality Assurance / Pharmaceutical Legislation</li>
             </ul>
           </v-col>
           <v-col cols="12" md="6">
             <ul class="session-list">
-              <li>Pharmaceutical Technology and Biotechnology / Biopharmaceutics / Cosmetology</li>
-              <li>Pharmaceutical Chemistry / Biomolecular Sciences</li>
               <li>Community and Clinical Pharmacy</li>
+              <li>Clinical Biochemistry / Toxicology / Food and Nutrition</li>
               <li>Natural Products and Phytotherapy</li>
+              <li>Pharmacoeconomics / Drug Information</li>
               <li>Student Section</li>
             </ul>
           </v-col>
@@ -451,7 +451,7 @@ const toggleBio = (id) => {
             </v-avatar>
           </v-col>
           <v-col cols="12" sm="9" md="10">
-            <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Dr. Simone Moser, Austria</div>
+            <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Simone Moser, Austria</div>
             <div class="speaker-affiliation mb-4">Department of Pharmacognosy, University of Innsbruck</div>
             <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
               :active="expandedBios['simone']" @click="toggleBio('simone')">
@@ -571,37 +571,34 @@ const toggleBio = (id) => {
 
         <!-- Session group -->
         <div class="session-group mb-8">
-          <div class="session-name mb-4">Session: Clinical Biochemistry / Toxicology / Food and Nutrition</div>
+          <div class="session-name mb-4">Session: Pharmaceutical Chemistry / Biomolecular Sciences</div>
 
           <v-row class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
-                <v-img :src="dusanImg" alt="Prof. Dusan Misic"></v-img>
+                <v-img :src="vladimirWImg" alt="Prof. Ing. Vladimír Wsól"></v-img>
               </v-avatar>
             </v-col>
             <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Prof. Dusan Misic, Poland</div>
-              <div class="speaker-affiliation mb-4">Department of Functional Food Products Development, Faculty of
-                Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences</div>
+              <div class="speaker-name font-weight-bold mb-1">Prof. Ing. Vladimír Wsól, Czech Republic</div>
+              <div class="speaker-affiliation mb-4">Department of Biochemical Sciences, Faculty of Pharmacy, Charles
+                University</div>
               <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['dusan']" @click="toggleBio('dusan')">
-                {{ expandedBios['dusan'] ? 'Hide Biography' : 'Read Biography' }}
+                :active="expandedBios['vladimirW']" @click="toggleBio('vladimirW')">
+                {{ expandedBios['vladimirW'] ? 'Hide Biography' : 'Read Biography' }}
               </v-btn>
 
               <v-expand-transition>
-                <div v-show="expandedBios['dusan']" class="mt-4 bio-content">
-                  <p class="mb-3">
-                    Dr. Dušan Mišić is a University Professor at the Department of Functional Food Products Development,
-                    Faculty of Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences,
-                    Poland. His research focuses on antimicrobial bioactive compounds, mechanisms of antibacterial
-                    activity, antimicrobial resistance, biofilms, and the development of biodegradable antibacterial
-                    materials for applications in food packaging and medicine.
-                  </p>
+                <div v-show="expandedBios['vladimirW']" class="mt-4 bio-content">
                   <p>
-                    Prof. Mišić has authored more than 65 peer-reviewed publications, with over 1300 citations (h-index
-                    23). He has led and participated in several international research projects and collaborates widely
-                    in interdisciplinary research related to food safety, microbiology, and functional bioactive
-                    materials.
+                    Dr. Vladimír Wsól is a Professor at the Faculty of Pharmacy in Hradec Králové, Charles University,
+                    Czech Republic, where he also serves as Head of the Department of Biochemical Sciences. His research
+                    focuses on xenobiotic metabolism, drug metabolism, drug–drug interactions, and mechanisms of
+                    resistance in anticancer therapy. Prof. Wsól has authored more than 125 peer-reviewed publications
+                    with over 2,000 citations (h-index 25, WoS). He has led and participated in several national and
+                    international research projects related to innovative medicines and biomedical technologies. He is
+                    an active member of several international scientific societies, including the International Society
+                    for the Study of Xenobiotics and the American Association of Pharmaceutical Scientists.
                   </p>
                 </div>
               </v-expand-transition>
@@ -611,38 +608,165 @@ const toggleBio = (id) => {
           <v-row class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
-                <v-img :src="marijanaImg" alt="Assoc. Prof. Marijana Curcic"></v-img>
+                <v-img :src="vladimirDImg" alt="Prof. Vladimir Dobričić"></v-img>
               </v-avatar>
             </v-col>
             <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Assoc. Prof. Marijana Curcic, Serbia</div>
-              <div class="speaker-affiliation mb-4">Department of Toxicology "Akademik Danilo Soldatovic", Centre for
-                Toxicological Risk Assessment, University of Belgrade</div>
+              <div class="speaker-name font-weight-bold mb-1">Prof. Vladimir Dobričić, Serbia</div>
+              <div class="speaker-affiliation mb-4">Department of Pharmaceutical Chemistry, Faculty of Pharmacy,
+                University of Belgrade</div>
               <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['marijana']" @click="toggleBio('marijana')">
-                {{ expandedBios['marijana'] ? 'Hide Biography' : 'Read Biography' }}
+                :active="expandedBios['vladimirD']" @click="toggleBio('vladimirD')">
+                {{ expandedBios['vladimirD'] ? 'Hide Biography' : 'Read Biography' }}
               </v-btn>
 
               <v-expand-transition>
-                <div v-show="expandedBios['marijana']" class="mt-4 bio-content">
+                <div v-show="expandedBios['vladimirD']" class="mt-4 bio-content">
                   <p class="mb-3">
-                    Dr. Marijana Ćurčić is an Associate Professor at the University of Belgrade – Faculty of Pharmacy,
-                    Department of Toxicology “Akademik Danilo Soldatović” and a European Registered Toxicologist (ERT).
-                    Her expertise includes toxicological risk assessment, toxicological chemistry, and regulatory
-                    toxicology.
-                  </p>
-                  <p class="mb-3">
-                    She serves as a national evaluator of plant protection products for the Ministry of Agriculture,
-                    Forestry and Water Management of the Republic of Serbia and has contributed to the evaluation of
-                    genotoxic impurities in medicines at the Agency for Drugs and Medical Devices of Serbia. She has
-                    also participated in international initiatives related to chemical safety, including the UNIDO
-                    project for the implementation of the Stockholm Convention.
+                    Dr. Vladimir Dobričić is an associate professor at the Department of Pharmaceutical Chemistry,
+                    University of Belgrade – Faculty of Pharmacy.
                   </p>
                   <p>
-                    Dr. Ćurčić is involved in several national and international research projects focusing on
-                    environmental health, chemical exposure, and risk communication. She is the co-author of university
-                    textbooks in toxicology and has published numerous scientific papers in leading international
-                    journals in toxicology and environmental health.
+                    Dr. Dobričić’s research focuses on the design, synthesis, and evaluation of physicochemical and
+                    pharmacokinetic properties of pharmacologically active compounds. He leads a research group at the
+                    Department of Pharmaceutical Chemistry and serves as the University of Belgrade’s coordinator for
+                    the Paul Ehrlich MedChem Euro PhD Network. He has completed advanced training in in silico design
+                    and modeling of pharmacologically active compounds in Slovenia and Poland. He has led and
+                    participated in several national and international research projects. He authored over 60
+                    publications in international journals (h-index 19), has presented more than 100 communications at
+                    scientific conferences, and has served as a reviewer for numerous scientific journals.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+        </div>
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Social Pharmacy / Pharmaceutical Law</div>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="slaveykoImg" alt="Dr. Slaveyko Djambazov"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Dr. Slaveyko Djambazov, Bulgaria</div>
+              <div class="speaker-affiliation mb-4">Managing Director of HTA Ltd.</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['slaveyko']" @click="toggleBio('slaveyko')">
+                {{ expandedBios['slaveyko'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['slaveyko']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Slaveyko Djambazov brings over a decade of experience at the intersection of health technology
+                    assessment (HTA), value-based healthcare (VBHC), and health policy. A medical doctor with an MPH,
+                    MBA, and PhD in HTA, he combines academic rigor with hands-on implementation and executive
+                    leadership experience.
+                  </p>
+                  <p class="mb-3">
+                    As founder and managing director of HTA Ltd., Dr. Djambazov has led more than 1,200 health economic
+                    and policy analyses informing reimbursement, investment, and strategic healthcare decisions across
+                    Europe, sub-Saharan Africa, and Central and Southeast Asia—translating evidence into policy and
+                    practice. Beyond advisory work, Dr. Djambazov brings deep provider-side insight. He has co-founded
+                    and managed more than 15 hospitals and over 50 medical centers, giving him firsthand understanding
+                    of operational realities, financial pressures, and care delivery transformation.
+                  </p>
+                  <p>
+                    Since completing the VBHC program at Harvard Business School, he has led over 50 VBHC implementation
+                    projects in hospitals and medical centers across Europe, bridging strategic frameworks with
+                    frontline execution. Dr. Djambazov teaches VBHC and HTA at the American University in Bulgaria, the
+                    University of St Andrews, and executive education programs internationally. He has authored and
+                    co-authored more than 25 books and 150 peer-reviewed publications, contributing to the global
+                    dialogue on value, outcomes measurement, and sustainable health system reform.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+        </div>
+
+        <!-- Other groups -->
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Pharmaceutical Analysis / Quality Assurance / Pharmaceutical
+            Legislation</div>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="andzelijaImg" alt="Dr Anđelija Malenović"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Prof. Anđelija Malenović, Serbia</div>
+              <div class="speaker-affiliation mb-4">Department of Drug Analytics, Faculty of Pharmacy, University of
+                Belgrade</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['andzelija']" @click="toggleBio('andzelija')">
+                {{ expandedBios['andzelija'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['andzelija']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr Anđelija Malenović, full professor at the Department of Drug Analytics at the Faculty of
+                    Pharmacy, University of Belgrade and specialist in drug testing and control.
+                  </p>
+                  <p class="mb-3">
+                    Expert appointed by Medicines and Medical Devices Agency of Montenegro and Medicines and Medical
+                    Devices Agency of Serbia. Technical expert appointed by Accreditation Body of Serbia. Speaker at the
+                    two course of continuing education held at the Faculty of Pharmacy and four professional seminars
+                    organized by Chamber of Commerce and Industry of Serbia. Member of Scientific Committee at three
+                    international and national conferences.
+                  </p>
+                  <p>
+                    Nowadays, her research interests head in several directions of pharmaceutical analysis: (i)
+                    fundamental examination of the RP-HPLC systems employing eluents with chaotropic agents or
+                    microemulsions and micellar mobile phases, (ii) experimental design applied to the development of
+                    chromatographic methods for the impurity profiling of pharmaceutical substances and (iii)
+                    bioanalysis which employs LC-MS/MS and the dried matrix spots as a sample collection technique. The
+                    research output of Dr Anđelija Malenović consists in over 120 original research papers published in
+                    the journals covered by the Science Citation Index She has over 1700 citations without self-citation
+                    and her h-index is 24.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="ericImg" alt="Dr Eric Deconinck"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Dr Eric Deconinck, Belgium</div>
+              <div class="speaker-affiliation mb-4">Official Medicine Control Laboratory, Sciensano</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['eric']" @click="toggleBio('eric')">
+                {{ expandedBios['eric'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['eric']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Eric Deconinck graduated as a pharmacist at the Vrije Universiteit Brussel in 2002 and obtained
+                    a Phd in pharmaceutical sciences at that same university in 2007. His doctoral research was situated
+                    in the domain of analytical chemistry and chemometrics. After his Phd he worked in the R&D
+                    departments of some small pharamceutical companies, after which he joined the Sciensano to work in
+                    the Official Medicine Control Laboratory. Before becoming head of the OMCL in 2016, he was
+                    responsible for the analysis of falsified medicines and illegal preparations for the Belgian and the
+                    European authorities, as well as for different research projects in collaboration with universities.
+                  </p>
+                  <p>
+                    Today, as head of the Belgian OMCL, he is a member of the GEON advisory group and active in
+                    different activities and workgroups of the European network. Still active in research projects, his
+                    main domains of interest are the analysis and risk evaluation of illegal medicines and health
+                    products, mapping and follow up of the illicit drug market and the use of spectroscopy and
+                    chemometrics within the daily work of an OMCL.
                   </p>
                 </div>
               </v-expand-transition>
@@ -735,36 +859,38 @@ const toggleBio = (id) => {
           </v-row>
         </div>
 
-        <!-- Session group -->
         <div class="session-group mb-8">
-          <div class="session-name mb-4">Session: Pharmaceutical Chemistry / Biomolecular Sciences</div>
+          <div class="session-name mb-4">Session: Clinical Biochemistry / Toxicology / Food and Nutrition</div>
 
           <v-row class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
-                <v-img :src="vladimirWImg" alt="Prof. Ing. Vladimír Wsól"></v-img>
+                <v-img :src="dusanImg" alt="Prof. Dusan Misic"></v-img>
               </v-avatar>
             </v-col>
             <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Prof. Ing. Vladimír Wsól, Czech Republic</div>
-              <div class="speaker-affiliation mb-4">Department of Biochemical Sciences, Faculty of Pharmacy, Charles
-                University</div>
+              <div class="speaker-name font-weight-bold mb-1">Prof. Dusan Misic, Poland</div>
+              <div class="speaker-affiliation mb-4">Department of Functional Food Products Development, Faculty of
+                Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences</div>
               <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['vladimirW']" @click="toggleBio('vladimirW')">
-                {{ expandedBios['vladimirW'] ? 'Hide Biography' : 'Read Biography' }}
+                :active="expandedBios['dusan']" @click="toggleBio('dusan')">
+                {{ expandedBios['dusan'] ? 'Hide Biography' : 'Read Biography' }}
               </v-btn>
 
               <v-expand-transition>
-                <div v-show="expandedBios['vladimirW']" class="mt-4 bio-content">
+                <div v-show="expandedBios['dusan']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Dušan Mišić is a University Professor at the Department of Functional Food Products Development,
+                    Faculty of Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences,
+                    Poland. His research focuses on antimicrobial bioactive compounds, mechanisms of antibacterial
+                    activity, antimicrobial resistance, biofilms, and the development of biodegradable antibacterial
+                    materials for applications in food packaging and medicine.
+                  </p>
                   <p>
-                    Dr. Vladimír Wsól is a Professor at the Faculty of Pharmacy in Hradec Králové, Charles University,
-                    Czech Republic, where he also serves as Head of the Department of Biochemical Sciences. His research
-                    focuses on xenobiotic metabolism, drug metabolism, drug–drug interactions, and mechanisms of
-                    resistance in anticancer therapy. Prof. Wsól has authored more than 125 peer-reviewed publications
-                    with over 2,000 citations (h-index 25, WoS). He has led and participated in several national and
-                    international research projects related to innovative medicines and biomedical technologies. He is
-                    an active member of several international scientific societies, including the International Society
-                    for the Study of Xenobiotics and the American Association of Pharmaceutical Scientists.
+                    Prof. Mišić has authored more than 65 peer-reviewed publications, with over 1300 citations (h-index
+                    23). He has led and participated in several international research projects and collaborates widely
+                    in interdisciplinary research related to food safety, microbiology, and functional bioactive
+                    materials.
                   </p>
                 </div>
               </v-expand-transition>
@@ -774,33 +900,38 @@ const toggleBio = (id) => {
           <v-row class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
-                <v-img :src="vladimirDImg" alt="Prof. Vladimir Dobričić"></v-img>
+                <v-img :src="marijanaImg" alt="Assoc. Prof. Marijana Curcic"></v-img>
               </v-avatar>
             </v-col>
             <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Prof. Vladimir Dobričić, Serbia</div>
-              <div class="speaker-affiliation mb-4">Department of Pharmaceutical Chemistry, Faculty of Pharmacy,
-                University of Belgrade</div>
+              <div class="speaker-name font-weight-bold mb-1">Assoc. Prof. Marijana Curcic, Serbia</div>
+              <div class="speaker-affiliation mb-4">Department of Toxicology "Akademik Danilo Soldatovic", Centre for
+                Toxicological Risk Assessment, University of Belgrade</div>
               <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['vladimirD']" @click="toggleBio('vladimirD')">
-                {{ expandedBios['vladimirD'] ? 'Hide Biography' : 'Read Biography' }}
+                :active="expandedBios['marijana']" @click="toggleBio('marijana')">
+                {{ expandedBios['marijana'] ? 'Hide Biography' : 'Read Biography' }}
               </v-btn>
 
               <v-expand-transition>
-                <div v-show="expandedBios['vladimirD']" class="mt-4 bio-content">
+                <div v-show="expandedBios['marijana']" class="mt-4 bio-content">
                   <p class="mb-3">
-                    Dr. Vladimir Dobričić is an associate professor at the Department of Pharmaceutical Chemistry,
-                    University of Belgrade – Faculty of Pharmacy.
+                    Dr. Marijana Ćurčić is an Associate Professor at the University of Belgrade – Faculty of Pharmacy,
+                    Department of Toxicology “Akademik Danilo Soldatović” and a European Registered Toxicologist (ERT).
+                    Her expertise includes toxicological risk assessment, toxicological chemistry, and regulatory
+                    toxicology.
+                  </p>
+                  <p class="mb-3">
+                    She serves as a national evaluator of plant protection products for the Ministry of Agriculture,
+                    Forestry and Water Management of the Republic of Serbia and has contributed to the evaluation of
+                    genotoxic impurities in medicines at the Agency for Drugs and Medical Devices of Serbia. She has
+                    also participated in international initiatives related to chemical safety, including the UNIDO
+                    project for the implementation of the Stockholm Convention.
                   </p>
                   <p>
-                    Dr. Dobričić’s research focuses on the design, synthesis, and evaluation of physicochemical and
-                    pharmacokinetic properties of pharmacologically active compounds. He leads a research group at the
-                    Department of Pharmaceutical Chemistry and serves as the University of Belgrade’s coordinator for
-                    the Paul Ehrlich MedChem Euro PhD Network. He has completed advanced training in in silico design
-                    and modeling of pharmacologically active compounds in Slovenia and Poland. He has led and
-                    participated in several national and international research projects. He authored over 60
-                    publications in international journals (h-index 19), has presented more than 100 communications at
-                    scientific conferences, and has served as a reviewer for numerous scientific journals.
+                    Dr. Ćurčić is involved in several national and international research projects focusing on
+                    environmental health, chemical exposure, and risk communication. She is the co-author of university
+                    textbooks in toxicology and has published numerous scientific papers in leading international
+                    journals in toxicology and environmental health.
                   </p>
                 </div>
               </v-expand-transition>
@@ -849,138 +980,6 @@ const toggleBio = (id) => {
           </v-row>
         </div>
 
-        <!-- Other groups -->
-        <div class="session-group mb-8">
-          <div class="session-name mb-4">Session: Pharmaceutical Analysis / Quality Assurance / Pharmaceutical
-            Legislation</div>
-
-          <v-row class="mb-6 align-center">
-            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
-              <v-avatar size="140" class="elevation-2 speaker-avatar">
-                <v-img :src="andzelijaImg" alt="Dr Anđelija Malenović"></v-img>
-              </v-avatar>
-            </v-col>
-            <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Dr Anđelija Malenović, Serbia</div>
-              <div class="speaker-affiliation mb-4">Department of Drug Analytics, Faculty of Pharmacy, University of
-                Belgrade</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['andzelija']" @click="toggleBio('andzelija')">
-                {{ expandedBios['andzelija'] ? 'Hide Biography' : 'Read Biography' }}
-              </v-btn>
-
-              <v-expand-transition>
-                <div v-show="expandedBios['andzelija']" class="mt-4 bio-content">
-                  <p class="mb-3">
-                    Dr Anđelija Malenović, full professor at the Department of Drug Analytics at the Faculty of
-                    Pharmacy, University of Belgrade and specialist in drug testing and control.
-                  </p>
-                  <p class="mb-3">
-                    Expert appointed by Medicines and Medical Devices Agency of Montenegro and Medicines and Medical
-                    Devices Agency of Serbia. Technical expert appointed by Accreditation Body of Serbia. Speaker at the
-                    two course of continuing education held at the Faculty of Pharmacy and four professional seminars
-                    organized by Chamber of Commerce and Industry of Serbia. Member of Scientific Committee at three
-                    international and national conferences.
-                  </p>
-                  <p>
-                    Nowadays, her research interests head in several directions of pharmaceutical analysis: (i)
-                    fundamental examination of the RP-HPLC systems employing eluents with chaotropic agents or
-                    microemulsions and micellar mobile phases, (ii) experimental design applied to the development of
-                    chromatographic methods for the impurity profiling of pharmaceutical substances and (iii)
-                    bioanalysis which employs LC-MS/MS and the dried matrix spots as a sample collection technique. The
-                    research output of Dr Anđelija Malenović consists in over 120 original research papers published in
-                    the journals covered by the Science Citation Index She has over 1700 citations without self-citation
-                    and her h-index is 24.
-                  </p>
-                </div>
-              </v-expand-transition>
-            </v-col>
-          </v-row>
-
-          <v-row class="mb-6 align-center">
-            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
-              <v-avatar size="140" class="elevation-2 speaker-avatar">
-                <v-img :src="ericImg" alt="Dr Eric Deconinck"></v-img>
-              </v-avatar>
-            </v-col>
-            <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Dr Eric Deconinck, Belgium</div>
-              <div class="speaker-affiliation mb-4">Official Medicine Control Laboratory, Sciensano</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['eric']" @click="toggleBio('eric')">
-                {{ expandedBios['eric'] ? 'Hide Biography' : 'Read Biography' }}
-              </v-btn>
-
-              <v-expand-transition>
-                <div v-show="expandedBios['eric']" class="mt-4 bio-content">
-                  <p class="mb-3">
-                    Dr. Eric Deconinck graduated as a pharmacist at the Vrije Universiteit Brussel in 2002 and obtained
-                    a Phd in pharmaceutical sciences at that same university in 2007. His doctoral research was situated
-                    in the domain of analytical chemistry and chemometrics. After his Phd he worked in the R&D
-                    departments of some small pharamceutical companies, after which he joined the Sciensano to work in
-                    the Official Medicine Control Laboratory. Before becoming head of the OMCL in 2016, he was
-                    responsible for the analysis of falsified medicines and illegal preparations for the Belgian and the
-                    European authorities, as well as for different research projects in collaboration with universities.
-                  </p>
-                  <p>
-                    Today, as head of the Belgian OMCL, he is a member of the GEON advisory group and active in
-                    different activities and workgroups of the European network. Still active in research projects, his
-                    main domains of interest are the analysis and risk evaluation of illegal medicines and health
-                    products, mapping and follow up of the illicit drug market and the use of spectroscopy and
-                    chemometrics within the daily work of an OMCL.
-                  </p>
-                </div>
-              </v-expand-transition>
-            </v-col>
-          </v-row>
-        </div>
-
-        <div class="session-group mb-8">
-          <div class="session-name mb-4">Session: Social Pharmacy / Pharmaceutical Law</div>
-          
-          <v-row class="mb-6 align-center">
-            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
-              <v-avatar size="140" class="elevation-2 speaker-avatar">
-                <v-img :src="slaveykoImg" alt="Dr. Slaveyko Djambazov"></v-img>
-              </v-avatar>
-            </v-col>
-            <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Dr. Slaveyko Djambazov, Bulgaria</div>
-              <div class="speaker-affiliation mb-4">Managing Director of HTA Ltd.</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['slaveyko']" @click="toggleBio('slaveyko')">
-                {{ expandedBios['slaveyko'] ? 'Hide Biography' : 'Read Biography' }}
-              </v-btn>
-
-              <v-expand-transition>
-                <div v-show="expandedBios['slaveyko']" class="mt-4 bio-content">
-                  <p class="mb-3">
-                    Dr. Slaveyko Djambazov brings over a decade of experience at the intersection of health technology
-                    assessment (HTA), value-based healthcare (VBHC), and health policy. A medical doctor with an MPH,
-                    MBA, and PhD in HTA, he combines academic rigor with hands-on implementation and executive
-                    leadership experience.
-                  </p>
-                  <p class="mb-3">
-                    As founder and managing director of HTA Ltd., Dr. Djambazov has led more than 1,200 health economic
-                    and policy analyses informing reimbursement, investment, and strategic healthcare decisions across
-                    Europe, sub-Saharan Africa, and Central and Southeast Asia—translating evidence into policy and
-                    practice. Beyond advisory work, Dr. Djambazov brings deep provider-side insight. He has co-founded
-                    and managed more than 15 hospitals and over 50 medical centers, giving him firsthand understanding
-                    of operational realities, financial pressures, and care delivery transformation.
-                  </p>
-                  <p>
-                    Since completing the VBHC program at Harvard Business School, he has led over 50 VBHC implementation
-                    projects in hospitals and medical centers across Europe, bridging strategic frameworks with
-                    frontline execution. Dr. Djambazov teaches VBHC and HTA at the American University in Bulgaria, the
-                    University of St Andrews, and executive education programs internationally. He has authored and
-                    co-authored more than 25 books and 150 peer-reviewed publications, contributing to the global
-                    dialogue on value, outcomes measurement, and sustainable health system reform.
-                  </p>
-                </div>
-              </v-expand-transition>
-            </v-col>
-          </v-row>
-        </div>
 
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Pharmacoeconomics / Drug Information</div>
