@@ -1,8 +1,32 @@
 <script setup>
+import { ref } from 'vue';
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import homeimg from "@/assets/dates.png";
+
+// Import Lecturer Images
+import zanetaImg from "@/assets/ZanetaNikolovskaColeska.jpg";
+import marioImg from "@/assets/MarioJug.jpg";
+import ritaImg from "@/assets/RitaAmbrus.png";
+import dusanImg from "@/assets/DusanMisic.png";
+import marijanaImg from "@/assets/MarijanaCurcic.jpg";
+import anitaImg from "@/assets/AnitaHogg.png";
+import majaImg from "@/assets/MajaOrtnerHadziabdic.jpg";
+import vladimirWImg from "@/assets/VladimirWsol.png";
+import vladimirDImg from "@/assets/VladimirDobricic.jpg";
+import danijelaImg from "@/assets/DanijelaMisic.jpg";
+import simoneImg from "@/assets/SimoneMoser.png";
+import slaveykoImg from "@/assets/SlaveykoDjambazov.jpg";
+import andzelijaImg from "@/assets/AndzelinaMalenovic.png";
+import ericImg from "@/assets/EricDeconinck.jpg";
+import borutImg from "@/assets/BorutBozic.PNG";
+
+const expandedBios = ref({});
+
+const toggleBio = (id) => {
+  expandedBios.value[id] = !expandedBios.value[id];
+};
 </script>
 
 <template>
@@ -332,109 +356,640 @@ import homeimg from "@/assets/dates.png";
         <v-card-text class="text-h6 font-weight-bold">INVITED LECTURERS</v-card-text>
       </v-card>
 
-      <base-card class="mt-5 mb-10">
-        <h3 class="program-date mb-4">Plenary speakers</h3>
-        <div class="speaker-item mb-4">
-          <div class="speaker-name">Prof. Zaneta Nikolovska-Coleska, USA</div>
-          <div class="speaker-affiliation">University of Michigan Medical School</div>
-        </div>
-        <div class="speaker-item mb-6">
-          <div class="speaker-name">Prof. Borut Božič, Slovenia</div>
-          <div class="speaker-affiliation">Faculty of Pharmacy, University of Ljubljana</div>
-        </div>
+      <base-card class="mt-5 mb-10 pa-6">
+        <h3 class="program-date mb-6">Plenary speakers</h3>
 
-        <h3 class="program-date mb-4">Session speakers</h3>
+        <!-- Zaneta Nikolovska-Coleska -->
+        <v-row class="mb-8 align-center">
+          <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+            <v-avatar size="140" class="elevation-4 speaker-avatar">
+              <v-img :src="zanetaImg" alt="Prof. Zaneta Nikolovska-Coleska"></v-img>
+            </v-avatar>
+          </v-col>
+          <v-col cols="12" sm="9" md="10">
+            <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Zaneta Nikolovska-Coleska, USA</div>
+            <div class="speaker-affiliation mb-4">University of Michigan Medical School</div>
+            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+              :active="expandedBios['zaneta']" @click="toggleBio('zaneta')">
+              {{ expandedBios['zaneta'] ? 'Hide Biography' : 'Read Biography' }}
+            </v-btn>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Pharmaceutical Technology and Biotechnology / Biopharmaceutics /
+            <v-expand-transition>
+              <div v-show="expandedBios['zaneta']" class="mt-4 bio-content">
+                <p class="mb-3">
+                  Dr. Zaneta Nikolovska-Coleska is Associate Dean of Graduate & Postdoctoral Studies and Professor of
+                  Pathology at the University of Michigan Medical School. She is also affiliated with the
+                  interdepartmental graduate programs in Medicinal Chemistry and Chemical Biology at the University of
+                  Michigan, Ann Arbor. From 2021 to 2023, Prof. Nikolovska-Coleska served as President of the
+                  International Chemical Biology Society (ICBS) and currently continues to serve on its Board of
+                  Directors. She is also an Associate Editor for RSC Chemical Biology.
+                </p>
+                <p>
+                  Prof. Nikolovska-Coleska is an internationally recognized expert in chemical genomics, focusing on the
+                  discovery and development of potent, selective chemical probes that target cancer-related
+                  protein-protein interactions (PPIs). Her pioneering research advances the understanding of crucial
+                  PPIs involved in cancer progression, accelerates drug target validation, and lays the foundation for
+                  translating these discoveries into clinical therapeutics. Dr. Nikolovska-Coleska has received numerous
+                  prestigious awards, including the Chemical Structure Association Trust (CSA Trust) Award, the New
+                  Investigator Award from the Leukemia Research Foundation, the Innovator Award from the Harrington
+                  Discovery Institute, and the AACR-Bayer Innovation and Discovery Award.
+                </p>
+              </div>
+            </v-expand-transition>
+          </v-col>
+        </v-row>
+
+        <!-- Borut Božič -->
+        <v-row class="mb-8 align-center">
+          <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+            <v-avatar size="140" class="elevation-4 speaker-avatar">
+              <v-img :src="borutImg" alt="Prof. Borut Božič"></v-img>
+            </v-avatar>
+          </v-col>
+          <v-col cols="12" sm="9" md="10">
+            <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Borut Božič, Slovenia</div>
+            <div class="speaker-affiliation mb-4">Faculty of Pharmacy, University of Ljubljana</div>
+            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+              :active="expandedBios['borut']" @click="toggleBio('borut')">
+              {{ expandedBios['borut'] ? 'Hide Biography' : 'Read Biography' }}
+            </v-btn>
+
+            <v-expand-transition>
+              <div v-show="expandedBios['borut']" class="mt-4 bio-content">
+                <p class="mb-3">
+                  Borut Božič, MSc in Pharmacy, PhD in Clinical Immunology, and European Specialist in Laboratory
+                  Medicine, is a Full Professor of Clinical Biochemistry and Laboratory Biomedicine at the Faculty of
+                  Pharmacy, University of Ljubljana, Slovenia. He also serves as a specialist consultant at the
+                  University Medical Centre Ljubljana. He has experience in industry, public pharmacy, research in
+                  autoimmunity, laboratory diagnostic analysis, and university teaching. He has held visiting positions
+                  in the Netherlands, Germany, Russia, the UK, Israel, Croatia, and the USA.
+                </p>
+                <p class="mb-3">
+                  He is a co-author of a patent, research papers published in peer-reviewed scientific journals, and
+                  chapters in several books and encyclopedias on autoimmunity, rheumatology, atherogenesis, respiratory
+                  medicine, analytical sciences, membrane biophysics and quality of pharmaceutical education.
+                </p>
+                <p>
+                  He has held numerous leadership roles, including President of the Governing Board of the University,
+                  member of the University Senate, Dean of the Faculty of Pharmacy, President of the Slovenian Chamber
+                  of Laboratory Medicine, regional director of European project on quality assurance of education of
+                  pharmacists. He is coordinator of Doctoral program Biomedicine at University and Chair of the
+                  Department of clinical biochemistry at the Faculty of Pharmacy. He is a member of the European
+                  Federation on Clinical Chemistry and Laboratory Medicine Working Group on Ethics and serves as the
+                  President of European Association Faculties of Pharmacy.
+                </p>
+              </div>
+            </v-expand-transition>
+          </v-col>
+        </v-row>
+
+        <!-- Simone Moser -->
+        <v-row class="mb-8 align-center">
+          <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+            <v-avatar size="140" class="elevation-4 speaker-avatar">
+              <v-img :src="simoneImg" alt="Prof. Dr. Simone Moser"></v-img>
+            </v-avatar>
+          </v-col>
+          <v-col cols="12" sm="9" md="10">
+            <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Dr. Simone Moser, Austria</div>
+            <div class="speaker-affiliation mb-4">Department of Pharmacognosy, University of Innsbruck</div>
+            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+              :active="expandedBios['simone']" @click="toggleBio('simone')">
+              {{ expandedBios['simone'] ? 'Hide Biography' : 'Read Biography' }}
+            </v-btn>
+
+            <v-expand-transition>
+              <div v-show="expandedBios['simone']" class="mt-4 bio-content">
+                <p class="mb-3">
+                  Prof. Dr. Simone Moser holds a degree in Chemistry from the University of Innsbruck, where she
+                  completed her PhD focusing on the isolation and structural characterization of natural compounds.
+                  Her postdoctoral research at the École Polytechnique Fédérale de Lausanne (EPFL) and the
+                  Massachusetts Institute of Technology (MIT) centered on elucidating the modes of action of small
+                  molecules.
+                </p>
+                <p class="mb-3">
+                  Following her postdoctoral studies, Dr. Moser joined the Analytical Development team at Novartis in
+                  Austria. She later returned to academia, establishing her research group within the Chair of
+                  Pharmaceutical Biology at the Ludwig Maximilian University of Munich (LMU), where she completed her
+                  habilitation in 2022.
+                </p>
+                <p>
+                  In September 2023, Dr. Moser was appointed Head of the Department of Pharmacognosy at the University
+                  of Innsbruck, Austria. Her research on the pharmaceutical properties of newly discovered natural
+                  products has earned her several prestigious awards, including the Blair-Curtius-Pfleiderer-Wachter
+                  Prize for Pteridinology (2020) and the Dr. Willmar Schwabe Prize from the Society for Medicinal
+                  Plant and Natural Product Research (2022).
+                </p>
+              </div>
+            </v-expand-transition>
+          </v-col>
+        </v-row>
+
+        <h3 class="program-date mb-6">Session speakers</h3>
+
+        <!-- Session group -->
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Pharmaceutical Technology and Biotechnology / Biopharmaceutics /
             Cosmetology</div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Prof. Mario Jug, Croatia</div>
-            <div class="speaker-affiliation">Department of Pharmaceutical Technology, Faculty of Pharmacy and
-              Biochemistry, University of Zagreb</div>
-          </div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Prof. Rita Ambrus, Hungary</div>
-            <div class="speaker-affiliation">Institute of Pharmaceutical Technology and Regulatory Affairs, Faculty of
-              Pharmacy, University of Szeged</div>
-          </div>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="marioImg" alt="Prof. Mario Jug"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Prof. Mario Jug, Croatia</div>
+              <div class="speaker-affiliation mb-4">Department of Pharmaceutical Technology, Faculty of Pharmacy and
+                Biochemistry, University of Zagreb</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['mario']" @click="toggleBio('mario')">
+                {{ expandedBios['mario'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['mario']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Mario Jug is a tenured full professor in the Department of Pharmaceutical Technology at the
+                    University of Zagreb Faculty of Pharmacy and Biochemistry. He teaches Drug Formulation 2 and
+                    Industrial Pharmacy at the graduate (diploma) level and coordinates several modules at the
+                    postgraduate doctoral level.
+                  </p>
+                  <p>
+                    He has authored 55 scientific papers in WoSCC‑indexed international journals, 16 professional
+                    publications, and has presented his work at numerous scientific conferences. In his research, he
+                    collaborates extensively with academic and industrial partners in Croatia and abroad. His scientific
+                    work focuses on developing advanced drug delivery systems for mucosal and dermal applications, with
+                    a particular emphasis on cyclodextrin‑based supramolecular carriers and their mechanochemical
+                    synthesis, polymeric hydrogels, and green extraction methodologies.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="ritaImg" alt="Prof. Rita Ambrus"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Prof. Rita Ambrus, Hungary</div>
+              <div class="speaker-affiliation mb-4">Institute of Pharmaceutical Technology and Regulatory Affairs,
+                Faculty of Pharmacy, University of Szeged</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['rita']" @click="toggleBio('rita')">
+                {{ expandedBios['rita'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['rita']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Rita Ambrus, is a Full Professor in Institute of Pharmaceutical Technology and Regulatory
+                    Affairs, and she is a vice dean for Sciences and Economy at Faculty of Pharmacy University of
+                    Szeged. Professor Ambrus is also an experimental leader of Nanotechnological and Pulmonary Research
+                    group of Interdisciplinary Excellence Centre University of Szeged. Her research interest is
+                    development of technological procedures (nano- and microparticle production) and alternative drug
+                    administration (pulmonary and intranasal) to reach improved bioavailability of poorly water-soluble
+                    drugs. She published more than 210 research articles with almost 3000 independent citations and her
+                    H index is 38.
+                  </p>
+                  <p>
+                    She has active cooperation with national and international (9 active cooperation in Europe) higher
+                    education institutions and pharmaceutical industry partners. She is active member of the Spanish PhD
+                    Program Academic Commission (PPAC) in "Drug Research and Development" of the University of Santiago
+                    de Compostela and also a leading researcher of the Bulgarian "Strategic research and innovation
+                    program "Biomaterials and Nanostructure Drug Delivery" working group. She was a PI by Serbian,
+                    Slovenian and Croatian bilateral projects.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </div>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Clinical Biochemistry / Toxicology / Food and Nutrition</div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Prof. Dusan Misic, Poland</div>
-            <div class="speaker-affiliation">Department of Functional Food Products Development, Faculty of
-              Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences</div>
-          </div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Assoc. Prof. Marijana Curcic, Serbia</div>
-            <div class="speaker-affiliation">Department of Toxicology "Akademik Danilo Soldatovic", Centre for
-              Toxicological Risk Assessment, University of Belgrade</div>
-          </div>
+        <!-- Session group -->
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Clinical Biochemistry / Toxicology / Food and Nutrition</div>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="dusanImg" alt="Prof. Dusan Misic"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Prof. Dusan Misic, Poland</div>
+              <div class="speaker-affiliation mb-4">Department of Functional Food Products Development, Faculty of
+                Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['dusan']" @click="toggleBio('dusan')">
+                {{ expandedBios['dusan'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['dusan']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Dušan Mišić is a University Professor at the Department of Functional Food Products Development,
+                    Faculty of Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences,
+                    Poland. His research focuses on antimicrobial bioactive compounds, mechanisms of antibacterial
+                    activity, antimicrobial resistance, biofilms, and the development of biodegradable antibacterial
+                    materials for applications in food packaging and medicine.
+                  </p>
+                  <p>
+                    Prof. Mišić has authored more than 65 peer-reviewed publications, with over 1300 citations (h-index
+                    23). He has led and participated in several international research projects and collaborates widely
+                    in interdisciplinary research related to food safety, microbiology, and functional bioactive
+                    materials.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="marijanaImg" alt="Assoc. Prof. Marijana Curcic"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Assoc. Prof. Marijana Curcic, Serbia</div>
+              <div class="speaker-affiliation mb-4">Department of Toxicology "Akademik Danilo Soldatovic", Centre for
+                Toxicological Risk Assessment, University of Belgrade</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['marijana']" @click="toggleBio('marijana')">
+                {{ expandedBios['marijana'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['marijana']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Marijana Ćurčić is an Associate Professor at the University of Belgrade – Faculty of Pharmacy,
+                    Department of Toxicology “Akademik Danilo Soldatović” and a European Registered Toxicologist (ERT).
+                    Her expertise includes toxicological risk assessment, toxicological chemistry, and regulatory
+                    toxicology.
+                  </p>
+                  <p class="mb-3">
+                    She serves as a national evaluator of plant protection products for the Ministry of Agriculture,
+                    Forestry and Water Management of the Republic of Serbia and has contributed to the evaluation of
+                    genotoxic impurities in medicines at the Agency for Drugs and Medical Devices of Serbia. She has
+                    also participated in international initiatives related to chemical safety, including the UNIDO
+                    project for the implementation of the Stockholm Convention.
+                  </p>
+                  <p>
+                    Dr. Ćurčić is involved in several national and international research projects focusing on
+                    environmental health, chemical exposure, and risk communication. She is the co-author of university
+                    textbooks in toxicology and has published numerous scientific papers in leading international
+                    journals in toxicology and environmental health.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </div>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Community and Clinical Pharmacy</div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Anita Hogg, Northern Ireland</div>
-            <div class="speaker-affiliation">Lead for Medicines Optimisation Resource Efficiency, Medicines Optimisation
-              Innovation Centre (MOIC) Northern Health and Social Care Trust (NHSCT)</div>
-          </div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Assoc. Prof. Maja Ortner Hadziabdic, Croatia</div>
-            <div class="speaker-affiliation">Centre of Applied Pharmacy, Faculty of Pharmacy and Biochemistry,
-              University of Zagreb</div>
-          </div>
+        <!-- Session group -->
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Community and Clinical Pharmacy</div>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="anitaImg" alt="Anita Hogg"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Anita Hogg, Northern Ireland</div>
+              <div class="speaker-affiliation mb-4">Lead for Medicines Optimisation Resource Efficiency, Medicines
+                Optimisation Innovation Centre (MOIC) Northern Health and Social Care Trust (NHSCT)</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['anita']" @click="toggleBio('anita')">
+                {{ expandedBios['anita'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['anita']" class="mt-4 bio-content">
+                  <p>
+                    Anita is Lead in the Regional Medicines Optimisation Innovation Centre (MOIC) in Northern Ireland.
+                    She is a registered Pharmacist, holds an MSc in Clinical Pharmacy and has developed, delivered and
+                    evaluated innovative medicines optimisation services for over 20 years. This multi-award winning
+                    work has contributed to the transformation of clinical pharmacy services in Northern Ireland and
+                    extensive collaboration across Europe, including participation in large European projects. Anita has
+                    disseminated widely, including conference presentations and workshops across Europe and
+                    internationally. She is passionate about making a difference to patients, empowering pharmacists and
+                    driving change through informing the delivery of best practice in medicines use. Anita completed the
+                    Independent Prescriber course in 2009 and is a recipient of the Northern Ireland Hospital Pharmacist
+                    of the Year Award.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="majaImg" alt="Assoc. Prof. Maja Ortner Hadziabdic"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Assoc. Prof. Maja Ortner Hadziabdic, Croatia</div>
+              <div class="speaker-affiliation mb-4">Centre of Applied Pharmacy, Faculty of Pharmacy and Biochemistry,
+                University of Zagreb</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['maja']" @click="toggleBio('maja')">
+                {{ expandedBios['maja'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['maja']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Maja Ortner Hadžiabdić is an Associate Professor and Vice Dean for Lifelong Learning at the
+                    University of Zagreb Faculty of Pharmacy and Biochemistry. She is passionate about teaching and is
+                    actively involved in courses such as Clinical Pharmacy and Pharmacotherapy, Consultation Skills, and
+                    Pharmaceutical Care as well as several postgraduate courses within the Clinical Pharmacy
+                    postgraduate specialist program. Additionally, she organises and oversees the Pre-registration
+                    Training program for pharmacy students. Dedicated to advancing pharmacy education, Maja has played a
+                    role in several major curriculum development projects and initiatives at her institution, (TEMPUS
+                    JOINT 18028-2003 (New Pharmacy Curricula – Development and Implementation, 2005–2007); Development
+                    and Implementation of Pre-registration Training for Pharmacy Students (2015–2025); Application of
+                    the Croatian Qualification Framework in Improving Study Programs in Pharmacy and Medical
+                    Biochemistry (PharMedQ) (2019–2022))
+                  </p>
+                  <p>
+                    Maja is deeply committed to the development of clinical pharmacy in Croatia, where the field is
+                    still evolving. Her clinical pharmacy expertise was enhanced through a visiting pharmacist position
+                    at Guy’s and St. Thomas’ Hospital NHS Trust in London, UK (2005) and completed specialisation in
+                    Clinical Pharmacy in Croatia in 2022. Maja’s research interests focus on drug optimization,
+                    pharmaceutical care, and pharmacy education. Currently, Maja serves as the principal investigator of
+                    the DEP2OLD project, funded by the Croatian Science Foundation, which aims to develop a
+                    pharmacotherapy optimization model focused on deprescribing for nursing home residents. She has
+                    published over 50 scientific and professional papers and has presented nearly 100 oral and poster
+                    presentations at scientific conferences.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </div>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Pharmaceutical Chemistry / Biomolecular Sciences</div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Prof. Ing. Vladimír Wsól, Czech Republic</div>
-            <div class="speaker-affiliation">Department of Biochemical Sciences, Faculty of Pharmacy, Charles University
-            </div>
-          </div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Prof. Vladimir Dobričić, Serbia</div>
-            <div class="speaker-affiliation">Department of Pharmaceutical Chemistry, Faculty of Pharmacy, University of
-              Belgrade</div>
-          </div>
+        <!-- Session group -->
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Pharmaceutical Chemistry / Biomolecular Sciences</div>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="vladimirWImg" alt="Prof. Ing. Vladimír Wsól"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Prof. Ing. Vladimír Wsól, Czech Republic</div>
+              <div class="speaker-affiliation mb-4">Department of Biochemical Sciences, Faculty of Pharmacy, Charles
+                University</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['vladimirW']" @click="toggleBio('vladimirW')">
+                {{ expandedBios['vladimirW'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['vladimirW']" class="mt-4 bio-content">
+                  <p>
+                    Dr. Vladimír Wsól is a Professor at the Faculty of Pharmacy in Hradec Králové, Charles University,
+                    Czech Republic, where he also serves as Head of the Department of Biochemical Sciences. His research
+                    focuses on xenobiotic metabolism, drug metabolism, drug–drug interactions, and mechanisms of
+                    resistance in anticancer therapy. Prof. Wsól has authored more than 125 peer-reviewed publications
+                    with over 2,000 citations (h-index 25, WoS). He has led and participated in several national and
+                    international research projects related to innovative medicines and biomedical technologies. He is
+                    an active member of several international scientific societies, including the International Society
+                    for the Study of Xenobiotics and the American Association of Pharmaceutical Scientists.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="vladimirDImg" alt="Prof. Vladimir Dobričić"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Prof. Vladimir Dobričić, Serbia</div>
+              <div class="speaker-affiliation mb-4">Department of Pharmaceutical Chemistry, Faculty of Pharmacy,
+                University of Belgrade</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['vladimirD']" @click="toggleBio('vladimirD')">
+                {{ expandedBios['vladimirD'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['vladimirD']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Vladimir Dobričić is an associate professor at the Department of Pharmaceutical Chemistry,
+                    University of Belgrade – Faculty of Pharmacy.
+                  </p>
+                  <p>
+                    Dr. Dobričić’s research focuses on the design, synthesis, and evaluation of physicochemical and
+                    pharmacokinetic properties of pharmacologically active compounds. He leads a research group at the
+                    Department of Pharmaceutical Chemistry and serves as the University of Belgrade’s coordinator for
+                    the Paul Ehrlich MedChem Euro PhD Network. He has completed advanced training in in silico design
+                    and modeling of pharmacologically active compounds in Slovenia and Poland. He has led and
+                    participated in several national and international research projects. He authored over 60
+                    publications in international journals (h-index 19), has presented more than 100 communications at
+                    scientific conferences, and has served as a reviewer for numerous scientific journals.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </div>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Natural Products and Phytotherapy</div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-name">Dr. Danijela Mišić, Serbia</div>
-            <div class="speaker-affiliation">Department of Plant Physiology, Institute for Biological Research "Siniša
-              Stanković"- National Institute of the Republic of Serbia, University of Belgrade</div>
-          </div>
+        <!-- Session group -->
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Natural Products and Phytotherapy</div>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="danijelaImg" alt="Dr. Danijela Mišić"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Dr. Danijela Mišić, Serbia</div>
+              <div class="speaker-affiliation mb-4">Department of Plant Physiology, Institute for Biological Research
+                "Siniša Stanković"- National Institute of the Republic of Serbia, University of Belgrade</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['danijela']" @click="toggleBio('danijela')">
+                {{ expandedBios['danijela'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['danijela']" class="mt-4 bio-content">
+                  <p>
+                    Dr. Danijela Mišić is the Principal Research Fellow at the Department. of Plant Physiology of the
+                    Institute for Biological Research “Siniša Stanković”- National Institute of the Republic of Serbia,
+                    University of Belgrade. After earning the PhD degree (2009) at the University of Belgrade- Faculty
+                    of Biology, she was a postdoctorate fellow at the Wageningen University, The Netherlands
+                    (2011-2012). She was a fellow of "Norman Borlaug Fellowship" sponsored by U.S. Department of State
+                    (USDA) (2005), and a PIFI fellow of the Chinese Academy of Sciences (CAS) (2019 and 2024). Danijela
+                    is a PI of the multidisciplinary research group working in the area of plant sciences, and covering
+                    fields of plant physiology, plant specialized metabolism, natural products chemistry, plant stress
+                    physiology, plant molecular biology, functional genomics, metabolic engineering, biodiversity and
+                    conservation, plant-biotic interactions, and plant genetics. The group currently numbers 17
+                    permanent members, and is especially devoted to the investigation of biology, chemistry, ecology,
+                    and biotechnology of iridoids- and phenolics-rich plant species.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </div>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Pharmaceutical Analysis / Quality Assurance / Pharmaceutical Legislation
-          </div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-affiliation">The names will be announced shortly</div>
-          </div>
+        <!-- Other groups -->
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Pharmaceutical Analysis / Quality Assurance / Pharmaceutical
+            Legislation</div>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="andzelijaImg" alt="Dr Anđelija Malenović"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Dr Anđelija Malenović, Serbia</div>
+              <div class="speaker-affiliation mb-4">Department of Drug Analytics, Faculty of Pharmacy, University of
+                Belgrade</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['andzelija']" @click="toggleBio('andzelija')">
+                {{ expandedBios['andzelija'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['andzelija']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr Anđelija Malenović, full professor at the Department of Drug Analytics at the Faculty of
+                    Pharmacy, University of Belgrade and specialist in drug testing and control.
+                  </p>
+                  <p class="mb-3">
+                    Expert appointed by Medicines and Medical Devices Agency of Montenegro and Medicines and Medical
+                    Devices Agency of Serbia. Technical expert appointed by Accreditation Body of Serbia. Speaker at the
+                    two course of continuing education held at the Faculty of Pharmacy and four professional seminars
+                    organized by Chamber of Commerce and Industry of Serbia. Member of Scientific Committee at three
+                    international and national conferences.
+                  </p>
+                  <p>
+                    Nowadays, her research interests head in several directions of pharmaceutical analysis: (i)
+                    fundamental examination of the RP-HPLC systems employing eluents with chaotropic agents or
+                    microemulsions and micellar mobile phases, (ii) experimental design applied to the development of
+                    chromatographic methods for the impurity profiling of pharmaceutical substances and (iii)
+                    bioanalysis which employs LC-MS/MS and the dried matrix spots as a sample collection technique. The
+                    research output of Dr Anđelija Malenović consists in over 120 original research papers published in
+                    the journals covered by the Science Citation Index She has over 1700 citations without self-citation
+                    and her h-index is 24.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="ericImg" alt="Dr Eric Deconinck"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Dr Eric Deconinck, Belgium</div>
+              <div class="speaker-affiliation mb-4">Official Medicine Control Laboratory, Sciensano</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['eric']" @click="toggleBio('eric')">
+                {{ expandedBios['eric'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['eric']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Eric Deconinck graduated as a pharmacist at the Vrije Universiteit Brussel in 2002 and obtained
+                    a Phd in pharmaceutical sciences at that same university in 2007. His doctoral research was situated
+                    in the domain of analytical chemistry and chemometrics. After his Phd he worked in the R&D
+                    departments of some small pharamceutical companies, after which he joined the Sciensano to work in
+                    the Official Medicine Control Laboratory. Before becoming head of the OMCL in 2016, he was
+                    responsible for the analysis of falsified medicines and illegal preparations for the Belgian and the
+                    European authorities, as well as for different research projects in collaboration with universities.
+                  </p>
+                  <p>
+                    Today, as head of the Belgian OMCL, he is a member of the GEON advisory group and active in
+                    different activities and workgroups of the European network. Still active in research projects, his
+                    main domains of interest are the analysis and risk evaluation of illegal medicines and health
+                    products, mapping and follow up of the illicit drug market and the use of spectroscopy and
+                    chemometrics within the daily work of an OMCL.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </div>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Social Pharmacy / Pharmaceutical Law</div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-affiliation">The names will be announced shortly</div>
-          </div>
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Social Pharmacy / Pharmaceutical Law</div>
+          
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="slaveykoImg" alt="Dr. Slaveyko Djambazov"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Dr. Slaveyko Djambazov, Bulgaria</div>
+              <div class="speaker-affiliation mb-4">Managing Director of HTA Ltd.</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
+                :active="expandedBios['slaveyko']" @click="toggleBio('slaveyko')">
+                {{ expandedBios['slaveyko'] ? 'Hide Biography' : 'Read Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['slaveyko']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Slaveyko Djambazov brings over a decade of experience at the intersection of health technology
+                    assessment (HTA), value-based healthcare (VBHC), and health policy. A medical doctor with an MPH,
+                    MBA, and PhD in HTA, he combines academic rigor with hands-on implementation and executive
+                    leadership experience.
+                  </p>
+                  <p class="mb-3">
+                    As founder and managing director of HTA Ltd., Dr. Djambazov has led more than 1,200 health economic
+                    and policy analyses informing reimbursement, investment, and strategic healthcare decisions across
+                    Europe, sub-Saharan Africa, and Central and Southeast Asia—translating evidence into policy and
+                    practice. Beyond advisory work, Dr. Djambazov brings deep provider-side insight. He has co-founded
+                    and managed more than 15 hospitals and over 50 medical centers, giving him firsthand understanding
+                    of operational realities, financial pressures, and care delivery transformation.
+                  </p>
+                  <p>
+                    Since completing the VBHC program at Harvard Business School, he has led over 50 VBHC implementation
+                    projects in hospitals and medical centers across Europe, bridging strategic frameworks with
+                    frontline execution. Dr. Djambazov teaches VBHC and HTA at the American University in Bulgaria, the
+                    University of St Andrews, and executive education programs internationally. He has authored and
+                    co-authored more than 25 books and 150 peer-reviewed publications, contributing to the global
+                    dialogue on value, outcomes measurement, and sustainable health system reform.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </div>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Pharmacoeconomics / Drug Information</div>
-          <div class="speaker-item mt-2">
-            <div class="speaker-affiliation">The names will be announced shortly</div>
-          </div>
+        <div class="session-group mb-8">
+          <div class="session-name mb-4">Session: Pharmacoeconomics / Drug Information</div>
+          <div class="speaker-affiliation ml-4 italic text-grey-darken-1">The names will be announced shortly</div>
         </div>
 
-        <div class="session-group mb-6">
-          <div class="session-name">Session: Student Section</div>
+        <div class="session-group">
+          <div class="session-name mb-4">Session: Student Section</div>
+          <div class="speaker-affiliation ml-4 italic text-grey-darken-1">The names will be announced shortly</div>
         </div>
       </base-card>
     </base-container>
@@ -489,10 +1044,6 @@ import homeimg from "@/assets/dates.png";
   font-size: 0.95rem
 }
 
-.speaker-item {
-  text-align: left;
-}
-
 .speaker-name {
   font-weight: bold;
   color: #125280;
@@ -502,7 +1053,6 @@ import homeimg from "@/assets/dates.png";
 .speaker-affiliation {
   color: #1c5a6d;
   font-size: 1rem;
-  font-style: italic;
 }
 
 .session-name {
@@ -514,6 +1064,30 @@ import homeimg from "@/assets/dates.png";
   padding-left: 10px;
 }
 
+.speaker-avatar {
+  border: 3px solid #1c5a6d;
+  transition: transform 0.3s ease;
+}
+
+.speaker-avatar:hover {
+  transform: scale(1.05);
+}
+
+.bio-content {
+  color: #1c5a6d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: justify;
+  background-color: #f5f9fa;
+  padding: 15px;
+  border-left: 4px solid #1c5a6d;
+  border-radius: 0 8px 8px 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .hero-title {
     font-size: 1.2rem;
@@ -521,6 +1095,10 @@ import homeimg from "@/assets/dates.png";
 
   .session-list li {
     font-size: 0.9rem;
+  }
+
+  .speaker-avatar {
+    size: 100px !important;
   }
 }
 </style>
