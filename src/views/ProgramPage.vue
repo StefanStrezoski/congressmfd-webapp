@@ -27,6 +27,10 @@ const expandedBios = ref({});
 const toggleBio = (id) => {
   expandedBios.value[id] = !expandedBios.value[id];
 };
+
+const expandIcon = (isExpanded) => {
+  return isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down';
+}
 </script>
 
 <template>
@@ -369,9 +373,10 @@ const toggleBio = (id) => {
           <v-col cols="12" sm="9" md="10">
             <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Zaneta Nikolovska-Coleska, USA</div>
             <div class="speaker-affiliation mb-4">University of Michigan Medical School</div>
-            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-              :active="expandedBios['zaneta']" @click="toggleBio('zaneta')">
-              {{ expandedBios['zaneta'] ? 'Hide Biography' : 'Read Biography' }}
+            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+              :append-icon="expandIcon(expandedBios['zaneta'])" :active="expandedBios['zaneta']"
+              @click="toggleBio('zaneta')">
+              {{ expandedBios['zaneta'] ? 'Short Biography' : 'Short Biography' }}
             </v-btn>
 
             <v-expand-transition>
@@ -409,9 +414,10 @@ const toggleBio = (id) => {
           <v-col cols="12" sm="9" md="10">
             <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Borut Božič, Slovenia</div>
             <div class="speaker-affiliation mb-4">Faculty of Pharmacy, University of Ljubljana</div>
-            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-              :active="expandedBios['borut']" @click="toggleBio('borut')">
-              {{ expandedBios['borut'] ? 'Hide Biography' : 'Read Biography' }}
+            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+              :append-icon="expandIcon(expandedBios['borut'])" :active="expandedBios['borut']"
+              @click="toggleBio('borut')">
+              {{ expandedBios['borut'] ? 'Short Biography' : 'Short Biography' }}
             </v-btn>
 
             <v-expand-transition>
@@ -452,10 +458,11 @@ const toggleBio = (id) => {
           </v-col>
           <v-col cols="12" sm="9" md="10">
             <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Simone Moser, Austria</div>
-            <div class="speaker-affiliation mb-4">Department of Pharmacognosy, University of Innsbruck</div>
-            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-              :active="expandedBios['simone']" @click="toggleBio('simone')">
-              {{ expandedBios['simone'] ? 'Hide Biography' : 'Read Biography' }}
+            <div class="speaker-affiliation mb-4">University of Innsbruck</div>
+            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+              :append-icon="expandIcon(expandedBios['simone'])" :active="expandedBios['simone']"
+              @click="toggleBio('simone')">
+              {{ expandedBios['simone'] ? 'Short Biography' : 'Short Biography' }}
             </v-btn>
 
             <v-expand-transition>
@@ -500,11 +507,11 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Prof. Mario Jug, Croatia</div>
-              <div class="speaker-affiliation mb-4">Department of Pharmaceutical Technology, Faculty of Pharmacy and
-                Biochemistry, University of Zagreb</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['mario']" @click="toggleBio('mario')">
-                {{ expandedBios['mario'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Faculty of Pharmacy and Biochemistry, University of Zagreb</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['mario'])" :active="expandedBios['mario']"
+                @click="toggleBio('mario')">
+                {{ expandedBios['mario'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -536,11 +543,11 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Prof. Rita Ambrus, Hungary</div>
-              <div class="speaker-affiliation mb-4">Institute of Pharmaceutical Technology and Regulatory Affairs,
-                Faculty of Pharmacy, University of Szeged</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['rita']" @click="toggleBio('rita')">
-                {{ expandedBios['rita'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Faculty of Pharmacy, University of Szeged</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['rita'])" :active="expandedBios['rita']"
+                @click="toggleBio('rita')">
+                {{ expandedBios['rita'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -581,11 +588,11 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Prof. Ing. Vladimír Wsól, Czech Republic</div>
-              <div class="speaker-affiliation mb-4">Department of Biochemical Sciences, Faculty of Pharmacy, Charles
-                University</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['vladimirW']" @click="toggleBio('vladimirW')">
-                {{ expandedBios['vladimirW'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Faculty of Pharmacy, Charles University</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['vladimirW'])" :active="expandedBios['vladimirW']"
+                @click="toggleBio('vladimirW')">
+                {{ expandedBios['vladimirW'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -613,11 +620,11 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Prof. Vladimir Dobričić, Serbia</div>
-              <div class="speaker-affiliation mb-4">Department of Pharmaceutical Chemistry, Faculty of Pharmacy,
-                University of Belgrade</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['vladimirD']" @click="toggleBio('vladimirD')">
-                {{ expandedBios['vladimirD'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Faculty of Pharmacy, University of Belgrade</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['vladimirD'])" :active="expandedBios['vladimirD']"
+                @click="toggleBio('vladimirD')">
+                {{ expandedBios['vladimirD'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -652,10 +659,11 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Dr. Slaveyko Djambazov, Bulgaria</div>
-              <div class="speaker-affiliation mb-4">Managing Director of HTA Ltd.</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['slaveyko']" @click="toggleBio('slaveyko')">
-                {{ expandedBios['slaveyko'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Founder and Managing Director | HTA Ltd.</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['slaveyko'])" :active="expandedBios['slaveyko']"
+                @click="toggleBio('slaveyko')">
+                {{ expandedBios['slaveyko'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -701,11 +709,11 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Prof. Anđelija Malenović, Serbia</div>
-              <div class="speaker-affiliation mb-4">Department of Drug Analytics, Faculty of Pharmacy, University of
-                Belgrade</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['andzelija']" @click="toggleBio('andzelija')">
-                {{ expandedBios['andzelija'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Faculty of Pharmacy, University of Belgrade</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['andzelija'])" :active="expandedBios['andzelija']"
+                @click="toggleBio('andzelija')">
+                {{ expandedBios['andzelija'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -744,10 +752,13 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Dr Eric Deconinck, Belgium</div>
-              <div class="speaker-affiliation mb-4">Official Medicine Control Laboratory, Sciensano</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['eric']" @click="toggleBio('eric')">
-                {{ expandedBios['eric'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Head of Scientific Service Medicines and Health Products,
+                Sciensano
+              </div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['eric'])" :active="expandedBios['eric']"
+                @click="toggleBio('eric')">
+                {{ expandedBios['eric'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -786,11 +797,12 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Anita Hogg, Northern Ireland</div>
-              <div class="speaker-affiliation mb-4">Lead for Medicines Optimisation Resource Efficiency, Medicines
-                Optimisation Innovation Centre (MOIC) Northern Health and Social Care Trust (NHSCT)</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['anita']" @click="toggleBio('anita')">
-                {{ expandedBios['anita'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Medicines Optimisation Innovation Centre (MOIC) Northern Health and
+                Social Care Trust</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['anita'])" :active="expandedBios['anita']"
+                @click="toggleBio('anita')">
+                {{ expandedBios['anita'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -819,12 +831,12 @@ const toggleBio = (id) => {
               </v-avatar>
             </v-col>
             <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Assoc. Prof. Maja Ortner Hadziabdic, Croatia</div>
-              <div class="speaker-affiliation mb-4">Centre of Applied Pharmacy, Faculty of Pharmacy and Biochemistry,
-                University of Zagreb</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['maja']" @click="toggleBio('maja')">
-                {{ expandedBios['maja'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-name font-weight-bold mb-1">Assoc. Prof. Maja Ortner Hadžiabdić, Croatia</div>
+              <div class="speaker-affiliation mb-4">Faculty of Pharmacy and Biochemistry, University of Zagreb</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['maja'])" :active="expandedBios['maja']"
+                @click="toggleBio('maja')">
+                {{ expandedBios['maja'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -869,12 +881,13 @@ const toggleBio = (id) => {
               </v-avatar>
             </v-col>
             <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Prof. Dusan Misic, Poland</div>
-              <div class="speaker-affiliation mb-4">Department of Functional Food Products Development, Faculty of
-                Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['dusan']" @click="toggleBio('dusan')">
-                {{ expandedBios['dusan'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-name font-weight-bold mb-1">Prof. Dušan Mišić, Poland</div>
+              <div class="speaker-affiliation mb-4">Faculty of Biotechnology and Food Science, Wrocław University of
+                Environmental and Life Sciences</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['dusan'])" :active="expandedBios['dusan']"
+                @click="toggleBio('dusan')">
+                {{ expandedBios['dusan'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -904,12 +917,13 @@ const toggleBio = (id) => {
               </v-avatar>
             </v-col>
             <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Assoc. Prof. Marijana Curcic, Serbia</div>
-              <div class="speaker-affiliation mb-4">Department of Toxicology "Akademik Danilo Soldatovic", Centre for
-                Toxicological Risk Assessment, University of Belgrade</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['marijana']" @click="toggleBio('marijana')">
-                {{ expandedBios['marijana'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-name font-weight-bold mb-1">Assoc. Prof. Marijana Ćurčić, Serbia</div>
+              <div class="speaker-affiliation mb-4">Centre for Toxicological Risk Assessment, University of Belgrade
+              </div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['marijana'])" :active="expandedBios['marijana']"
+                @click="toggleBio('marijana')">
+                {{ expandedBios['marijana'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -951,11 +965,12 @@ const toggleBio = (id) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Dr. Danijela Mišić, Serbia</div>
-              <div class="speaker-affiliation mb-4">Department of Plant Physiology, Institute for Biological Research
-                "Siniša Stanković"- National Institute of the Republic of Serbia, University of Belgrade</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none" append-icon="mdi-chevron-down"
-                :active="expandedBios['danijela']" @click="toggleBio('danijela')">
-                {{ expandedBios['danijela'] ? 'Hide Biography' : 'Read Biography' }}
+              <div class="speaker-affiliation mb-4">Institute for Biological Research "Siniša Stanković"- National
+                Institute of the Republic of Serbia, University of Belgrade</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['danijela'])" :active="expandedBios['danijela']"
+                @click="toggleBio('danijela')">
+                {{ expandedBios['danijela'] ? 'Short Biography' : 'Short Biography' }}
               </v-btn>
 
               <v-expand-transition>
@@ -986,10 +1001,6 @@ const toggleBio = (id) => {
           <div class="speaker-affiliation ml-4 italic text-grey-darken-1">The names will be announced shortly</div>
         </div>
 
-        <div class="session-group">
-          <div class="session-name mb-4">Session: Student Section</div>
-          <div class="speaker-affiliation ml-4 italic text-grey-darken-1">The names will be announced shortly</div>
-        </div>
       </base-card>
     </base-container>
   </div>
