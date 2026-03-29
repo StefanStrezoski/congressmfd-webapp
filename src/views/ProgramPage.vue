@@ -154,6 +154,7 @@ const expandIcon = (isExpanded) => {
         <!-- Thursday -->
         <base-card class="mb-5">
           <h3 class="program-date mb-2">Thursday, October 1st, 2026</h3>
+          <div class="hall-info mb-1"><b>HOTEL METROPOL</b></div>
           <v-list density="compact" class="program-list">
             <v-list-item>
               <div class="d-flex">
@@ -166,17 +167,20 @@ const expandIcon = (isExpanded) => {
           <v-list density="compact" class="program-list">
             <v-list-item>
               <div class="d-flex">
-                <span class="time-col">17:00 – 20:00</span>
-                <span>
-                  Opening ceremony and welcome address<br />
-                  Plenary session
-                </span>
+                <span class="time-col">17:00 – 18:00</span>
+                <span>Opening ceremony</span>
               </div>
             </v-list-item>
             <v-list-item>
               <div class="d-flex">
-                <span class="time-col">21:00</span>
-                <span>Welcome Reception</span>
+                <span class="time-col">18:00 – 19:30</span>
+                <span>Plenary session</span>
+              </div>
+            </v-list-item>
+            <v-list-item>
+              <div class="d-flex">
+                <span class="time-col">19:30 – 20:00</span>
+                <span>Discussion</span>
               </div>
             </v-list-item>
           </v-list>
@@ -187,18 +191,35 @@ const expandIcon = (isExpanded) => {
           <h3 class="program-date mb-2">Friday, October 2nd, 2026</h3>
           <v-row>
             <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Hall Car Samoil (Hall 2)</b></div>
+              <div class="hall-info mb-1"><b>Hall Biljana (Hall 1)</b></div>
               <v-list density="compact" class="program-list">
                 <v-list-item>
                   <div class="d-flex">
-                    <span class="time-col">9:30 – 12:30</span>
-                    <span>Session: Pharmaceutical Technology and Biotechnology / Biopharmaceutics / Cosmetology</span>
+                    <span class="time-col">9:00 – 12:00</span>
+                    <span>Session: Pharmaceutical Chemistry / Biomolecular Sciences</span>
                   </div>
                 </v-list-item>
                 <v-list-item>
                   <div class="d-flex">
-                    <span class="time-col">16:00 – 18:00</span>
-                    <span>Workshops and interactive sessions</span>
+                    <span class="time-col">12:00 – 12:30</span>
+                    <span>Break</span>
+                  </div>
+                </v-list-item>
+              </v-list>
+            </v-col>
+            <v-col cols="12" md="6">
+              <div class="hall-info mb-1"><b>Hall Car Samoil (Hall 2)</b></div>
+              <v-list density="compact" class="program-list">
+                <v-list-item>
+                  <div class="d-flex">
+                    <span class="time-col">9:00 – 12:00</span>
+                    <span>Session: Pharmaceutical Technology / Biotechnology / Biopharmacy and Cosmetology</span>
+                  </div>
+                </v-list-item>
+                <v-list-item>
+                  <div class="d-flex">
+                    <span class="time-col">16:00 – 19:00</span>
+                    <span>Student Session</span>
                   </div>
                 </v-list-item>
               </v-list>
@@ -208,36 +229,8 @@ const expandIcon = (isExpanded) => {
               <v-list density="compact" class="program-list">
                 <v-list-item>
                   <div class="d-flex">
-                    <span class="time-col">9:30 – 12:30</span>
-                    <span>Session: Pharmaceutical Chemistry / Biomolecular Sciences</span>
-                  </div>
-                </v-list-item>
-              </v-list>
-            </v-col>
-            <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Hall Kaneo (Hall 4)</b></div>
-              <v-list density="compact" class="program-list">
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">9:30 – 12:30</span>
+                    <span class="time-col">9:00 – 12:00</span>
                     <span>Session: Social Pharmacy / Pharmaceutical Law</span>
-                  </div>
-                </v-list-item>
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">16:00 – 18:00</span>
-                    <span>Workshops and interactive sessions</span>
-                  </div>
-                </v-list-item>
-              </v-list>
-            </v-col>
-            <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Business Hall</b></div>
-              <v-list density="compact" class="program-list">
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">12:30 – 14:30</span>
-                    <span>Poster sessions/Exhibition</span>
                   </div>
                 </v-list-item>
               </v-list>
@@ -250,57 +243,35 @@ const expandIcon = (isExpanded) => {
           <h3 class="program-date mb-2">Saturday, October 3rd, 2026</h3>
           <v-row>
             <v-col cols="12" md="6">
+              <div class="hall-info mb-1"><b>Hall Biljana (Hall 1)</b></div>
+              <v-list density="compact" class="program-list">
+                <v-list-item>
+                  <div class="d-flex">
+                    <span class="time-col">9:00 – 12:00</span>
+                    <span>Session: Pharmaceutical analysis / Quality Assurance / Pharmaceutical Legislation</span>
+                  </div>
+                </v-list-item>
+                <v-list-item>
+                  <div class="d-flex">
+                    <span class="time-col">12:00 – 12:15</span>
+                    <span>Break</span>
+                  </div>
+                </v-list-item>
+              </v-list>
+            </v-col>
+            <v-col cols="12" md="6">
               <div class="hall-info mb-1"><b>Hall Car Samoil (Hall 2)</b></div>
               <v-list density="compact" class="program-list">
                 <v-list-item>
                   <div class="d-flex">
-                    <span class="time-col">9:30 – 12:30</span>
-                    <span>Session: Pharmaceutical Analysis / Quality Assurance / Pharmaceutical Legislation</span>
-                  </div>
-                </v-list-item>
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">16:00 – 18:00</span>
-                    <span>Student Session</span>
-                  </div>
-                </v-list-item>
-              </v-list>
-            </v-col>
-            <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Hall Ohrid (Hall 3)</b></div>
-              <v-list density="compact" class="program-list">
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">9:30 – 12:30</span>
-                    <span>Session: Community and Clinical Pharmacy</span>
-                  </div>
-                </v-list-item>
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">16:00 – 18:00</span>
-                    <span>Workshops and interactive sessions</span>
-                  </div>
-                </v-list-item>
-              </v-list>
-            </v-col>
-            <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Hall Kaneo (Hall 4)</b></div>
-              <v-list density="compact" class="program-list">
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">9:30 – 12:30</span>
+                    <span class="time-col">9:00 – 12:00</span>
                     <span>Session: Clinical Biochemistry / Toxicology / Food and Nutrition</span>
                   </div>
                 </v-list-item>
-              </v-list>
-            </v-col>
-            <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Business Hall</b></div>
-              <v-list density="compact" class="program-list">
                 <v-list-item>
                   <div class="d-flex">
-                    <span class="time-col">12:30 – 14:30</span>
-                    <span>Poster sessions/Exhibition</span>
+                    <span class="time-col">14:30 – 17:30</span>
+                    <span>Session: phytotherapy and Natural Products</span>
                   </div>
                 </v-list-item>
               </v-list>
@@ -313,39 +284,29 @@ const expandIcon = (isExpanded) => {
           <h3 class="program-date mb-2">Sunday, October 4th, 2026</h3>
           <v-row>
             <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Hall Car Samoil (Hall 2)</b></div>
+              <div class="hall-info mb-1"><b>Hall Biljana (Hall 1)</b></div>
               <v-list density="compact" class="program-list">
                 <v-list-item>
                   <div class="d-flex">
-                    <span class="time-col">9:30 – 12:30</span>
-                    <span>Session: Natural Products and Phytotherapy</span>
-                  </div>
-                </v-list-item>
-              </v-list>
-            </v-col>
-            <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Hall Ohrid (Hall 3)</b></div>
-              <v-list density="compact" class="program-list">
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">9:30 – 12:30</span>
-                    <span>Session: Pharmacoeconomics / Drug Information</span>
-                  </div>
-                </v-list-item>
-              </v-list>
-            </v-col>
-            <v-col cols="12" md="6">
-              <div class="hall-info mb-1"><b>Business Hall</b></div>
-              <v-list density="compact" class="program-list">
-                <v-list-item>
-                  <div class="d-flex">
-                    <span class="time-col">12:30 – 14:30</span>
-                    <span>Poster sessions/Exhibition</span>
+                    <span class="time-col">09:00 – 11:30</span>
+                    <span>Session: Pharmacoeconomy / Drug Information</span>
                   </div>
                 </v-list-item>
                 <v-list-item>
                   <div class="d-flex">
-                    <span class="time-col">16:00</span>
+                    <span class="time-col">11:30 – 12:00</span>
+                    <span>Break</span>
+                  </div>
+                </v-list-item>
+                <v-list-item>
+                  <div class="d-flex">
+                    <span class="time-col">13:30 – 16:30</span>
+                    <span>Session: Community Pharmacy and Clinical Pharmacy</span>
+                  </div>
+                </v-list-item>
+                <v-list-item>
+                  <div class="d-flex">
+                    <span class="time-col">16:30 – 17:00</span>
                     <span>Closing ceremony</span>
                   </div>
                 </v-list-item>
@@ -1097,6 +1058,7 @@ const expandIcon = (isExpanded) => {
 .italic {
   font-style: italic;
 }
+
 
 @media (max-width: 768px) {
   .hero-title {
