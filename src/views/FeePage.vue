@@ -15,8 +15,8 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8007';
 
 const route = useRoute();
 const TEST_KEY = 'smfd2026';
-const isUnlocked = route.query.key === TEST_KEY;
-const isTestMode = isUnlocked; // show test package only when unlocked
+const isUnlocked = true;
+const isTestMode = route.query.key === TEST_KEY; // show test package only when unlocked
 
 const { t } = useI18n();
 
