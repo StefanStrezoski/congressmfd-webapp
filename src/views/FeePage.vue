@@ -171,11 +171,6 @@ async function handlePayOnline() {
         hiddenForm.appendChild(input);
       });
 
-      const meta = document.createElement('meta');
-      meta.name = 'referrer';
-      meta.content = 'no-referrer';
-      document.head.appendChild(meta);
-
       document.body.appendChild(hiddenForm);
       hiddenForm.submit();
     }
