@@ -5,11 +5,13 @@ import BaseParagraph from "@/components/BaseParagraph.vue";
 import BannerImage from "@/components/BannerImage.vue";
 import { ref } from "vue";
 import { supabase } from "@/supabase/supabase.js";
+import { v4 as uuidv4 } from "uuid";
 
 const formRef = ref(null);
 const loading = ref(false);
 const message = ref('');
 const success = ref(false);
+const file = ref(null);
 
 const formData = ref({
   abstractTitle: '',
@@ -43,6 +45,10 @@ const presentationTypes = [
   'E-poster presentation'
 ];
 
+const fileRule = [
+  () => formData.value.category !== 'Student Section' || !!file.value || 'You must upload a document.',
+];
+
 const rules = {
   required: value => !!value || 'Required.',
   email: value => {
@@ -70,6 +76,32 @@ async function handleSubmit() {
       return;
     }
 
+    let fileName = null;
+
+    if (formData.value.category === 'Student Section') {
+      if (!file.value) {
+        message.value = 'You must upload a document.';
+        loading.value = false;
+        return;
+      }
+
+      const fileExtension = file.value.name.match(/\.[^.]+$/)[0].toLowerCase();
+      fileName = `congressmfd-documents/${Date.now()}_${uuidv4()}${fileExtension}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from('projects')
+        .upload(fileName, file.value);
+
+      if (uploadError) {
+        message.value = `File upload failed: ${uploadError.message}`;
+        loading.value = false;
+        return;
+      }
+
+    }
+
+
+
     const { error: dbError } = await supabase.from('abstract_submissions_congressmfd').insert({
       name: `${formData.value.firstName} ${formData.value.lastName}`,
       email: formData.value.email,
@@ -79,7 +111,8 @@ async function handleSubmit() {
       category: formData.value.category,
       presentation_type: formData.value.presentationType,
       abstract_title: formData.value.abstractTitle,
-      consent: formData.value.consent
+      consent: formData.value.consent,
+      file_name: fileName,
     });
 
     if (dbError) {
@@ -325,6 +358,12 @@ async function handleSubmit() {
               </v-select>
             </v-col>
 
+            <v-col cols="12" md="12">
+              <v-file-input v-if="formData.category === 'Student Section'" v-model="file" label="Upload Document"
+                accept="image/jpeg,image/png,image/heic" :rules="fileRule" variant="outlined" density="comfortable"
+                show-size />
+            </v-col>
+
             <v-col cols="12">
               <v-select v-model="formData.presentationType" :items="presentationTypes" variant="outlined"
                 density="comfortable" :rules="[rules.required]" required>
@@ -335,9 +374,12 @@ async function handleSubmit() {
             </v-col>
 
             <v-col cols="12">
-              <p class="mb-4 text-md-body-1">
-                Attach your PAPER in .doc or docx (Word) format.
+              <p class="text-md-body-1">
+                Attach your PAPER using the following link:
                 <a href="mailto:8CPM.secretary@ff.ukim.edu.mk" class="submission-link">LINK</a>
+              </p>
+              <p class="mb-4 text-md-body-1">If the link doesn't work copy this e-mail address:
+                <b class="text-orange">8CPM.secretary@ff.ukim.edu.mk</b>
               </p>
               <p class="mb-2 text-md-body-1">Statement of Consent for Publication:<span class="text-orange">*</span></p>
               <v-radio-group v-model="formData.consent" :rules="[rules.required]" required>
