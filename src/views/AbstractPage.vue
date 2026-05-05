@@ -359,9 +359,9 @@ async function handleSubmit() {
             </v-col>
 
             <v-col cols="12" md="12">
-              <v-file-input v-if="formData.category === 'Student Section'" v-model="file" label="Upload Document"
-                accept="image/jpeg,image/png,image/heic" :rules="fileRule" variant="outlined" density="comfortable"
-                show-size />
+              <v-file-input v-if="formData.category === 'Student Section'" v-model="file"
+                label="Upload Document (.doc .docx)" accept=".doc,.docx" :rules="fileRule" variant="outlined"
+                density="comfortable" show-size />
             </v-col>
 
             <v-col cols="12">
