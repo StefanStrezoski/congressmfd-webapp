@@ -359,8 +359,8 @@ async function handleSubmit() {
             </v-col>
 
             <v-col cols="12" md="12">
-              <v-file-input v-if="formData.category === 'Student Section'" v-model="file"
-                label="Upload Document (.doc .docx)" accept=".doc,.docx" :rules="fileRule" variant="outlined"
+              <v-file-input v-if="formData.category === 'Student Section'" v-model="file" label="Upload Document"
+                accept="image/jpeg,image/png,image/heic,.doc,.docx,.pdf" :rules="fileRule" variant="outlined"
                 density="comfortable" show-size />
             </v-col>
 
@@ -375,7 +375,7 @@ async function handleSubmit() {
 
             <v-col cols="12">
               <p class="text-md-body-1">
-                Attach your PAPER using the following link:
+                Attach your PAPER in .doc or docx (Word) format.
                 <a href="mailto:8CPM.secretary@ff.ukim.edu.mk" class="submission-link">LINK</a>
               </p>
               <p class="mb-4 text-md-body-1">If the link doesn't work copy this e-mail address:
