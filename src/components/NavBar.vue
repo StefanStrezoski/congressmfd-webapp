@@ -70,7 +70,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from "vue-router";
-import logo from '@/assets/logoheader.png'
+import logo from '@/assets/logoheader.webp'
 import { useDisplay } from "vuetify/lib/composables/index.js";
 import CountdownTimer from './CountdownTimer.vue';
 

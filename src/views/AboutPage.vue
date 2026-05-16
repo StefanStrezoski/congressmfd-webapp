@@ -2,7 +2,7 @@
 
 import BaseContainer from "@/components/BaseContainer.vue";
 import desktopImg from "@/assets/Maticni lekari Za Nastanot.jpg"
-import { onMounted, onUnmounted, ref } from "vue";
+import { ref } from "vue";
 
 const currentImage = ref(desktopImg);
 

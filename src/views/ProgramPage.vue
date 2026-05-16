@@ -3,24 +3,25 @@ import { ref } from 'vue';
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import homeimg from "@/assets/dates.png";
+import homeimg from "@/assets/dates.webp";
 
 // Import Lecturer Images
-import zanetaImg from "@/assets/ZanetaNikolovskaColeska.jpg";
-import marioImg from "@/assets/MarioJug.jpg";
-import ritaImg from "@/assets/RitaAmbrus.png";
-import dusanImg from "@/assets/DusanMisic.png";
-import marijanaImg from "@/assets/MarijanaCurcic.jpg";
-import anitaImg from "@/assets/AnitaHogg.png";
-import majaImg from "@/assets/MajaOrtnerHadziabdic.jpg";
-import vladimirWImg from "@/assets/VladimirWsol.png";
-import vladimirDImg from "@/assets/VladimirDobricic.jpg";
-import danijelaImg from "@/assets/DanijelaMisic.jpg";
-import simoneImg from "@/assets/SimoneMoser.png";
-import slaveykoImg from "@/assets/SlaveykoDjambazov.jpg";
-import andzelijaImg from "@/assets/AndzelinaMalenovic.png";
-import ericImg from "@/assets/EricDeconinck.jpg";
-import borutImg from "@/assets/BorutBozic.PNG";
+import zanetaImg from "@/assets/ZanetaNikolovskaColeska.webp";
+import marioImg from "@/assets/MarioJug.webp";
+import ritaImg from "@/assets/RitaAmbrus.webp";
+import dusanImg from "@/assets/DusanMisic.webp";
+import marijanaImg from "@/assets/MarijanaCurcic.webp";
+import anitaImg from "@/assets/AnitaHogg.webp";
+import majaImg from "@/assets/MajaOrtnerHadziabdic.webp";
+import vladimirWImg from "@/assets/VladimirWsol.webp";
+import vladimirDImg from "@/assets/VladimirDobricic.webp";
+import danijelaImg from "@/assets/DanijelaMisic.webp";
+import simoneImg from "@/assets/SimoneMoser.webp";
+import slaveykoImg from "@/assets/SlaveykoDjambazov.webp";
+import andzelijaImg from "@/assets/AndzelinaMalenovic.webp";
+import ericImg from "@/assets/EricDeconinck.webp";
+import borutImg from "@/assets/BorutBozic.PNG.webp";
+import bertalanImg from "@/assets/BertalanNemeth.webp";
 
 const expandedBios = ref({});
 
@@ -959,7 +960,41 @@ const expandIcon = (isExpanded) => {
 
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Pharmacoeconomics / Drug Information</div>
-          <div class="speaker-affiliation ml-4 italic text-grey-darken-1">The names will be announced shortly</div>
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="bertalanImg" alt="Bertalan Németh"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Bertalan Németh PhD, Hungary</div>
+              <div class="speaker-affiliation mb-4">Syreon Research Institute</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['bertalan'])" :active="expandedBios['bertalan']"
+                @click="toggleBio('bertalan')">
+                {{ expandedBios['bertalan'] ? 'Short Biography' : 'Short Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['bertalan']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Bertalan Németh PhD graduated from the Corvinus University of Budapest (MSc in Quantitative
+                    economics and Operation research), the Eötvös Loránd University (Pharmaceutical economics and drug
+                    policies), and the Semmelweis University School of PhD Studies. Between 2010 and 2015 he was a
+                    health economist at the Hungarian HTA office. Since August 2015 Bertalan has been a Senior Health
+                    Economist, and since 2019 a Principal Researcher at Syreon Research Institute. Bertalan is the chief
+                    modeller at Syreon, and he is involved in various projects that include modelling, economic
+                    evaluation in health, health technology assessment, and health statistics as well. Bertalan was the
+                    President of the ISPOR Hungary Chapter and was the Chair of the ISPOR CEE Consortium, was
+                    participant in the international EUnetHTA project, the ISPOR HTA Roundtable Europe, and the
+                    scientific committees of multiple domestic and international conferences. Bertalan is currently a
+                    course leader and PhD supervisor at Semmelweis University and is a faculty member of the global
+                    ISPOR short courses as well. Bertalan received the Bernie O’Brien Young Investigator Award in 2025.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </div>
 
       </base-card>

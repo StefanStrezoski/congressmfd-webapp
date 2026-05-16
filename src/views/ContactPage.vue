@@ -2,7 +2,7 @@
 import BaseContainer from "@/components/BaseContainer.vue";
 import SmallCard from "@/components/SmallCard.vue";
 import BannerImage from "@/components/BannerImage.vue";
-import globalnetadv from "@/assets/LogoGNA.png";
+import globalnetadv from "@/assets/LogoGNA.webp";
 </script>
 
 <template>

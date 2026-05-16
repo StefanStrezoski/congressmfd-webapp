@@ -423,8 +423,8 @@ function resetForm() {
             <template v-slot:label>Select Category <span class="text-orange">*</span></template>
           </v-select>
 
-          <v-select v-model="form.presentationType" :items="presentationTypes" variant="outlined"
-            density="comfortable" :rules="[rules.required]">
+          <v-select v-model="form.presentationType" :items="presentationTypes" variant="outlined" density="comfortable"
+            :rules="[rules.required]">
             <template v-slot:label>Preference of presentation type <span class="text-orange">*</span></template>
           </v-select>
 
@@ -436,11 +436,12 @@ function resetForm() {
               </span>
             </div>
             <p class="text-caption mb-2" style="color: #795548;">
-              Attach one or more files in <b>.doc</b>, <b>.docx</b> (Word) or <b>.pdf</b> format — max <b>20 MB</b> per file.
+              Attach one or more files in <b>.doc</b>, <b>.docx</b> (Word) or <b>.pdf</b> format — max <b>20 MB</b> per
+              file.
             </p>
-            <v-file-input v-model="paperFiles" accept=".doc,.docx,application/pdf" multiple chips
-              variant="outlined" density="compact" show-size hide-details="auto"
-              label="Choose file(s)" prepend-icon="mdi-paperclip" :rules="paperFilesRule" />
+            <v-file-input v-model="paperFiles" accept=".doc,.docx,application/pdf" multiple chips variant="outlined"
+              density="compact" show-size hide-details="auto" label="Choose file(s)" prepend-icon="mdi-paperclip"
+              :rules="paperFilesRule" />
             <ul v-if="paperFiles.length" class="mt-3 file-list">
               <li v-for="(f, i) in paperFiles" :key="i" class="text-caption d-flex align-center ga-1">
                 <v-icon size="12" color="green">mdi-check-circle</v-icon>
@@ -461,10 +462,9 @@ function resetForm() {
             <p class="text-caption mb-2" style="color: #1c5a6d;">
               Upload a valid student ID or enrollment certificate (PDF, JPG or PNG — max 20 MB).
             </p>
-            <v-file-input v-model="studentCertificate"
-              accept="image/jpeg,image/png,image/heic,application/pdf"
-              variant="outlined" density="compact" show-size hide-details="auto"
-              label="Choose certificate" prepend-icon="mdi-school" :rules="certificateRule" />
+            <v-file-input v-model="studentCertificate" accept="image/jpeg,image/png,image/heic,application/pdf"
+              variant="outlined" density="compact" show-size hide-details="auto" label="Choose certificate"
+              prepend-icon="mdi-school" :rules="certificateRule" />
             <p v-if="studentCertificate" class="mt-2 text-caption text-green d-flex align-center ga-1">
               <v-icon size="12" color="green">mdi-check-circle</v-icon>
               {{ studentCertificate.name }} ({{ formatBytes(studentCertificate.size) }})
@@ -694,6 +694,7 @@ function resetForm() {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

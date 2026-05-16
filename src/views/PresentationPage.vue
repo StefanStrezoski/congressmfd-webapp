@@ -3,7 +3,7 @@ import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import SmallCard from "@/components/SmallCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import platinumSponsor from "@/assets/alakloid.png";
+import platinumSponsor from "@/assets/alakloid.webp";
 import BannerImage from "@/components/BannerImage.vue";
 </script>
 

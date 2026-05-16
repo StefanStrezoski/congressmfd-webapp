@@ -120,11 +120,11 @@
 import BaseCard from "@/components/BaseCard.vue";
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import oneSignature from "@/assets/potpis1.png";
-import twoSignature from "@/assets/potpis2.png";
-import ffLogo from "@/assets/FFlogo.png";
-import mfdLogo from "@/assets/mfdlogo.png";
-import homeimg from "@/assets/dates.png"
+import oneSignature from "@/assets/potpis1.webp";
+import twoSignature from "@/assets/potpis2.webp";
+import ffLogo from "@/assets/FFlogo.webp";
+import mfdLogo from "@/assets/mfdlogo.webp";
+import homeimg from "@/assets/dates.webp"
 </script>
 
 <style scoped>

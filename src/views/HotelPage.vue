@@ -2,11 +2,11 @@
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import brandLogo from "@/assets/LogoGNA.png";
-import metropolImage from "@/assets/metropol.png";
-import ohrid1 from '@/assets/ohrid1.png';
-import ohrid2 from '@/assets/ohrid2.png';
-import ohrid3 from '@/assets/ohrid3.png';
+import brandLogo from "@/assets/LogoGNA.webp";
+import metropolImage from "@/assets/metropol.webp";
+import ohrid1 from '@/assets/ohrid1.webp';
+import ohrid2 from '@/assets/ohrid2.webp';
+import ohrid3 from '@/assets/ohrid3.webp';
 import BannerImage from '@/components/BannerImage.vue';
 </script>
 
