@@ -288,7 +288,7 @@ async function handlePayOnline() {
                     4
                   </td>
                   <td class="cell-bg border">
-                    E-Poster
+                    &#11088;&#11088;&#11088;E-Poster
                   </td>
                   <td class="cell-bg border">
                     100 €
@@ -310,7 +310,8 @@ async function handlePayOnline() {
         <base-paragraph>
           &#11088;MPA – Macedonian Pharmaceutical Association <br />
           &#11088;&#11088;Students (under and post-graduated) must upload a valid student certificate to qualify for the
-          reduced registration fee.
+          reduced registration fee. <br />
+          &#11088;&#11088;&#11088;E-Poster – those who are not attending the Congress physically, but are willing to publish their research work in the Congress proceedings.
         </base-paragraph>
         <!-- Payment Details -->
         <v-card rounded="xl" class="mt-10 mb-5 pa-1 text-center title-card">
@@ -376,238 +377,239 @@ async function handlePayOnline() {
               <v-icon v-if="step > s.num" size="18">mdi-check-circle</v-icon>
               <v-icon v-else size="18">{{ s.icon }}</v-icon>
             </div>
-            <span class="step-label d-none d-sm-block" :class="{ 'text-primary': step === s.num, 'text-green': step > s.num, 'text-grey': step < s.num }">
+            <span class="step-label d-none d-sm-block"
+              :class="{ 'text-primary': step === s.num, 'text-green': step > s.num, 'text-grey': step < s.num }">
               {{ s.label }}
             </span>
           </div>
-          <v-icon v-if="i < stepsList.length - 1" size="16" :color="step > s.num ? 'green' : 'grey-lighten-1'">mdi-chevron-right</v-icon>
+          <v-icon v-if="i < stepsList.length - 1" size="16"
+            :color="step > s.num ? 'green' : 'grey-lighten-1'">mdi-chevron-right</v-icon>
         </div>
       </div>
 
       <template v-if="isUnlocked">
-      <!-- Step 1: Personal Information -->
-      <small-card v-if="step === 1" class="wizard-step">
-        <h3 class="text-h6 font-weight-bold mb-1">Personal Information</h3>
-        <p class="text-body-2 text-grey mb-6">Please fill in your details below.</p>
-        <v-form ref="formRef">
-          <v-text-field variant="outlined" density="comfortable" v-model="form.name" label="Full Name *"
-            placeholder="e.g. Dr. Ana Petrovska" :rules="validRule" />
-          <v-row>
-            <v-col cols="12" sm="6">
-              <v-text-field variant="outlined" density="comfortable" v-model="form.email" label="Email *"
-                type="email" placeholder="ana@example.com" :rules="validRule" />
-            </v-col>
-            <v-col cols="12" sm="6">
-              <v-text-field variant="outlined" density="comfortable" v-model="form.phone" label="Phone"
-                placeholder="+389 7X XXX XXX" />
-            </v-col>
-          </v-row>
-          <v-text-field variant="outlined" density="comfortable" v-model="form.institution" label="Institution *"
-            placeholder="e.g. Faculty of Pharmacy, UKIM" :rules="validRule" />
-          <v-btn color="primary" block size="large" :disabled="!canProceedStep1" @click="goToStep(2)">
-            Choose Your Package <v-icon end>mdi-arrow-right</v-icon>
-          </v-btn>
-        </v-form>
-      </small-card>
-
-      <!-- Step 2: Package Selection -->
-      <small-card v-if="step === 2" class="wizard-step">
-        <h3 class="text-h6 font-weight-bold mb-1">Choose Your Registration Package</h3>
-        <p class="text-body-2 text-grey mb-2">
-          Current period: <strong class="text-primary">{{ periodLabels[period] }}</strong>
-          <span class="text-grey"> ({{ periodDeadlines[period] }})</span>
-        </p>
-
-        <!-- One Day toggle -->
-        <div class="mb-6 mt-4">
-          <v-switch v-model="form.isOneDay" color="primary" hide-details density="compact">
-            <template #label>
-              <div>
-                <span class="text-body-2 font-weight-medium">One Day Pass</span>
-                <span class="d-block text-caption text-grey">Attend a single day of the congress at a reduced rate</span>
-              </div>
-            </template>
-          </v-switch>
-        </div>
-
-        <!-- Category cards -->
-        <v-row class="mb-6">
-          <v-col v-for="fee in fees" :key="fee.key" cols="12" sm="6">
-            <v-card
-              :class="['category-card', { 'category-card--active': form.category === fee.value }]"
-              @click="form.category = fee.value"
-              variant="outlined"
-              rounded="xl"
-            >
-              <div v-if="form.category === fee.value" class="category-check">
-                <v-icon size="14" color="white">mdi-check-circle</v-icon>
-              </div>
-              <v-card-text class="pa-5">
-                <h4 class="text-subtitle-1 font-weight-bold" :class="form.category === fee.value ? 'text-primary' : ''">
-                  {{ fee.category }}
-                </h4>
-                <p v-if="fee.note" class="text-caption text-grey mt-1">{{ fee.note }}</p>
-                <div class="mt-3 d-flex align-baseline ga-1">
-                  <span class="text-h5 font-weight-black" :class="form.category === fee.value ? 'text-primary' : ''">
-                    {{ form.isOneDay ? fee.oneday : fee[period] }} &euro;
-                  </span>
-                  <span v-if="form.isOneDay && fee[period] !== fee.oneday" class="text-body-2 text-grey text-decoration-line-through ml-2">
-                    {{ fee[period] }} &euro;
-                  </span>
-                </div>
-                <p class="text-caption text-grey mt-1">
-                  {{ form.isOneDay ? 'One Day Pass' : periodLabels[period] }}
-                </p>
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-
-        <!-- Student certificate upload -->
-        <v-card v-if="form.category === 3" class="mb-6 pa-4" color="amber-lighten-5" variant="flat" rounded="lg">
-          <div class="d-flex align-center ga-1 mb-2">
-            <v-icon size="14" color="amber-darken-3">mdi-upload</v-icon>
-            <span class="text-body-2 font-weight-medium" style="color: #795548;">Student Certificate Required *</span>
-          </div>
-          <p class="text-caption mb-2" style="color: #795548;">Upload a valid student ID or enrollment certificate (PDF, JPG, PNG - max 5MB)</p>
-          <v-file-input v-model="file" accept="image/jpeg,image/png,image/heic,application/pdf"
-            variant="outlined" density="compact" show-size hide-details
-            label="Choose file" />
-          <p v-if="file" class="mt-2 text-caption text-green d-flex align-center ga-1">
-            <v-icon size="12" color="green">mdi-check-circle</v-icon> {{ file.name }}
-          </p>
-        </v-card>
-
-        <!-- Navigation -->
-        <div class="d-flex ga-3">
-          <v-btn variant="outlined" size="large" @click="goToStep(1)">
-            <v-icon start>mdi-arrow-left</v-icon> Back
-          </v-btn>
-          <v-btn color="primary" size="large" class="flex-grow-1" :disabled="!canProceedStep2" @click="goToStep(3)">
-            Review & Pay <v-icon end>mdi-arrow-right</v-icon>
-          </v-btn>
-        </div>
-      </small-card>
-
-      <!-- Step 3: Review & Pay -->
-      <div v-if="step === 3 && !success">
-        <!-- Order Summary -->
-        <small-card class="wizard-step mb-4">
-          <div class="summary-header pa-4 mb-4">
-            <h3 class="text-h6 font-weight-bold d-flex align-center ga-2">
-              <v-icon color="primary">mdi-file-check</v-icon> Registration Summary
-            </h3>
-          </div>
-          <v-row class="text-body-2 mb-4">
-            <v-col cols="12" sm="6">
-              <span class="text-grey">Name:</span>
-              <span class="ml-2 font-weight-medium">{{ form.name }}</span>
-            </v-col>
-            <v-col cols="12" sm="6">
-              <span class="text-grey">Email:</span>
-              <span class="ml-2 font-weight-medium">{{ form.email }}</span>
-            </v-col>
-            <v-col v-if="form.phone" cols="12" sm="6">
-              <span class="text-grey">Phone:</span>
-              <span class="ml-2 font-weight-medium">{{ form.phone }}</span>
-            </v-col>
-            <v-col cols="12" sm="6">
-              <span class="text-grey">Institution:</span>
-              <span class="ml-2 font-weight-medium">{{ form.institution }}</span>
-            </v-col>
-          </v-row>
-          <v-divider class="mb-4" />
-          <div class="d-flex align-center justify-space-between">
-            <div>
-              <p class="font-weight-bold">{{ selectedFee?.category }}</p>
-              <p class="text-body-2 text-grey">
-                {{ form.isOneDay ? 'One Day Pass' : periodLabels[period] }}
-                <span v-if="form.category === 3 && file" class="ml-2 text-green text-caption">
-                  <v-icon size="11" color="green">mdi-check-circle</v-icon> Certificate attached
-                </span>
-              </p>
-            </div>
-            <span class="text-h4 font-weight-black text-primary">{{ price }} &euro;</span>
-          </div>
+        <!-- Step 1: Personal Information -->
+        <small-card v-if="step === 1" class="wizard-step">
+          <h3 class="text-h6 font-weight-bold mb-1">Personal Information</h3>
+          <p class="text-body-2 text-grey mb-6">Please fill in your details below.</p>
+          <v-form ref="formRef">
+            <v-text-field variant="outlined" density="comfortable" v-model="form.name" label="Full Name *"
+              placeholder="e.g. Dr. Ana Petrovska" :rules="validRule" />
+            <v-row>
+              <v-col cols="12" sm="6">
+                <v-text-field variant="outlined" density="comfortable" v-model="form.email" label="Email *" type="email"
+                  placeholder="ana@example.com" :rules="validRule" />
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-text-field variant="outlined" density="comfortable" v-model="form.phone" label="Phone"
+                  placeholder="+389 7X XXX XXX" />
+              </v-col>
+            </v-row>
+            <v-text-field variant="outlined" density="comfortable" v-model="form.institution" label="Institution *"
+              placeholder="e.g. Faculty of Pharmacy, UKIM" :rules="validRule" />
+            <v-btn color="primary" block size="large" :disabled="!canProceedStep1" @click="goToStep(2)">
+              Choose Your Package <v-icon end>mdi-arrow-right</v-icon>
+            </v-btn>
+          </v-form>
         </small-card>
 
-        <!-- Payment notice -->
-        <v-alert type="info" variant="tonal" class="mb-4" border="start">
-          After submitting your registration, your details will be saved. Please complete payment via bank transfer or online payment to confirm your registration.
-        </v-alert>
+        <!-- Step 2: Package Selection -->
+        <small-card v-if="step === 2" class="wizard-step">
+          <h3 class="text-h6 font-weight-bold mb-1">Choose Your Registration Package</h3>
+          <p class="text-body-2 text-grey mb-2">
+            Current period: <strong class="text-primary">{{ periodLabels[period] }}</strong>
+            <span class="text-grey"> ({{ periodDeadlines[period] }})</span>
+          </p>
 
-        <!-- Actions -->
-        <div class="d-flex ga-3">
-          <v-btn variant="outlined" size="large" @click="goToStep(2)">
-            <v-icon start>mdi-arrow-left</v-icon> Back
-          </v-btn>
-          <v-btn color="orange-darken-2" size="large" class="flex-grow-1 text-white" :loading="loading" @click="handleSubmit">
-            <v-icon start>mdi-credit-card</v-icon>
-            Register & Pay {{ price }} &euro;
-          </v-btn>
-        </div>
-      </div>
+          <!-- One Day toggle -->
+          <div class="mb-6 mt-4">
+            <v-switch v-model="form.isOneDay" color="primary" hide-details density="compact">
+              <template #label>
+                <div>
+                  <span class="text-body-2 font-weight-medium">One Day Pass</span>
+                  <span class="d-block text-caption text-grey">Attend a single day of the congress at a reduced
+                    rate</span>
+                </div>
+              </template>
+            </v-switch>
+          </div>
 
-      <!-- Result after submission -->
-      <div v-if="step === 3 && success">
-        <v-alert type="success" variant="tonal" border="start" class="mb-4" prominent>
-          <div>
-            <h3 class="text-h6 font-weight-bold text-green-darken-2">Registration Submitted!</h3>
-            <p class="mt-1 text-body-2 text-green-darken-1">{{ message }}</p>
-            <p class="mt-3 text-body-2 text-green-darken-1">
-              Click below to proceed to the secure payment page to complete your payment.
+          <!-- Category cards -->
+          <v-row class="mb-6">
+            <v-col v-for="fee in fees" :key="fee.key" cols="12" sm="6">
+              <v-card :class="['category-card', { 'category-card--active': form.category === fee.value }]"
+                @click="form.category = fee.value" variant="outlined" rounded="xl">
+                <div v-if="form.category === fee.value" class="category-check">
+                  <v-icon size="14" color="white">mdi-check-circle</v-icon>
+                </div>
+                <v-card-text class="pa-5">
+                  <h4 class="text-subtitle-1 font-weight-bold"
+                    :class="form.category === fee.value ? 'text-primary' : ''">
+                    {{ fee.category }}
+                  </h4>
+                  <p v-if="fee.note" class="text-caption text-grey mt-1">{{ fee.note }}</p>
+                  <div class="mt-3 d-flex align-baseline ga-1">
+                    <span class="text-h5 font-weight-black" :class="form.category === fee.value ? 'text-primary' : ''">
+                      {{ form.isOneDay ? fee.oneday : fee[period] }} &euro;
+                    </span>
+                    <span v-if="form.isOneDay && fee[period] !== fee.oneday"
+                      class="text-body-2 text-grey text-decoration-line-through ml-2">
+                      {{ fee[period] }} &euro;
+                    </span>
+                  </div>
+                  <p class="text-caption text-grey mt-1">
+                    {{ form.isOneDay ? 'One Day Pass' : periodLabels[period] }}
+                  </p>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+
+          <!-- Student certificate upload -->
+          <v-card v-if="form.category === 3" class="mb-6 pa-4" color="amber-lighten-5" variant="flat" rounded="lg">
+            <div class="d-flex align-center ga-1 mb-2">
+              <v-icon size="14" color="amber-darken-3">mdi-upload</v-icon>
+              <span class="text-body-2 font-weight-medium" style="color: #795548;">Student Certificate Required *</span>
+            </div>
+            <p class="text-caption mb-2" style="color: #795548;">Upload a valid student ID or enrollment certificate
+              (PDF, JPG,
+              PNG - max 5MB)</p>
+            <v-file-input v-model="file" accept="image/jpeg,image/png,image/heic,application/pdf" variant="outlined"
+              density="compact" show-size hide-details label="Choose file" />
+            <p v-if="file" class="mt-2 text-caption text-green d-flex align-center ga-1">
+              <v-icon size="12" color="green">mdi-check-circle</v-icon> {{ file.name }}
             </p>
-            <v-btn
-              color="orange-darken-2"
-              class="mt-4 text-white"
-              size="large"
-              :loading="paymentLoading"
-              @click="handlePayOnline"
-            >
-              <v-icon start>mdi-credit-card</v-icon>
-              {{ paymentLoading ? 'Redirecting to payment...' : `Proceed to Payment — ${price} €` }}
+          </v-card>
+
+          <!-- Navigation -->
+          <div class="d-flex ga-3">
+            <v-btn variant="outlined" size="large" @click="goToStep(1)">
+              <v-icon start>mdi-arrow-left</v-icon> Back
+            </v-btn>
+            <v-btn color="primary" size="large" class="flex-grow-1" :disabled="!canProceedStep2" @click="goToStep(3)">
+              Review & Pay <v-icon end>mdi-arrow-right</v-icon>
             </v-btn>
           </div>
-        </v-alert>
-
-        <!-- Bank transfer alternative -->
-        <small-card>
-          <p class="text-body-2 text-grey mb-4 d-flex align-center ga-2">
-            <v-icon size="14">mdi-information</v-icon> Alternatively, you can pay via bank transfer:
-          </p>
-          <v-row>
-            <v-col cols="12" sm="6">
-              <v-card variant="flat" color="grey-lighten-4" rounded="lg" class="pa-3">
-                <div class="d-flex align-center ga-2 mb-2">
-                  <v-icon size="16" color="primary">mdi-bank</v-icon>
-                  <span class="font-weight-bold">EUR Transfer</span>
-                </div>
-                <p class="text-body-2 text-grey">Komercijalna banka</p>
-                <p class="text-caption font-weight-medium mt-1">IBAN: MK07300701001813673</p>
-              </v-card>
-            </v-col>
-            <v-col cols="12" sm="6">
-              <v-card variant="flat" color="grey-lighten-4" rounded="lg" class="pa-3">
-                <div class="d-flex align-center ga-2 mb-2">
-                  <v-icon size="16" color="primary">mdi-bank</v-icon>
-                  <span class="font-weight-bold">MKD Transfer</span>
-                </div>
-                <p class="text-body-2 text-grey">Komercijalna banka</p>
-                <p class="text-caption font-weight-medium mt-1">Acc: 300000004297621</p>
-              </v-card>
-            </v-col>
-          </v-row>
         </small-card>
-      </div>
 
-      <!-- Error result -->
-      <v-alert v-if="step === 3 && message && !success" type="error" variant="tonal" border="start" class="mt-4" prominent>
-        <div>
-          <h3 class="text-h6 font-weight-bold text-red-darken-2">Registration Failed</h3>
-          <p class="mt-1 text-body-2 text-red-darken-1">{{ message }}</p>
-          <v-btn color="primary" class="mt-3" size="small" @click="message = ''">Try Again</v-btn>
+        <!-- Step 3: Review & Pay -->
+        <div v-if="step === 3 && !success">
+          <!-- Order Summary -->
+          <small-card class="wizard-step mb-4">
+            <div class="summary-header pa-4 mb-4">
+              <h3 class="text-h6 font-weight-bold d-flex align-center ga-2">
+                <v-icon color="primary">mdi-file-check</v-icon> Registration Summary
+              </h3>
+            </div>
+            <v-row class="text-body-2 mb-4">
+              <v-col cols="12" sm="6">
+                <span class="text-grey">Name:</span>
+                <span class="ml-2 font-weight-medium">{{ form.name }}</span>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <span class="text-grey">Email:</span>
+                <span class="ml-2 font-weight-medium">{{ form.email }}</span>
+              </v-col>
+              <v-col v-if="form.phone" cols="12" sm="6">
+                <span class="text-grey">Phone:</span>
+                <span class="ml-2 font-weight-medium">{{ form.phone }}</span>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <span class="text-grey">Institution:</span>
+                <span class="ml-2 font-weight-medium">{{ form.institution }}</span>
+              </v-col>
+            </v-row>
+            <v-divider class="mb-4" />
+            <div class="d-flex align-center justify-space-between">
+              <div>
+                <p class="font-weight-bold">{{ selectedFee?.category }}</p>
+                <p class="text-body-2 text-grey">
+                  {{ form.isOneDay ? 'One Day Pass' : periodLabels[period] }}
+                  <span v-if="form.category === 3 && file" class="ml-2 text-green text-caption">
+                    <v-icon size="11" color="green">mdi-check-circle</v-icon> Certificate attached
+                  </span>
+                </p>
+              </div>
+              <span class="text-h4 font-weight-black text-primary">{{ price }} &euro;</span>
+            </div>
+          </small-card>
+
+          <!-- Payment notice -->
+          <v-alert type="info" variant="tonal" class="mb-4" border="start">
+            After submitting your registration, your details will be saved. Please complete payment via bank transfer or
+            online
+            payment to confirm your registration.
+          </v-alert>
+
+          <!-- Actions -->
+          <div class="d-flex ga-3">
+            <v-btn variant="outlined" size="large" @click="goToStep(2)">
+              <v-icon start>mdi-arrow-left</v-icon> Back
+            </v-btn>
+            <v-btn color="orange-darken-2" size="large" class="flex-grow-1 text-white" :loading="loading"
+              @click="handleSubmit">
+              <v-icon start>mdi-credit-card</v-icon>
+              Register & Pay {{ price }} &euro;
+            </v-btn>
+          </div>
         </div>
-      </v-alert>
+
+        <!-- Result after submission -->
+        <div v-if="step === 3 && success">
+          <v-alert type="success" variant="tonal" border="start" class="mb-4" prominent>
+            <div>
+              <h3 class="text-h6 font-weight-bold text-green-darken-2">Registration Submitted!</h3>
+              <p class="mt-1 text-body-2 text-green-darken-1">{{ message }}</p>
+              <p class="mt-3 text-body-2 text-green-darken-1">
+                Click below to proceed to the secure payment page to complete your payment.
+              </p>
+              <v-btn color="orange-darken-2" class="mt-4 text-white" size="large" :loading="paymentLoading"
+                @click="handlePayOnline">
+                <v-icon start>mdi-credit-card</v-icon>
+                {{ paymentLoading ? 'Redirecting to payment...' : `Proceed to Payment — ${price} €` }}
+              </v-btn>
+            </div>
+          </v-alert>
+
+          <!-- Bank transfer alternative -->
+          <small-card>
+            <p class="text-body-2 text-grey mb-4 d-flex align-center ga-2">
+              <v-icon size="14">mdi-information</v-icon> Alternatively, you can pay via bank transfer:
+            </p>
+            <v-row>
+              <v-col cols="12" sm="6">
+                <v-card variant="flat" color="grey-lighten-4" rounded="lg" class="pa-3">
+                  <div class="d-flex align-center ga-2 mb-2">
+                    <v-icon size="16" color="primary">mdi-bank</v-icon>
+                    <span class="font-weight-bold">EUR Transfer</span>
+                  </div>
+                  <p class="text-body-2 text-grey">Komercijalna banka</p>
+                  <p class="text-caption font-weight-medium mt-1">IBAN: MK07300701001813673</p>
+                </v-card>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-card variant="flat" color="grey-lighten-4" rounded="lg" class="pa-3">
+                  <div class="d-flex align-center ga-2 mb-2">
+                    <v-icon size="16" color="primary">mdi-bank</v-icon>
+                    <span class="font-weight-bold">MKD Transfer</span>
+                  </div>
+                  <p class="text-body-2 text-grey">Komercijalna banka</p>
+                  <p class="text-caption font-weight-medium mt-1">Acc: 300000004297621</p>
+                </v-card>
+              </v-col>
+            </v-row>
+          </small-card>
+        </div>
+
+        <!-- Error result -->
+        <v-alert v-if="step === 3 && message && !success" type="error" variant="tonal" border="start" class="mt-4"
+          prominent>
+          <div>
+            <h3 class="text-h6 font-weight-bold text-red-darken-2">Registration Failed</h3>
+            <p class="mt-1 text-body-2 text-red-darken-1">{{ message }}</p>
+            <v-btn color="primary" class="mt-3" size="small" @click="message = ''">Try Again</v-btn>
+          </div>
+        </v-alert>
       </template>
     </base-container>
   </div>
@@ -729,6 +731,7 @@ async function handlePayOnline() {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

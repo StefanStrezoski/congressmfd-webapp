@@ -22,6 +22,7 @@ import andzelijaImg from "@/assets/AndzelinaMalenovic.webp";
 import ericImg from "@/assets/EricDeconinck.webp";
 import borutImg from "@/assets/BorutBozic.PNG.webp";
 import bertalanImg from "@/assets/BertalanNemeth.webp";
+import teaImg from "@/assets/TeaPemovska.webp";
 
 const expandedBios = ref({});
 
@@ -604,6 +605,45 @@ const expandIcon = (isExpanded) => {
                     participated in several national and international research projects. He authored over 60
                     publications in international journals (h-index 19), has presented more than 100 communications at
                     scientific conferences, and has served as a reviewer for numerous scientific journals.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+
+          <v-row class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="teaImg" alt="Dr Tea Pemovska"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Dr Tea Pemovska, Austria</div>
+              <div class="speaker-affiliation mb-2">Medical University of Vienna</div>
+              <div class="speaker-affiliation mb-4">
+                Beyond Genomics: Functional Precision Medicine for Real-World Therapeutic Decisions
+              </div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['tea'])" :active="expandedBios['tea']" @click="toggleBio('tea')">
+                {{ expandedBios['tea'] ? 'Short Biography' : 'Short Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['tea']" class="mt-4 bio-content">
+                  <p class="mb-3">
+                    Dr. Tea Pemovska is a translational cancer systems biologist specializing in functional precision
+                    medicine, with expertise in drug screening assays and analytical pipelines for hematological
+                    malignancies. She obtained her PhD in Personalized Cancer Medicine / Chemical Systems Biology from
+                    the University of Helsinki and completed postdoctoral training at the CeMM Research Center for
+                    Molecular Medicine of the Austrian Academy of Sciences in Vienna as an EMBO fellow. Since 2020, she
+                    has been a Senior Researcher at the Medical University of Vienna in the Functional Precision
+                    Hematology Group. Her research focuses on integrating functional drug sensitivity profiling with
+                    molecular data to develop personalized therapeutic strategies for cancer patients.
+                  </p>
+                  <p>
+                    Dr. Pemovska is also co-founder and Chief Scientific Officer of Exalt, a spin-off company from the
+                    Medical University of Vienna, developing in vitro diagnostic tests for therapy optimization in
+                    precision oncology.
                   </p>
                 </div>
               </v-expand-transition>
