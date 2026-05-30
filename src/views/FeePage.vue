@@ -30,7 +30,7 @@ const allFees = [
 ];
 const fees = isTestMode ? allFees : allFees.filter(f => !f.testOnly);
 
-const EARLY_DEADLINE = new Date('2026-06-01T00:00:00');
+const EARLY_DEADLINE = new Date('2026-06-16T00:00:00');
 const ONSITE_START = new Date('2026-10-01T00:00:00');
 
 function getRegistrationPeriod() {
@@ -49,8 +49,8 @@ const periodLabels = {
 };
 
 const periodDeadlines = {
-  early: 'until May 31, 2026',
-  regular: 'June 1 – September 30, 2026',
+  early: 'until June 15, 2026',
+  regular: 'June 16 – September 30, 2026',
   onsite: 'from October 1, 2026',
 };
 
@@ -208,11 +208,11 @@ async function handlePayOnline() {
                   </th>
                   <th class="text-center bg-teal-lighten-2 border">
                     Early registration fee <br />
-                    (up to May 31st 2026)
+                    (up to June 15th 2026)
                   </th>
                   <th class="text-center bg-teal-lighten-2 border">
                     Registration fee <br />
-                    (after June 1st 2026)
+                    (after June 16th 2026)
                   </th>
                   <th class="text-center bg-teal-lighten-2 border">
                     On-site registration fee
