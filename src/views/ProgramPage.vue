@@ -25,9 +25,20 @@ import bertalanImg from "@/assets/BertalanNemeth.webp";
 import teaImg from "@/assets/TeaPemovska.webp";
 
 const expandedBios = ref({});
+const activeProgramTab = ref(0);
 
 const toggleBio = (id) => {
   expandedBios.value[id] = !expandedBios.value[id];
+};
+
+const scrollToSpeaker = (id) => {
+  expandedBios.value[id] = true;
+  setTimeout(() => {
+    const el = document.getElementById('speaker-' + id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, 100);
 };
 
 const expandIcon = (isExpanded) => {
@@ -51,6 +62,577 @@ const expandIcon = (isExpanded) => {
           enrichment of knowledge and exchange of experience among participants from academia, industry and
           practitioners.
         </base-paragraph>
+      </base-card>
+
+      <!-- Interactive Timeline Tables -->
+      <base-card class="mt-5 pa-4">
+        <v-tabs v-model="activeProgramTab" align-tabs="center" color="#d37315" slider-color="#d37315"
+          class="program-tabs mb-6">
+          <v-tab :value="0" class="text-subtitle-2 font-weight-bold">THU - 1.10.2026</v-tab>
+          <v-tab :value="1" class="text-subtitle-2 font-weight-bold">FRI - 2.10.2026</v-tab>
+          <v-tab :value="2" class="text-subtitle-2 font-weight-bold">SAT - 3.10.2026</v-tab>
+          <v-tab :value="3" class="text-subtitle-2 font-weight-bold">SUN - 4.10.2026</v-tab>
+        </v-tabs>
+
+        <v-window v-model="activeProgramTab" class="program-window">
+          <!-- Thursday, 1.10.2026 -->
+          <v-window-item :value="0">
+            <v-responsive>
+              <v-table class="timeline-table elevation-0">
+                <thead>
+                  <tr>
+                    <th class="time-header text-center">Time</th>
+                    <th class="place-header text-center">Place</th>
+                    <th class="activity-header text-left">Activity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">10:00 - 17:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="deep-purple-darken-1" variant="flat" size="small" class="font-weight-bold">HOTEL
+                        METROPOL</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <strong class="text-primary font-weight-bold">REGISTRATION</strong>
+                    </td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">17:00 - 18:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left font-weight-bold">Opening ceremony</td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">18:00 - 19:30</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold mb-2 text-primary">Plenary session</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('zaneta')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Zaneta Nikolovska - Coleska, USA</span>
+                        </div>
+                        <div class="speaker-item" @click="scrollToSpeaker('borut')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Borut Bozic, Slovenia</span>
+                        </div>
+                        <div class="speaker-item" @click="scrollToSpeaker('simone')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Simone Moser, Austria</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">19:30 - 20:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left font-weight-bold">Discussion</td>
+                  </tr>
+                </tbody>
+              </v-table>
+            </v-responsive>
+          </v-window-item>
+
+          <!-- Friday, 2.10.2026 -->
+          <v-window-item :value="1">
+            <v-responsive>
+              <v-table class="timeline-table elevation-0">
+                <thead>
+                  <tr>
+                    <th class="time-header text-center">Time</th>
+                    <th class="place-header text-center">Place</th>
+                    <th class="activity-header text-left">Activity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Parallel Session 1 -->
+                  <tr class="table-row">
+                    <td rowspan="3" class="time-col-cell text-center font-weight-bold rowspan-cell">9:00 - 10:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Technology / Biotechnology
+                        / Biopharmacy and Cosmetology</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('mario')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Mario Jug, Croatia</span>
+                        </div>
+                        <div class="speaker-item" @click="scrollToSpeaker('rita')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Rita Ambrus, Hungary</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="place-col-cell text-center">
+                      <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Chemistry / Biomolecular
+                        Sciences</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('vladimirW')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Vladimir Wsol, Czech Republic</span>
+                        </div>
+                        <div class="speaker-item" @click="scrollToSpeaker('vladimirD')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Vladimir Dobricic, Serbia</span>
+                        </div>
+                        <div class="speaker-item" @click="scrollToSpeaker('tea')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Dr. Tea Pemovska, Austria</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="place-col-cell text-center">
+                      <v-chip color="blue-darken-1" variant="flat" size="small" class="font-weight-bold">Ohrid
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Social Pharmacy / Pharmaceutical Law
+                      </div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('slaveyko')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Dr. Slaveyko Djambazov, Bulgaria</span>
+                        </div>
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">10:00 - 10:20</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Parallel Session 2 -->
+                  <tr class="table-row">
+                    <td rowspan="3" class="time-col-cell text-center font-weight-bold rowspan-cell">10:20 - 11:45</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Technology / Biotechnology
+                        / Biopharmacy and Cosmetology</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="place-col-cell text-center">
+                      <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Chemistry / Biomolecular
+                        Sciences</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="place-col-cell text-center">
+                      <v-chip color="blue-darken-1" variant="flat" size="small" class="font-weight-bold">Ohrid
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Social Pharmacy / Pharmaceutical Law
+                      </div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">11:45 - 12:30</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Poster Session -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">12:30 - 14:30</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="green-darken-1" variant="flat" size="small" class="font-weight-bold">Green
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left font-weight-bold text-primary">POSTER SESSION</td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">14:30 - 15:00</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Student Session -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">15:00 - 17:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">STUDENT SESSION</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">17:00 - 17:15</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Student Poster Session -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">17:15 - 19:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="green-darken-1" variant="flat" size="small" class="font-weight-bold">Green
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left font-weight-bold text-primary">STUDENT POSTER SESSION</td>
+                  </tr>
+                </tbody>
+              </v-table>
+            </v-responsive>
+          </v-window-item>
+
+          <!-- Saturday, 3.10.2026 -->
+          <v-window-item :value="2">
+            <v-responsive>
+              <v-table class="timeline-table elevation-0">
+                <thead>
+                  <tr>
+                    <th class="time-header text-center">Time</th>
+                    <th class="place-header text-center">Place</th>
+                    <th class="activity-header text-left">Activity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Parallel Session 1 -->
+                  <tr class="table-row">
+                    <td rowspan="2" class="time-col-cell text-center font-weight-bold rowspan-cell">9:00 - 10:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical analysis / Quality
+                        Assurance / Pharmaceutical Legislation</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('andzelija')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Andjelia Malenovic, Serbia</span>
+                        </div>
+                        <div class="speaker-item" @click="scrollToSpeaker('eric')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Dr. Eric Deconinck, Belgium</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="place-col-cell text-center">
+                      <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Clinical Biochemistry / Toxicology / Food
+                        and Nutrition</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('dusan')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Prof. Dusan Misic, Poland</span>
+                        </div>
+                        <div class="speaker-item" @click="scrollToSpeaker('marijana')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Assoc. Prof. Marijana Curcic, Serbia</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">10:00 - 10:20</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Parallel Session 2 -->
+                  <tr class="table-row">
+                    <td rowspan="2" class="time-col-cell text-center font-weight-bold rowspan-cell">10:20 - 11:45</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical analysis / Quality
+                        Assurance / Pharmaceutical Legislation</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="table-row">
+                    <td class="place-col-cell text-center">
+                      <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Clinical Biochemistry / Toxicology / Food
+                        and Nutrition</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">11:45 - 12:30</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Poster Session -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">12:30 - 14:30</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="green-darken-1" variant="flat" size="small" class="font-weight-bold">Green
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left font-weight-bold text-primary">POSTER SESSION</td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">14:30 - 15:00</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Afternoon Session 1 -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">15:00 - 16:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Phytotherapy and Natural Products</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('danijela')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Dr. Danijela Misic, Serbia</span>
+                        </div>
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">16:00 - 16:20</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Afternoon Session 2 -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">16:20 - 17:45</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Phytotherapy and Natural Products</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </v-table>
+            </v-responsive>
+          </v-window-item>
+
+          <!-- Sunday, 4.10.2026 -->
+          <v-window-item :value="3">
+            <v-responsive>
+              <v-table class="timeline-table elevation-0">
+                <thead>
+                  <tr>
+                    <th class="time-header text-center">Time</th>
+                    <th class="place-header text-center">Place</th>
+                    <th class="activity-header text-left">Activity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Session 1 -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">9:00 - 11:30</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmacoeconomy / Drug Information</div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('bertalan')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Bertalan Nemeth, PhD, Hungary</span>
+                        </div>
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Coffee Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">11:30 - 12:00</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> COFFEE BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Poster Session -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">12:00 - 13:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="green-darken-1" variant="flat" size="small" class="font-weight-bold">Green
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left font-weight-bold text-primary">POSTER SESSION</td>
+                  </tr>
+
+                  <!-- Break -->
+                  <tr class="table-row break-row">
+                    <td class="time-col-cell text-center">13:00 - 13:15</td>
+                    <td class="place-col-cell text-center">-</td>
+                    <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
+                    </td>
+                  </tr>
+
+                  <!-- Session 2 -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">13:15 - 15:45</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Community Pharmacy and Clinical Pharmacy
+                      </div>
+                      <div class="speaker-list-inline">
+                        <div class="speaker-item" @click="scrollToSpeaker('anita')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Anita Hogg, MSc, Northern Ireland</span>
+                        </div>
+                        <div class="speaker-item" @click="scrollToSpeaker('maja')">
+                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                          <span class="speaker-link">Assoc. Prof. Maja Ortner Hadzi Abdic, Croatia</span>
+                        </div>
+                        <div class="speaker-item-static">
+                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
+                          <span>Selected oral presentations</span>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Closing Ceremony -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">15:45 - 16:30</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
+                        Hall</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left font-weight-bold text-primary">CLOSING CEREMONY</td>
+                  </tr>
+                </tbody>
+              </v-table>
+            </v-responsive>
+          </v-window-item>
+        </v-window>
       </base-card>
 
       <!-- Congress Sessions -->
@@ -327,7 +909,7 @@ const expandIcon = (isExpanded) => {
         <h3 class="program-date mb-6">Plenary speakers</h3>
 
         <!-- Zaneta Nikolovska-Coleska -->
-        <v-row class="mb-8 align-center">
+        <v-row id="speaker-zaneta" class="mb-8 align-center">
           <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
             <v-avatar size="140" class="elevation-4 speaker-avatar">
               <v-img :src="zanetaImg" alt="Prof. Zaneta Nikolovska-Coleska"></v-img>
@@ -350,7 +932,7 @@ const expandIcon = (isExpanded) => {
                   interdepartmental graduate programs in Medicinal Chemistry and Chemical Biology at the University of
                   Michigan, Ann Arbor. From 2021 to 2023, Prof. Nikolovska-Coleska served as President of the
                   International Chemical Biology Society (ICBS) and currently continues to serve on its Board of
-                  Directors. She is also an Associate Editor for RSC Chemical Biology.
+                  Directors. He is also an Associate Editor for RSC Chemical Biology.
                 </p>
                 <p>
                   Prof. Nikolovska-Coleska is an internationally recognized expert in chemical genomics, focusing on the
@@ -368,7 +950,7 @@ const expandIcon = (isExpanded) => {
         </v-row>
 
         <!-- Borut Božič -->
-        <v-row class="mb-8 align-center">
+        <v-row id="speaker-borut" class="mb-8 align-center">
           <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
             <v-avatar size="140" class="elevation-4 speaker-avatar">
               <v-img :src="borutImg" alt="Prof. Borut Božič"></v-img>
@@ -413,7 +995,7 @@ const expandIcon = (isExpanded) => {
         </v-row>
 
         <!-- Simone Moser -->
-        <v-row class="mb-8 align-center">
+        <v-row id="speaker-simone" class="mb-8 align-center">
           <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
             <v-avatar size="140" class="elevation-4 speaker-avatar">
               <v-img :src="simoneImg" alt="Prof. Dr. Simone Moser"></v-img>
@@ -462,7 +1044,7 @@ const expandIcon = (isExpanded) => {
           <div class="session-name mb-4">Session: Pharmaceutical Technology and Biotechnology / Biopharmaceutics /
             Cosmetology</div>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-mario" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="marioImg" alt="Prof. Mario Jug"></v-img>
@@ -498,7 +1080,7 @@ const expandIcon = (isExpanded) => {
             </v-col>
           </v-row>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-rita" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="ritaImg" alt="Prof. Rita Ambrus"></v-img>
@@ -543,7 +1125,7 @@ const expandIcon = (isExpanded) => {
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Pharmaceutical Chemistry / Biomolecular Sciences</div>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-vladimirW" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="vladimirWImg" alt="Prof. Ing. Vladimír Wsól"></v-img>
@@ -575,7 +1157,7 @@ const expandIcon = (isExpanded) => {
             </v-col>
           </v-row>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-vladimirD" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="vladimirDImg" alt="Prof. Vladimir Dobričić"></v-img>
@@ -611,7 +1193,7 @@ const expandIcon = (isExpanded) => {
             </v-col>
           </v-row>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-tea" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="teaImg" alt="Dr Tea Pemovska"></v-img>
@@ -653,7 +1235,7 @@ const expandIcon = (isExpanded) => {
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Social Pharmacy / Pharmaceutical Law</div>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-slaveyko" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="slaveykoImg" alt="Dr. Slaveyko Djambazov"></v-img>
@@ -703,7 +1285,7 @@ const expandIcon = (isExpanded) => {
           <div class="session-name mb-4">Session: Pharmaceutical Analysis / Quality Assurance / Pharmaceutical
             Legislation</div>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-andzelija" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="andzelijaImg" alt="Dr Anđelija Malenović"></v-img>
@@ -746,7 +1328,7 @@ const expandIcon = (isExpanded) => {
             </v-col>
           </v-row>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-eric" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="ericImg" alt="Dr Eric Deconinck"></v-img>
@@ -791,7 +1373,7 @@ const expandIcon = (isExpanded) => {
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Community and Clinical Pharmacy</div>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-anita" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="anitaImg" alt="Anita Hogg"></v-img>
@@ -826,7 +1408,7 @@ const expandIcon = (isExpanded) => {
             </v-col>
           </v-row>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-maja" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="majaImg" alt="Assoc. Prof. Maja Ortner Hadziabdic"></v-img>
@@ -876,7 +1458,7 @@ const expandIcon = (isExpanded) => {
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Clinical Biochemistry / Toxicology / Food and Nutrition</div>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-dusan" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="dusanImg" alt="Prof. Dusan Misic"></v-img>
@@ -912,7 +1494,7 @@ const expandIcon = (isExpanded) => {
             </v-col>
           </v-row>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-marijana" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="marijanaImg" alt="Assoc. Prof. Marijana Curcic"></v-img>
@@ -959,7 +1541,7 @@ const expandIcon = (isExpanded) => {
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Natural Products and Phytotherapy</div>
 
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-danijela" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="danijelaImg" alt="Dr. Danijela Mišić"></v-img>
@@ -1000,7 +1582,7 @@ const expandIcon = (isExpanded) => {
 
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Pharmacoeconomics / Drug Information</div>
-          <v-row class="mb-6 align-center">
+          <v-row id="speaker-bertalan" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
                 <v-img :src="bertalanImg" alt="Bertalan Németh"></v-img>
@@ -1146,6 +1728,124 @@ const expandIcon = (isExpanded) => {
 
   .speaker-avatar {
     size: 100px !important;
+  }
+}
+
+/* Scoped styles for the timeline program tables */
+.program-tabs {
+  border-bottom: 1.5px solid #e5ecef;
+}
+
+.timeline-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.timeline-table th {
+  background-color: #1c5a6d !important;
+  color: white !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.5px;
+  padding: 12px 16px !important;
+}
+
+.table-row {
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f4f8fa !important;
+}
+
+.time-col-cell {
+  width: 140px;
+  font-weight: bold;
+  color: #125280;
+  border-right: 1px solid #e5ecef;
+  font-size: 1rem;
+  padding: 12px 16px !important;
+}
+
+.place-col-cell {
+  width: 180px;
+  border-right: 1px solid #e5ecef;
+  padding: 12px 16px !important;
+}
+
+.activity-col-cell {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  padding: 12px 16px !important;
+}
+
+.rowspan-cell {
+  vertical-align: middle !important;
+  background-color: #fcfdfe;
+}
+
+.break-row {
+  background-color: #fef9f3 !important;
+}
+
+.break-row:hover {
+  background-color: #fef5ea !important;
+}
+
+.speaker-list-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.speaker-item {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+  transition: transform 0.2s ease;
+}
+
+.speaker-item:hover {
+  transform: translateX(4px);
+}
+
+.speaker-link {
+  color: #d37315;
+  font-weight: 600;
+  border-bottom: 1px dashed transparent;
+  transition: border-color 0.2s ease;
+}
+
+.speaker-item:hover .speaker-link {
+  border-color: #d37315;
+}
+
+.speaker-item-static {
+  display: inline-flex;
+  align-items: center;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .time-col-cell {
+    width: 100px;
+    font-size: 0.85rem;
+    padding: 8px 10px !important;
+  }
+
+  .place-col-cell {
+    width: 110px;
+    padding: 8px 10px !important;
+  }
+
+  .activity-col-cell {
+    font-size: 0.85rem;
+    padding: 8px 10px !important;
   }
 }
 </style>

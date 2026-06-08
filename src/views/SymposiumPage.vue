@@ -101,13 +101,13 @@
       <base-card class="mt-5 text-center justify-center">
         <base-paragraph class="text-center hero-title">
           <b>
-            2nd Announcement
+            TENTATIVE PROGRAM
           </b>
         </base-paragraph>
         <base-paragraph class="text-center">
-          Please download the 2nd Announcement here.
+          Please download the Tentative Program here!
         </base-paragraph>
-        <v-btn color="orange-darken-2" prepend-icon="mdi-file-pdf-box" href="/files/secondannouncment.pdf"
+        <v-btn color="orange-darken-2" prepend-icon="mdi-file-pdf-box" href="/files/8CongressTentativeProgram.pdf"
           target="_blank" variant="elevated" rounded="pill">
           Download PDF
         </v-btn>
