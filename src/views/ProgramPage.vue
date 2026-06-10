@@ -53,7 +53,7 @@ const expandIcon = (isExpanded) => {
 
       <!-- Tentative Scientific Program -->
       <v-card rounded="xl" class="mt-10 mb-5 pa-1 text-center hero-title">
-        <v-card-text class="text-h6 font-weight-bold">Tentative and Scientific Program</v-card-text>
+        <v-card-text class="text-h6 font-weight-bold">Tentative Scientific Program</v-card-text>
       </v-card>
       <base-card class="mt-5">
         <base-paragraph>
