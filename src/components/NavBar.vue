@@ -85,7 +85,7 @@ const tabs = [
   { label: 'Home', icon: 'mdi-home', route: 'SymposiumPage' },
   { label: 'Commitees', icon: 'mdi-account-group', route: 'OrganizationPage' },
   { label: 'Programme', icon: 'mdi-calendar-text', route: 'ProgramPage' },
-  { label: 'Short Paper Submissions', icon: 'mdi-file-document-edit', route: 'AbstractPage' },
+  { label: 'Oral/Poster Presentation Submission', icon: 'mdi-file-presentation-box', route: 'PresentationSubmissionPage' },
   { label: 'Registration', icon: 'mdi-account-plus', route: 'FeePage' },
   { label: 'Sponsors', icon: 'mdi-hand-heart', route: 'PresentationPage' },
   { label: 'Accommodation', icon: 'mdi-bed', route: 'HotelPage' },

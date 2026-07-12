@@ -70,6 +70,26 @@
           </v-col>
         </v-row>
       </base-card>
+      <v-card rounded="xl" class="mt-10 mb-3 pa-1 text-center title-card-secondary">
+        <v-card-text class="text-h6 font-weight-bold">Key Dates</v-card-text>
+      </v-card>
+      <small-card>
+        <v-list density="compact" class="info-list">
+          <v-list-item>
+            <v-list-item-title><b>Congress Dates</b></v-list-item-title>
+            <v-list-item-subtitle opacity="100" class="text-orange">October 1–4, 2026</v-list-item-subtitle>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title><b>Deadline for poster and e-poster submission</b></v-list-item-title>
+            <v-list-item-subtitle opacity="100" class="text-orange">September 1, 2026</v-list-item-subtitle>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title><b>Deadline for oral presentation submission</b></v-list-item-title>
+            <v-list-item-subtitle opacity="100" class="text-orange">September 27, 2026</v-list-item-subtitle>
+          </v-list-item>
+        </v-list>
+      </small-card>
+
       <base-card class="mt-5 text-center justify-center">
         <base-paragraph class="text-center hero-title">
           <b>
@@ -120,6 +140,7 @@
 import BaseCard from "@/components/BaseCard.vue";
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
+import SmallCard from "@/components/SmallCard.vue";
 import oneSignature from "@/assets/potpis1.webp";
 import twoSignature from "@/assets/potpis2.webp";
 import ffLogo from "@/assets/FFlogo.webp";
@@ -150,6 +171,21 @@ import homeimg from "@/assets/dates.webp"
 .title-card {
   background-color: #125280;
   color: white;
+}
+
+.title-card-secondary {
+  background-color: #1c5a6d;
+  color: white;
+}
+
+.info-list {
+  background: transparent !important;
+  text-align: left;
+}
+
+.text-orange {
+  color: #d37315 !important;
+  font-weight: bold;
 }
 
 .list-title {
