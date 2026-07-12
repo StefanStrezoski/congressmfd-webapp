@@ -1,7 +1,7 @@
 <template>
   <div class="countdown-timer d-flex align-center">
     <div class="countdown-label d-sm-block mr-2">
-      Countdown to <br /> Short paper acceptance:
+      Countdown to <br /> Deadline for poster and e-poster submission:
     </div>
     <div class="countdown-values d-flex align-center">
       <div class="countdown-item">
@@ -25,7 +25,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const targetDate = new Date('2026-07-01T00:00:00+02:00');
+const targetDate = new Date('2026-09-01T23:59:59+02:00');
 const days = ref(0);
 const hours = ref(0);
 const minutes = ref(0);

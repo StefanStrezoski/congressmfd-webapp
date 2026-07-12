@@ -4,7 +4,7 @@ import OrganizationPage from "@/views/OrganizationPage.vue";
 import FeePage from "@/views/FeePage.vue";
 import HotelPage from "@/views/HotelPage.vue";
 import ProgramPage from '@/views/ProgramPage.vue';
-import AbstractPage from '@/views/AbstractPage.vue';
+import PresentationSubmissionPage from '@/views/PresentationSubmissionPage.vue';
 import PresentationPage from '@/views/PresentationPage.vue';
 import ContactPage from '@/views/ContactPage.vue';
 
@@ -28,9 +28,9 @@ const router = createRouter({
       component: ProgramPage
     },
     {
-      path: '/abstracts',
-      name: 'AbstractPage',
-      component: AbstractPage
+      path: '/presentation-submission',
+      name: 'PresentationSubmissionPage',
+      component: PresentationSubmissionPage
     },
     {
       path: '/registration',
