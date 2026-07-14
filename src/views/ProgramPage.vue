@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import homeimg from "@/assets/dates.webp";
+import homeimg from "@/assets/dates.png";
 
 // Import Lecturer Images
 import zanetaImg from "@/assets/ZanetaNikolovskaColeska.webp";

@@ -145,7 +145,7 @@ import oneSignature from "@/assets/potpis1.webp";
 import twoSignature from "@/assets/potpis2.webp";
 import ffLogo from "@/assets/FFlogo.webp";
 import mfdLogo from "@/assets/mfdlogo.webp";
-import homeimg from "@/assets/dates.webp"
+import homeimg from "@/assets/dates.png"
 </script>
 
 <style scoped>
