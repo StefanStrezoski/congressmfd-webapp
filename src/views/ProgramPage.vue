@@ -3,14 +3,14 @@ import { ref } from 'vue';
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseCard from "@/components/BaseCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import homeimg from "@/assets/dates.png";
+import homeimg from "@/assets/dates.webp";
 
 // Import Lecturer Images
 import zanetaImg from "@/assets/ZanetaNikolovskaColeska.webp";
 import marioImg from "@/assets/MarioJug.webp";
 import ritaImg from "@/assets/RitaAmbrus.webp";
-import dusanImg from "@/assets/DusanMisic.webp";
 import marijanaImg from "@/assets/MarijanaCurcic.webp";
+import kapellouImg from "@/assets/AngelikiKapellou.webp";
 import anitaImg from "@/assets/AnitaHogg.webp";
 import majaImg from "@/assets/MajaOrtnerHadziabdic.webp";
 import vladimirWImg from "@/assets/VladimirWsol.webp";
@@ -88,7 +88,7 @@ const expandIcon = (isExpanded) => {
                 </thead>
                 <tbody>
                   <tr class="table-row">
-                    <td class="time-col-cell text-center">10:00 - 17:00</td>
+                    <td class="time-col-cell text-center">14:00 - 19:00</td>
                     <td class="place-col-cell text-center">
                       <v-chip color="deep-purple-darken-1" variant="flat" size="small" class="font-weight-bold">HOTEL
                         METROPOL</v-chip>
@@ -114,17 +114,28 @@ const expandIcon = (isExpanded) => {
                     <td class="activity-col-cell text-left">
                       <div class="font-weight-bold mb-2 text-primary">Plenary session</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('zaneta')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Zaneta Nikolovska - Coleska, USA</span>
+                        <div class="talk-entry">
+                          <div class="speaker-item" @click="scrollToSpeaker('borut')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Borut Božič, Slovenia</span>
+                          </div>
+                          <div class="talk-title">Agile pharmacy curricula for a sustainable profession</div>
                         </div>
-                        <div class="speaker-item" @click="scrollToSpeaker('borut')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Borut Bozic, Slovenia</span>
+                        <div class="talk-entry">
+                          <div class="speaker-item" @click="scrollToSpeaker('zaneta')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Zaneta Nikolovska-Coleska, USA</span>
+                          </div>
+                          <div class="talk-title">Targeting protein–protein interactions for precision cancer therapy:
+                            mechanisms, structures, and inhibitor strategies</div>
                         </div>
-                        <div class="speaker-item" @click="scrollToSpeaker('simone')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Simone Moser, Austria</span>
+                        <div class="talk-entry">
+                          <div class="speaker-item" @click="scrollToSpeaker('simone')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Simone Moser, Austria</span>
+                          </div>
+                          <div class="talk-title">The phytochemistry of leaf senescence – from bioactive natural
+                            products to mode of action</div>
                         </div>
                       </div>
                     </td>
@@ -154,6 +165,18 @@ const expandIcon = (isExpanded) => {
                   </tr>
                 </thead>
                 <tbody>
+                  <!-- Registration -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">8:30 - 19:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="deep-purple-darken-1" variant="flat" size="small" class="font-weight-bold">HOTEL
+                        METROPOL</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <strong class="text-primary font-weight-bold">REGISTRATION</strong>
+                    </td>
+                  </tr>
+
                   <!-- Parallel Session 1 -->
                   <tr class="table-row">
                     <td rowspan="3" class="time-col-cell text-center font-weight-bold rowspan-cell">9:00 - 10:00</td>
@@ -162,16 +185,34 @@ const expandIcon = (isExpanded) => {
                         Hall</v-chip>
                     </td>
                     <td class="activity-col-cell text-left">
-                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Technology / Biotechnology
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Technology /
+                        Biotechnology
                         / Biopharmacy and Cosmetology</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('mario')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Mario Jug, Croatia</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:00 – 9:25</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('rita')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Rita Ambrus, Hungary</span>
+                          </div>
+                          <div class="talk-title">Therapy-specific drug development, novel trends for different
+                            administration routes</div>
                         </div>
-                        <div class="speaker-item" @click="scrollToSpeaker('rita')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Rita Ambrus, Hungary</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:25 – 9:50</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('mario')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Mario Jug, Croatia</span>
+                          </div>
+                          <div class="talk-title">Mechanochemistry: A powerful engine for pharmaceutical innovation,
+                            sustainability, and solid-state design</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:50 – 10:00</span>
+                          <div class="speaker-item-static">
+                            <v-icon size="16" class="mr-1" color="grey">mdi-forum</v-icon>
+                            <span>Discussion</span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -185,17 +226,33 @@ const expandIcon = (isExpanded) => {
                       <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Chemistry / Biomolecular
                         Sciences</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('vladimirW')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Vladimir Wsol, Czech Republic</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:00 – 9:20</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('vladimirW')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Vladimir Wsol, Czech Republic</span>
+                          </div>
+                          <div class="talk-title">Cancer drug resistance: Links between carbonyl reducing enzymes and
+                            kinase inhibitors</div>
                         </div>
-                        <div class="speaker-item" @click="scrollToSpeaker('vladimirD')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Vladimir Dobricic, Serbia</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:20 – 9:40</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('vladimirD')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Vladimir Dobričić, Serbia</span>
+                          </div>
+                          <div class="talk-title">Integrating in vitro pharmacokinetic screening and QSPR modeling for
+                            enhanced drug candidate selection</div>
                         </div>
-                        <div class="speaker-item" @click="scrollToSpeaker('tea')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Dr. Tea Pemovska, Austria</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:40 – 10:00</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('tea')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Tea Pemovska, Austria</span>
+                          </div>
+                          <div class="talk-title">Beyond genomics: functional precision medicine for personalized
+                            cancer
+                            therapy</div>
                         </div>
                       </div>
                     </td>
@@ -209,13 +266,33 @@ const expandIcon = (isExpanded) => {
                       <div class="font-weight-bold text-primary mb-1">SESSION: Social Pharmacy / Pharmaceutical Law
                       </div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('slaveyko')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Dr. Slaveyko Djambazov, Bulgaria</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:00 – 9:20</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('slaveyko')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Dr. Slaveyko Djambazov, Bulgaria</span>
+                          </div>
+                          <div class="talk-title">Healthcare as an investment: Quantifying the economic and societal
+                            returns of better health in North Macedonia</div>
                         </div>
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:20 – 9:40</span>
+                          <div class="speaker-item-static">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="font-weight-medium">Prof. Aleksandra Grozdanova, N. Macedonia</span>
+                          </div>
+                          <div class="talk-title">Value-based healthcare in N. Macedonia: Challenges and first steps
+                            toward implementation</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:40 – 10:00</span>
+                          <div class="speaker-item-static">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="font-weight-medium">Prof. Ana Poceva Panovska, N. Macedonia</span>
+                          </div>
+                          <div class="talk-title">Patent protection of pharmaceutical inventions: from academic
+                            research
+                            to intellectual property</div>
                         </div>
                       </div>
                     </td>
@@ -238,12 +315,44 @@ const expandIcon = (isExpanded) => {
                         Hall</v-chip>
                     </td>
                     <td class="activity-col-cell text-left">
-                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Technology / Biotechnology
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Technology /
+                        Biotechnology
                         / Biopharmacy and Cosmetology</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry"><span class="talk-time">10:20 – 10:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Paulina Apostolova, N. Macedonia</span></div>
+                          <div class="talk-title">Freeze-drying strategies for a stable radiopharmaceutical:
+                            Daratumumab
+                            immunoconjugate from formulation to quality evaluation</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:35 – 10:50</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Martin Gigovski, N. Macedonia</span></div>
+                          <div class="talk-title">Real-time NIR monitoring of fluid-bed coating process of glucomannan
+                          </div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:50 – 11:05</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Teodora Tasevska, N. Macedonia</span></div>
+                          <div class="talk-title">Optimization of hydrogel inks for semi-solid extrusion 3D printing
+                          </div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:05 – 11:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Ivana Vasiljević, Serbia</span></div>
+                          <div class="talk-title">Development and characterization of polyethylene glycol–based soft
+                            chewable tablets</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:20 – 11:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Aleksandra Krstevska, N. Macedonia</span></div>
+                          <div class="talk-title">Influence of in vitro dissolution test conditions on drug
+                            precipitation behavior: Aripiprazole example</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:35 – 11:45</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-forum</v-icon><span>Discussion</span></div>
                         </div>
                       </div>
                     </td>
@@ -257,9 +366,43 @@ const expandIcon = (isExpanded) => {
                       <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Chemistry / Biomolecular
                         Sciences</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry"><span class="talk-time">10:20 – 10:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Aleksandar Dimkovski, N. Macedonia</span></div>
+                          <div class="talk-title">Biopartitioning micellar chromatographic assessment of
+                            gastrointestinal absorption of novel hybrid molecules</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:35 – 10:50</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Darija Krzovska, N. Macedonia</span></div>
+                          <div class="talk-title">EC–MS profiling of electrochemically generated phase I metabolites
+                            of
+                            novel coumarin–isatin–triazole hybrid molecules</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:50 – 11:05</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Elizabeta Krstevska Bozhinovikj, N.
+                              Macedonia</span></div>
+                          <div class="talk-title">Molecular characterization of acute lymphoblastic leukemia in
+                            clinical
+                            management of pediatric patients from N. Macedonia</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:05 – 11:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Filip Ilievski, Sweden</span></div>
+                          <div class="talk-title">Adaptive laboratory evolution of a fully re-coded Escherichia coli
+                            for
+                            single-molecule tracking</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:20 – 11:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Effie C. Salata, Greece</span></div>
+                          <div class="talk-title">Impact of PD variation on response to commonly prescribed CNS
+                            medications in 3,000 individuals</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:35 – 11:45</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-forum</v-icon><span>Discussion</span></div>
                         </div>
                       </div>
                     </td>
@@ -273,9 +416,41 @@ const expandIcon = (isExpanded) => {
                       <div class="font-weight-bold text-primary mb-1">SESSION: Social Pharmacy / Pharmaceutical Law
                       </div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry"><span class="talk-time">10:20 – 10:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Evgenija Mihajloska, N. Macedonia</span></div>
+                          <div class="talk-title">ICHOM-aligned outcomes in patients with rheumatoid arthritis
+                            receiving
+                            biologic therapy: initial experience from a pilot observational study</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:35 – 10:50</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Damjan Bekarovski, N. Macedonia</span></div>
+                          <div class="talk-title">Pharmaceutical patent protection in Europe: Challenges and alignment
+                            of national practices</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:50 – 11:05</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Isidora Kacarska, N. Macedonia</span></div>
+                          <div class="talk-title">From innovation to implementation: professional perspectives of
+                            personalized healthcare in Albania and Kosovo</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:05 – 11:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Jasmina Arsić, Serbia</span></div>
+                          <div class="talk-title">Professional practice in pharmacist education – experience in West
+                            Balkan pharmacy schools</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:20 – 11:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Maja Kambovska, N. Macedonia</span></div>
+                          <div class="talk-title">Healthcare as an investment, not a cost: Unlocking societal value
+                            and
+                            economic growth through ophthalmology innovation</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:35 – 11:45</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-forum</v-icon><span>Discussion</span></div>
                         </div>
                       </div>
                     </td>
@@ -311,7 +486,7 @@ const expandIcon = (isExpanded) => {
 
                   <!-- Student Session -->
                   <tr class="table-row">
-                    <td class="time-col-cell text-center">15:00 - 17:00</td>
+                    <td class="time-col-cell text-center">15:00 - 17:30</td>
                     <td class="place-col-cell text-center">
                       <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
                         Hall</v-chip>
@@ -319,9 +494,97 @@ const expandIcon = (isExpanded) => {
                     <td class="activity-col-cell text-left">
                       <div class="font-weight-bold text-primary mb-1">STUDENT SESSION</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry"><span class="talk-time">15:00 – 15:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Tane Murgoski, N. Macedonia</span></div>
+                          <div class="talk-title">Designing workforce readiness in pharmacy: Evidence from a career
+                            lifecycle framework at Alkaloid Skopje</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">15:20 – 15:30</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Ivana Hristovska, N. Macedonia</span></div>
+                          <div class="talk-title">A highly selective RP-HPLC/UV method for therapeutic drug monitoring
+                            of structurally diverse antiepileptic drugs in human plasma</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">15:30 – 15:40</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Aleksandar Atanasoski, N. Macedonia</span></div>
+                          <div class="talk-title">Phytochemical and vibrational spectroscopic markers in medicinal
+                            plants as indicators of urban and anthropogenic ecological stress</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">15:40 – 15:50</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Kamenka Nikolova, N. Macedonia</span></div>
+                          <div class="talk-title">Protective effects of Verbena officinalis extract against oxidative
+                            stress in human lymphocytes</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">15:50 – 16:00</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Elena Risteska, N. Macedonia</span></div>
+                          <div class="talk-title">Cannabis extractum crudum from Macedonian wild-growing Cannabis:
+                            yield
+                            and cannabinoid composition</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">16:00 – 16:10</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Ilina Popovska, N. Macedonia</span></div>
+                          <div class="talk-title">Personalized nutritional assessment in children with Autism</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">16:10 – 16:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Filip Petrov, N. Macedonia</span></div>
+                          <div class="talk-title">In vitro evaluation of rosemary and Cannabis sativa extracts loaded
+                            nanoliposomal formulations for potential treatment of Alzheimer's disease</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">16:20 – 16:30</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Jovana Stojcheska, N. Macedonia</span></div>
+                          <div class="talk-title">Digital vs allele-specific PCR for the detection of BRAF V600E
+                            mutation in colon cancer patients</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">16:30 – 16:40</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Nikola Stojmenovski, N. Macedonia</span></div>
+                          <div class="talk-title">Optimization of electrochemical reaction conditions in a glassy
+                            carbon-based EC-MS method for simulation of risperidone phase I metabolism</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">16:40 – 16:50</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Sanja Bobevska, N. Macedonia</span></div>
+                          <div class="talk-title">Evaluation of silver nanoparticles as a surface-enhanced Raman
+                            spectroscopy substrate for tacrolimus detection in spiked human plasma</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">16:50 – 17:00</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Emilija Veselinovska, N. Macedonia</span></div>
+                          <div class="talk-title">Dietary and nutritional challenges in individuals with cerebral
+                            palsy
+                            in North Macedonia</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">17:00 – 17:10</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Ljubica Nikolova, N. Macedonia</span></div>
+                          <div class="talk-title">Assessment of patient-reported outcomes in rheumatoid arthritis
+                            patients treated with biologic therapy</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">17:10 – 17:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Evgenija Dobrevska, N. Macedonia</span></div>
+                          <div class="talk-title">Raman spectroscopy combined with PLS-DA for discrimination of
+                            insulin
+                            types and sample forms</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">17:10 – 17:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Metodi Naumovski, N. Macedonia</span></div>
+                          <div class="talk-title">Formulation, characterization and comparison of mucoadhesive
+                            alginate
+                            biofilms loaded with dexamethasone delivery carriers</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">17:20 – 17:30</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Luka Sharovikj, N. Macedonia</span></div>
+                          <div class="talk-title">Rheology and shape fidelity of poloxamer 407 bioinks</div>
                         </div>
                       </div>
                     </td>
@@ -329,7 +592,7 @@ const expandIcon = (isExpanded) => {
 
                   <!-- Break -->
                   <tr class="table-row break-row">
-                    <td class="time-col-cell text-center">17:00 - 17:15</td>
+                    <td class="time-col-cell text-center">17:30 - 17:40</td>
                     <td class="place-col-cell text-center">-</td>
                     <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
                       <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
@@ -338,7 +601,7 @@ const expandIcon = (isExpanded) => {
 
                   <!-- Student Poster Session -->
                   <tr class="table-row">
-                    <td class="time-col-cell text-center">17:15 - 19:00</td>
+                    <td class="time-col-cell text-center">17:40 - 19:00</td>
                     <td class="place-col-cell text-center">
                       <v-chip color="green-darken-1" variant="flat" size="small" class="font-weight-bold">Green
                         Hall</v-chip>
@@ -362,6 +625,18 @@ const expandIcon = (isExpanded) => {
                   </tr>
                 </thead>
                 <tbody>
+                  <!-- Registration -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">8:30 - 19:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="deep-purple-darken-1" variant="flat" size="small" class="font-weight-bold">HOTEL
+                        METROPOL</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <strong class="text-primary font-weight-bold">REGISTRATION</strong>
+                    </td>
+                  </tr>
+
                   <!-- Parallel Session 1 -->
                   <tr class="table-row">
                     <td rowspan="2" class="time-col-cell text-center font-weight-bold rowspan-cell">9:00 - 10:00</td>
@@ -370,16 +645,35 @@ const expandIcon = (isExpanded) => {
                         Hall</v-chip>
                     </td>
                     <td class="activity-col-cell text-left">
-                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical analysis / Quality
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Analysis / Quality
                         Assurance / Pharmaceutical Legislation</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('andzelija')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Andjelia Malenovic, Serbia</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:00 – 9:20</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('eric')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Dr. Eric Deconinck, Belgium</span>
+                          </div>
+                          <div class="talk-title">Illegal medicines and medicines in disguise on the European market
+                          </div>
                         </div>
-                        <div class="speaker-item" @click="scrollToSpeaker('eric')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Dr. Eric Deconinck, Belgium</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:20 – 9:40</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('andzelija')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Prof. Anđelija Malenović, Serbia</span>
+                          </div>
+                          <div class="talk-title">Beyond tradition: advancing analytical procedures for drug quality
+                            control through the enhanced approach</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:50 – 10:00</span>
+                          <div class="speaker-item-static">
+                            <v-icon size="14" class="mr-1" color="grey">mdi-account</v-icon>
+                            <span>Hrisanta Godzo, N. Macedonia</span>
+                          </div>
+                          <div class="talk-title">Integrated vibrational spectroscopic and chemometric strategies for
+                            advanced quality control of therapeutic peptides</div>
                         </div>
                       </div>
                     </td>
@@ -390,16 +684,26 @@ const expandIcon = (isExpanded) => {
                         Hall</v-chip>
                     </td>
                     <td class="activity-col-cell text-left">
-                      <div class="font-weight-bold text-primary mb-1">SESSION: Clinical Biochemistry / Toxicology / Food
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Clinical Biochemistry / Toxicology /
+                        Food
                         and Nutrition</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('dusan')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Prof. Dusan Misic, Poland</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:00 – 9:30</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('marijana')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Assoc. Prof. Marijana Ćurčić, Serbia</span>
+                          </div>
+                          <div class="talk-title">Environmental pollutants and metabolic disorders</div>
                         </div>
-                        <div class="speaker-item" @click="scrollToSpeaker('marijana')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Assoc. Prof. Marijana Curcic, Serbia</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:30 – 10:00</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('kapellou')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Dr. Angeliki Kapellou, Greece</span>
+                          </div>
+                          <div class="talk-title">Unlocking precision nutrition: The expanding role of nutrigenetics
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -422,12 +726,42 @@ const expandIcon = (isExpanded) => {
                         Hall</v-chip>
                     </td>
                     <td class="activity-col-cell text-left">
-                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical analysis / Quality
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmaceutical Analysis / Quality
                         Assurance / Pharmaceutical Legislation</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry"><span class="talk-time">10:20 – 10:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Marija Zafirova, N. Macedonia</span></div>
+                          <div class="talk-title">Artificial intelligence in HPLC method development: Opportunities,
+                            applications and challenges</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:35 – 10:50</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Aleksandra Damjanoska, N. Macedonia</span></div>
+                          <div class="talk-title">Comparative sustainability assessment of green HPLC method for
+                            cefalexin determination</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:50 – 11:05</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Maja Hadzieva Gigovska, N. Macedonia</span></div>
+                          <div class="talk-title">Strategies to evaluate mass balance in forced degradation study – an
+                            essential approach to develop stability indicating method</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:05 – 11:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Elena Kazandjievska, N. Macedonia</span></div>
+                          <div class="talk-title">In-vitro study for evaluating compatibility of using Omeprazole
+                            ready-to-use oral solution though enteral feeding tubes</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:20 – 11:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Aleksandra Petrovska, N. Macedonia</span></div>
+                          <div class="talk-title">Comprehensive approach in Out-of-Trend investigation in stability
+                            studies of medicinal products</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:35 – 11:45</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-forum</v-icon><span>Discussion</span></div>
                         </div>
                       </div>
                     </td>
@@ -438,12 +772,43 @@ const expandIcon = (isExpanded) => {
                         Hall</v-chip>
                     </td>
                     <td class="activity-col-cell text-left">
-                      <div class="font-weight-bold text-primary mb-1">SESSION: Clinical Biochemistry / Toxicology / Food
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Clinical Biochemistry / Toxicology /
+                        Food
                         and Nutrition</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry"><span class="talk-time">10:20 – 10:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Kalina Grivcheva Stardelova, N. Macedonia</span>
+                          </div>
+                          <div class="talk-title">Nutrition in inflammatory bowel diseases</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:35 – 10:50</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Ana Marija Bajatovska, N. Macedonia</span></div>
+                          <div class="talk-title">Total dietary carbohydrates, sugars and glycemic regulation in
+                            patients with type 2 diabetes mellitus</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">10:50 – 11:05</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Elena Stanojevska, N. Macedonia</span></div>
+                          <div class="talk-title">Thyroglobulin as a tumor marker: the importance of method comparison
+                            in patients with differentiated thyroid carcinoma</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:05 – 11:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Stefanija Ubavkova, N. Macedonia</span></div>
+                          <div class="talk-title">Detection of methadone in diaper matrix: A downscaled protocol for
+                            pediatric diagnostics</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:20 – 11:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Nikola Šalinić, Serbia</span></div>
+                          <div class="talk-title">Toxicological profile of lavender essential oil: use and concerns
+                          </div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">11:35 – 11:45</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-forum</v-icon><span>Discussion</span></div>
                         </div>
                       </div>
                     </td>
@@ -487,13 +852,33 @@ const expandIcon = (isExpanded) => {
                     <td class="activity-col-cell text-left">
                       <div class="font-weight-bold text-primary mb-1">SESSION: Phytotherapy and Natural Products</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('danijela')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Dr. Danijela Misic, Serbia</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">15:00 – 15:20</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('danijela')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Dr. Danijela Mišić, Serbia</span>
+                          </div>
+                          <div class="talk-title">Phytotherapeutic potential of iridoid-rich plant species native to
+                            the
+                            Balkan peninsula</div>
                         </div>
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">15:20 – 15:40</span>
+                          <div class="speaker-item-static">
+                            <v-icon size="14" class="mr-1" color="grey">mdi-account</v-icon>
+                            <span>Ivana Cvetkovikj Karanfilova, N. Macedonia</span>
+                          </div>
+                          <div class="talk-title">Data-driven modeling and green analytics of medicinal Sage and
+                            related
+                            Salvia species</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">15:40 – 16:00</span>
+                          <div class="speaker-item-static">
+                            <v-icon size="14" class="mr-1" color="grey">mdi-account</v-icon>
+                            <span>Dr. Luka Petrović, Serbia</span>
+                          </div>
+                          <div class="talk-title">Antigenotoxic potential of Nepeta grandiflora</div>
                         </div>
                       </div>
                     </td>
@@ -510,7 +895,7 @@ const expandIcon = (isExpanded) => {
 
                   <!-- Afternoon Session 2 -->
                   <tr class="table-row">
-                    <td class="time-col-cell text-center">16:20 - 17:45</td>
+                    <td class="time-col-cell text-center">16:20 - 17:40</td>
                     <td class="place-col-cell text-center">
                       <v-chip color="orange-darken-2" variant="flat" size="small" class="font-weight-bold">Tzar Samoil
                         Hall</v-chip>
@@ -518,9 +903,31 @@ const expandIcon = (isExpanded) => {
                     <td class="activity-col-cell text-left">
                       <div class="font-weight-bold text-primary mb-1">SESSION: Phytotherapy and Natural Products</div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry"><span class="talk-time">16:20 – 16:40</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Ana Trajkovska Matevska, N. Macedonia</span>
+                          </div>
+                          <div class="talk-title">Cannabinoid accumulation in in vitro multiplied shoots and
+                            acclimatized plants of Cannabis sativa L.</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">16:40 – 17:00</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Veronika Stoilkovska Gjorgievska, N.
+                              Macedonia</span></div>
+                          <div class="talk-title">Molecular genetic analysis as a tool for Cannabis quality control
+                          </div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">17:00 – 17:20</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Elena Rafailovska, N. Macedonia</span></div>
+                          <div class="talk-title">Countering pancreatic damage: mechanistic insights into the
+                            antidiabetic effects of Hypericum perforatum hairy root extract</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">17:20 – 17:40</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Iskra Davkova, N. Macedonia</span></div>
+                          <div class="talk-title">Multicomponent herbal mixtures: target approach for chronic wound
+                            management</div>
                         </div>
                       </div>
                     </td>
@@ -542,6 +949,18 @@ const expandIcon = (isExpanded) => {
                   </tr>
                 </thead>
                 <tbody>
+                  <!-- Registration -->
+                  <tr class="table-row">
+                    <td class="time-col-cell text-center">8:30 - 11:00</td>
+                    <td class="place-col-cell text-center">
+                      <v-chip color="deep-purple-darken-1" variant="flat" size="small" class="font-weight-bold">HOTEL
+                        METROPOL</v-chip>
+                    </td>
+                    <td class="activity-col-cell text-left">
+                      <strong class="text-primary font-weight-bold">REGISTRATION</strong>
+                    </td>
+                  </tr>
+
                   <!-- Session 1 -->
                   <tr class="table-row">
                     <td class="time-col-cell text-center">9:00 - 11:30</td>
@@ -550,15 +969,75 @@ const expandIcon = (isExpanded) => {
                         Hall</v-chip>
                     </td>
                     <td class="activity-col-cell text-left">
-                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmacoeconomy / Drug Information</div>
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Pharmacoeconomy / Drug Information
+                      </div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('bertalan')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Bertalan Nemeth, PhD, Hungary</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:00 – 9:25</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('bertalan')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Bertalan Németh, PhD, Hungary</span>
+                          </div>
+                          <div class="talk-title">Transferability, capacity building, and standardization in HTA –
+                            with
+                            a focus on lower-income European countries</div>
                         </div>
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:25 – 9:50</span>
+                          <div class="speaker-item-static">
+                            <v-icon size="14" class="mr-1" color="grey">mdi-account-question</v-icon>
+                            <span class="font-weight-medium">TBA</span>
+                          </div>
+                          <div class="talk-title">Title TBA</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">9:50 – 10:00</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-forum</v-icon><span>Discussion</span></div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">10:00 – 10:15</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Prof. Aleksandra Kapedanovska Nestorovska, N.
+                              Macedonia</span></div>
+                          <div class="talk-title">Pharmacoeconomic evidence for pharmacist-led New Medicine Services
+                            in
+                            hypertension management</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">10:15 – 10:30</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Platon Peristeris, Greece</span></div>
+                          <div class="talk-title">The Nexus of drug pricing, pharmacoeconomics, and HTA: a comparative
+                            analysis of regulatory paths in EU Member States and Western Balkan Countries</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">10:30 – 10:45</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Jelena Davidovska, N. Macedonia</span></div>
+                          <div class="talk-title">Cost-effectiveness of avelumab maintenance therapy for advanced
+                            urothelial carcinoma in N. Macedonia</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">10:45 – 11:00</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Lirim Shabani, N. Macedonia</span></div>
+                          <div class="talk-title">Cost–utility analysis of pharmacist-led medication review in
+                            high-risk
+                            cardiovascular polypharmacy patients</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">11:00 – 11:15</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Marija Panajotovikj Pop-Nikolova, N.
+                              Macedonia</span></div>
+                          <div class="talk-title">Pragmatic approaches and evaluation of effectiveness of additional
+                            risk minimization measures</div>
+                        </div>
+                        <div class="talk-entry">
+                          <span class="talk-time">11:15 – 11:30</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-forum</v-icon><span>Discussion</span></div>
                         </div>
                       </div>
                     </td>
@@ -569,7 +1048,7 @@ const expandIcon = (isExpanded) => {
                     <td class="time-col-cell text-center">11:30 - 12:00</td>
                     <td class="place-col-cell text-center">-</td>
                     <td class="activity-col-cell text-left font-weight-bold italic text-orange-darken-3">
-                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> COFFEE BREAK
+                      <v-icon size="16" class="mr-1" color="orange-darken-3">mdi-coffee</v-icon> BREAK
                     </td>
                   </tr>
 
@@ -600,20 +1079,59 @@ const expandIcon = (isExpanded) => {
                         Hall</v-chip>
                     </td>
                     <td class="activity-col-cell text-left">
-                      <div class="font-weight-bold text-primary mb-1">SESSION: Community Pharmacy and Clinical Pharmacy
+                      <div class="font-weight-bold text-primary mb-1">SESSION: Community Pharmacy and Clinical
+                        Pharmacy
                       </div>
                       <div class="speaker-list-inline">
-                        <div class="speaker-item" @click="scrollToSpeaker('anita')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Anita Hogg, MSc, Northern Ireland</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">13:15 – 13:45</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('maja')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Assoc. Prof. Maja Ortner Hadži Abdić, Croatia</span>
+                          </div>
+                          <div class="talk-title">Can improving medication adherence improve treatment outcomes?</div>
                         </div>
-                        <div class="speaker-item" @click="scrollToSpeaker('maja')">
-                          <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
-                          <span class="speaker-link">Assoc. Prof. Maja Ortner Hadzi Abdic, Croatia</span>
+                        <div class="talk-entry">
+                          <span class="talk-time">13:45 – 14:15</span>
+                          <div class="speaker-item" @click="scrollToSpeaker('anita')">
+                            <v-icon size="16" class="mr-1" color="primary">mdi-account-circle</v-icon>
+                            <span class="speaker-link">Anita Hogg, MSc, Northern Ireland</span>
+                          </div>
+                          <div class="talk-title">Evidencing novel clinical pharmacy practices across a health system
+                          </div>
                         </div>
-                        <div class="speaker-item-static">
-                          <v-icon size="16" class="mr-1" color="grey">mdi-presentation</v-icon>
-                          <span>Selected oral presentations</span>
+                        <div class="talk-entry"><span class="talk-time">14:15 – 14:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Sandra Chulakovska Tasevska, N. Macedonia</span>
+                          </div>
+                          <div class="talk-title">Implementation of the first pharmacist-led New Medicine Service in
+                            N.
+                            Macedonia for patients initiating antihypertensive therapy: Outcomes of a collaborative
+                            pharmaceutical care initiative</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">14:35 – 14:55</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Alenka Kovačič, Slovenia</span></div>
+                          <div class="talk-title">Initial experience with an ambulatory clinical pharmacy service at a
+                            Slovenian general hospital</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">14:55 – 15:15</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Tina Kegl, Slovenia</span></div>
+                          <div class="talk-title">Evaluation of seamless care implementation at the Murska Sobota
+                            General hospital in 2023</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">15:15 – 15:35</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-account</v-icon><span>Olivera Spasovska, N. Macedonia</span></div>
+                          <div class="talk-title">Impact of clinical pharmacist interventions on medication
+                            optimization
+                            and safety in critically ill patients: A prospective observational study in the intensive
+                            care unit</div>
+                        </div>
+                        <div class="talk-entry"><span class="talk-time">15:35 – 15:45</span>
+                          <div class="speaker-item-static"><v-icon size="14" class="mr-1"
+                              color="grey">mdi-forum</v-icon><span>Discussion</span></div>
                         </div>
                       </div>
                     </td>
@@ -621,7 +1139,7 @@ const expandIcon = (isExpanded) => {
 
                   <!-- Closing Ceremony -->
                   <tr class="table-row">
-                    <td class="time-col-cell text-center">15:45 - 16:30</td>
+                    <td class="time-col-cell text-center">16:00 - 16:30</td>
                     <td class="place-col-cell text-center">
                       <v-chip color="teal-darken-1" variant="flat" size="small" class="font-weight-bold">Biljana
                         Hall</v-chip>
@@ -738,47 +1256,6 @@ const expandIcon = (isExpanded) => {
       <base-card class="mt-5 mb-10 pa-6">
         <h3 class="program-date mb-6">Plenary speakers</h3>
 
-        <!-- Zaneta Nikolovska-Coleska -->
-        <v-row id="speaker-zaneta" class="mb-8 align-center">
-          <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
-            <v-avatar size="140" class="elevation-4 speaker-avatar">
-              <v-img :src="zanetaImg" alt="Prof. Zaneta Nikolovska-Coleska"></v-img>
-            </v-avatar>
-          </v-col>
-          <v-col cols="12" sm="9" md="10">
-            <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Zaneta Nikolovska-Coleska, USA</div>
-            <div class="speaker-affiliation mb-4">University of Michigan Medical School</div>
-            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
-              :append-icon="expandIcon(expandedBios['zaneta'])" :active="expandedBios['zaneta']"
-              @click="toggleBio('zaneta')">
-              {{ expandedBios['zaneta'] ? 'Short Biography' : 'Short Biography' }}
-            </v-btn>
-
-            <v-expand-transition>
-              <div v-show="expandedBios['zaneta']" class="mt-4 bio-content">
-                <p class="mb-3">
-                  Dr. Zaneta Nikolovska-Coleska is Associate Dean of Graduate & Postdoctoral Studies and Professor of
-                  Pathology at the University of Michigan Medical School. She is also affiliated with the
-                  interdepartmental graduate programs in Medicinal Chemistry and Chemical Biology at the University of
-                  Michigan, Ann Arbor. From 2021 to 2023, Prof. Nikolovska-Coleska served as President of the
-                  International Chemical Biology Society (ICBS) and currently continues to serve on its Board of
-                  Directors. He is also an Associate Editor for RSC Chemical Biology.
-                </p>
-                <p>
-                  Prof. Nikolovska-Coleska is an internationally recognized expert in chemical genomics, focusing on the
-                  discovery and development of potent, selective chemical probes that target cancer-related
-                  protein-protein interactions (PPIs). Her pioneering research advances the understanding of crucial
-                  PPIs involved in cancer progression, accelerates drug target validation, and lays the foundation for
-                  translating these discoveries into clinical therapeutics. Dr. Nikolovska-Coleska has received numerous
-                  prestigious awards, including the Chemical Structure Association Trust (CSA Trust) Award, the New
-                  Investigator Award from the Leukemia Research Foundation, the Innovator Award from the Harrington
-                  Discovery Institute, and the AACR-Bayer Innovation and Discovery Award.
-                </p>
-              </div>
-            </v-expand-transition>
-          </v-col>
-        </v-row>
-
         <!-- Borut Božič -->
         <v-row id="speaker-borut" class="mb-8 align-center">
           <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
@@ -818,6 +1295,48 @@ const expandIcon = (isExpanded) => {
                   Department of clinical biochemistry at the Faculty of Pharmacy. He is a member of the European
                   Federation on Clinical Chemistry and Laboratory Medicine Working Group on Ethics and serves as the
                   President of European Association Faculties of Pharmacy.
+                </p>
+              </div>
+            </v-expand-transition>
+          </v-col>
+        </v-row>
+
+        <!-- Zaneta Nikolovska-Coleska -->
+        <v-row id="speaker-zaneta" class="mb-8 align-center">
+          <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+            <v-avatar size="140" class="elevation-4 speaker-avatar">
+              <v-img :src="zanetaImg" alt="Prof. Zaneta Nikolovska-Coleska"></v-img>
+            </v-avatar>
+          </v-col>
+          <v-col cols="12" sm="9" md="10">
+            <div class="speaker-name text-h6 font-weight-bold mb-1">Prof. Zaneta Nikolovska-Coleska, USA</div>
+            <div class="speaker-affiliation mb-4">University of Michigan Medical School</div>
+            <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+              :append-icon="expandIcon(expandedBios['zaneta'])" :active="expandedBios['zaneta']"
+              @click="toggleBio('zaneta')">
+              {{ expandedBios['zaneta'] ? 'Short Biography' : 'Short Biography' }}
+            </v-btn>
+
+            <v-expand-transition>
+              <div v-show="expandedBios['zaneta']" class="mt-4 bio-content">
+                <p class="mb-3">
+                  Dr. Zaneta Nikolovska-Coleska is Associate Dean of Graduate &amp; Postdoctoral Studies and Professor
+                  of
+                  Pathology at the University of Michigan Medical School. She is also affiliated with the
+                  interdepartmental graduate programs in Medicinal Chemistry and Chemical Biology at the University of
+                  Michigan, Ann Arbor. From 2021 to 2023, Prof. Nikolovska-Coleska served as President of the
+                  International Chemical Biology Society (ICBS) and currently continues to serve on its Board of
+                  Directors. He is also an Associate Editor for RSC Chemical Biology.
+                </p>
+                <p>
+                  Prof. Nikolovska-Coleska is an internationally recognized expert in chemical genomics, focusing on the
+                  discovery and development of potent, selective chemical probes that target cancer-related
+                  protein-protein interactions (PPIs). Her pioneering research advances the understanding of crucial
+                  PPIs involved in cancer progression, accelerates drug target validation, and lays the foundation for
+                  translating these discoveries into clinical therapeutics. Dr. Nikolovska-Coleska has received numerous
+                  prestigious awards, including the Chemical Structure Association Trust (CSA Trust) Award, the New
+                  Investigator Award from the Leukemia Research Foundation, the Innovator Award from the Harrington
+                  Discovery Institute, and the AACR-Bayer Innovation and Discovery Award.
                 </p>
               </div>
             </v-expand-transition>
@@ -1031,10 +1550,7 @@ const expandIcon = (isExpanded) => {
             </v-col>
             <v-col cols="12" sm="9" md="10">
               <div class="speaker-name font-weight-bold mb-1">Dr Tea Pemovska, Austria</div>
-              <div class="speaker-affiliation mb-2">Medical University of Vienna</div>
-              <div class="speaker-affiliation mb-4">
-                Beyond Genomics: Functional Precision Medicine for Real-World Therapeutic Decisions
-              </div>
+              <div class="speaker-affiliation mb-4">Medical University of Vienna</div>
               <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
                 :append-icon="expandIcon(expandedBios['tea'])" :active="expandedBios['tea']" @click="toggleBio('tea')">
                 {{ expandedBios['tea'] ? 'Short Biography' : 'Short Biography' }}
@@ -1288,42 +1804,6 @@ const expandIcon = (isExpanded) => {
         <div class="session-group mb-8">
           <div class="session-name mb-4">Session: Clinical Biochemistry / Toxicology / Food and Nutrition</div>
 
-          <v-row id="speaker-dusan" class="mb-6 align-center">
-            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
-              <v-avatar size="140" class="elevation-2 speaker-avatar">
-                <v-img :src="dusanImg" alt="Prof. Dusan Misic"></v-img>
-              </v-avatar>
-            </v-col>
-            <v-col cols="12" sm="9" md="10">
-              <div class="speaker-name font-weight-bold mb-1">Prof. Dušan Mišić, Poland</div>
-              <div class="speaker-affiliation mb-4">Faculty of Biotechnology and Food Science, Wrocław University of
-                Environmental and Life Sciences</div>
-              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
-                :append-icon="expandIcon(expandedBios['dusan'])" :active="expandedBios['dusan']"
-                @click="toggleBio('dusan')">
-                {{ expandedBios['dusan'] ? 'Short Biography' : 'Short Biography' }}
-              </v-btn>
-
-              <v-expand-transition>
-                <div v-show="expandedBios['dusan']" class="mt-4 bio-content">
-                  <p class="mb-3">
-                    Dr. Dušan Mišić is a University Professor at the Department of Functional Food Products Development,
-                    Faculty of Biotechnology and Food Science, Wrocław University of Environmental and Life Sciences,
-                    Poland. His research focuses on antimicrobial bioactive compounds, mechanisms of antibacterial
-                    activity, antimicrobial resistance, biofilms, and the development of biodegradable antibacterial
-                    materials for applications in food packaging and medicine.
-                  </p>
-                  <p>
-                    Prof. Mišić has authored more than 65 peer-reviewed publications, with over 1300 citations (h-index
-                    23). He has led and participated in several international research projects and collaborates widely
-                    in interdisciplinary research related to food safety, microbiology, and functional bioactive
-                    materials.
-                  </p>
-                </div>
-              </v-expand-transition>
-            </v-col>
-          </v-row>
-
           <v-row id="speaker-marijana" class="mb-6 align-center">
             <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
               <v-avatar size="140" class="elevation-2 speaker-avatar">
@@ -1344,7 +1824,7 @@ const expandIcon = (isExpanded) => {
                 <div v-show="expandedBios['marijana']" class="mt-4 bio-content">
                   <p class="mb-3">
                     Dr. Marijana Ćurčić is an Associate Professor at the University of Belgrade – Faculty of Pharmacy,
-                    Department of Toxicology “Akademik Danilo Soldatović” and a European Registered Toxicologist (ERT).
+                    Department of Toxicology "Akademik Danilo Soldatović" and a European Registered Toxicologist (ERT).
                     Her expertise includes toxicological risk assessment, toxicological chemistry, and regulatory
                     toxicology.
                   </p>
@@ -1360,6 +1840,37 @@ const expandIcon = (isExpanded) => {
                     environmental health, chemical exposure, and risk communication. She is the co-author of university
                     textbooks in toxicology and has published numerous scientific papers in leading international
                     journals in toxicology and environmental health.
+                  </p>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
+
+          <v-row id="speaker-kapellou" class="mb-6 align-center">
+            <v-col cols="12" sm="3" md="2" class="d-flex justify-center">
+              <v-avatar size="140" class="elevation-2 speaker-avatar">
+                <v-img :src="kapellouImg" alt="Dr. Angeliki Kapellou"></v-img>
+              </v-avatar>
+            </v-col>
+            <v-col cols="12" sm="9" md="10">
+              <div class="speaker-name font-weight-bold mb-1">Dr. Angeliki Kapellou, Greece</div>
+              <div class="speaker-affiliation mb-4">Athens Metropolitan College &amp; iDNA Laboratories, Greece</div>
+              <v-btn variant="outlined" color="#1c5a6d" size="small" class="text-none"
+                :append-icon="expandIcon(expandedBios['kapellou'])" :active="expandedBios['kapellou']"
+                @click="toggleBio('kapellou')">
+                {{ expandedBios['kapellou'] ? 'Short Biography' : 'Short Biography' }}
+              </v-btn>
+
+              <v-expand-transition>
+                <div v-show="expandedBios['kapellou']" class="mt-4 bio-content">
+                  <p>
+                    Dr Angeliki Kapellou, PhD, RD, is a Lecturer in Dietetics at Athens Metropolitan College and a
+                    Nutrition &amp; Genetics Specialist at iDNA Laboratories, Greece. Her research focuses on
+                    Nutrigenetics, Precision Nutrition and gene–diet interactions, with particular interests in
+                    cardiometabolic health, obesity, diabetes and cognitive performance. She has authored peer-reviewed
+                    publications in leading international journals and serves as a reviewer for journals in the fields
+                    of Nutrition and Genetics. Her work bridges academic research and clinical practice, with the aim
+                    of advancing evidence-based Personalised Nutrition.
                   </p>
                 </div>
               </v-expand-transition>
@@ -1661,6 +2172,35 @@ const expandIcon = (isExpanded) => {
   font-size: 0.9rem;
 }
 
+.talk-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 0 6px 0;
+  border-bottom: 1px dashed #e5ecef;
+}
+
+.talk-entry:last-child {
+  border-bottom: none;
+}
+
+.talk-time {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1c5a6d;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+
+.talk-title {
+  font-size: 0.83rem;
+  color: #555;
+  font-style: italic;
+  margin-top: 2px;
+  margin-left: 22px;
+  line-height: 1.4;
+}
+
 @media (max-width: 768px) {
   .time-col-cell {
     width: 100px;
@@ -1676,6 +2216,10 @@ const expandIcon = (isExpanded) => {
   .activity-col-cell {
     font-size: 0.85rem;
     padding: 8px 10px !important;
+  }
+
+  .talk-title {
+    margin-left: 0;
   }
 }
 </style>

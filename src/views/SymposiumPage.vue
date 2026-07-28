@@ -118,7 +118,7 @@
         </v-row>
       </base-card>
 
-      <base-card class="mt-5 text-center justify-center">
+      <base-card v-if="false" class="mt-5 text-center justify-center">
         <base-paragraph class="text-center hero-title">
           <b>
             TENTATIVE PROGRAM
@@ -145,7 +145,7 @@ import oneSignature from "@/assets/potpis1.webp";
 import twoSignature from "@/assets/potpis2.webp";
 import ffLogo from "@/assets/FFlogo.webp";
 import mfdLogo from "@/assets/mfdlogo.webp";
-import homeimg from "@/assets/dates.png"
+import homeimg from "@/assets/dates.webp"
 </script>
 
 <style scoped>
