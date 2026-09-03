@@ -17,8 +17,8 @@ const sponsorTiers = [
   {
     title: "Platinum Sponsor",
     tierClass: "tier-platinum",
-    cardCols: { cols: 12, sm: 8, md: 6 },
-    imgHeight: 120,
+    cardCols: { cols: 12, sm: 12, md: 12 },
+    imgHeight: 280,
     items: [
       { name: "Alkaloid", logo: alkaloidLogo, alt: "Alkaloid" }
     ]
@@ -26,8 +26,8 @@ const sponsorTiers = [
   {
     title: "Golden Sponsors",
     tierClass: "tier-gold",
-    cardCols: { cols: 12, sm: 4, md: 4 },
-    imgHeight: 90,
+    cardCols: { cols: 12, sm: 12, md: 12 },
+    imgHeight: 110,
     items: [
       { name: "Replek", logo: replekLogo, alt: "Replek" },
       { name: "EuroFarm", logo: eurofarmLogo, alt: "EuroFarm" },
@@ -37,8 +37,8 @@ const sponsorTiers = [
   {
     title: "Silver Sponsors",
     tierClass: "tier-silver",
-    cardCols: { cols: 12, sm: 6, md: 5 },
-    imgHeight: 80,
+    cardCols: { cols: 12, sm: 5, md: 4 },
+    imgHeight: 55,
     items: [
       { name: "Salveo", logo: salveoLogo, alt: "Salveo" },
       { name: "PharmaS", logo: pharmaSLogo, alt: "PharmaS" }
@@ -47,8 +47,8 @@ const sponsorTiers = [
   {
     title: "Bronze Sponsor",
     tierClass: "tier-bronze",
-    cardCols: { cols: 12, sm: 6, md: 4 },
-    imgHeight: 70,
+    cardCols: { cols: 12, sm: 5, md: 3 },
+    imgHeight: 45,
     items: [
       { name: "Galenika", logo: galenikaLogo, alt: "Galenika" }
     ]
@@ -240,18 +240,16 @@ const sponsorTiers = [
 
 .sponsor-card {
   width: 100%;
-  min-height: 110px;
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s ease-in-out;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.25s ease-in-out;
 }
 
 .sponsor-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  border-color: #94a3b8;
+  border: none;
+  box-shadow: none;
 }
 
 .sponsor-img {
@@ -278,10 +276,6 @@ const sponsorTiers = [
   .tier-badge {
     font-size: 0.9rem;
     padding: 5px 18px;
-  }
-
-  .sponsor-card {
-    min-height: 90px;
   }
 }
 </style>
