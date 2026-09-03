@@ -29,9 +29,9 @@ const sponsorTiers = [
     cardCols: { cols: 12, sm: 12, md: 12 },
     imgHeight: 110,
     items: [
-      { name: "Replek", logo: replekLogo, alt: "Replek", imgHeight: 80 },
+      { name: "Replek", logo: replekLogo, alt: "Replek", imgHeight: 100 },
       { name: "EuroFarm", logo: eurofarmLogo, alt: "EuroFarm", imgHeight: 160 },
-      { name: "Pliva Teva", logo: plivaTevaLogo, alt: "Pliva Teva", imgHeight: 75 }
+      { name: "Pliva Teva", logo: plivaTevaLogo, alt: "Pliva Teva", imgHeight: 100 }
     ]
   },
   {
@@ -41,7 +41,7 @@ const sponsorTiers = [
     imgHeight: 55,
     items: [
       { name: "Salveo", logo: salveoLogo, alt: "Salveo", imgHeight: 75 },
-      { name: "PharmaS", logo: pharmaSLogo, alt: "PharmaS" }
+      { name: "PharmaS", logo: pharmaSLogo, alt: "PharmaS", imgHeight: 45 }
     ]
   },
   {
@@ -77,8 +77,8 @@ const sponsorTiers = [
             <v-col v-for="sponsor in tier.items" :key="sponsor.name" :cols="tier.cardCols.cols" :sm="tier.cardCols.sm"
               :md="tier.cardCols.md" class="d-flex justify-center">
               <div class="sponsor-card d-flex align-center justify-center pa-4">
-                <v-img :src="sponsor.logo" :alt="sponsor.alt" :max-height="sponsor.imgHeight || tier.imgHeight" width="100%" contain
-                  class="sponsor-img" />
+                <v-img :src="sponsor.logo" :alt="sponsor.alt" :max-height="sponsor.imgHeight || tier.imgHeight"
+                  width="100%" contain class="sponsor-img" />
               </div>
             </v-col>
           </v-row>
