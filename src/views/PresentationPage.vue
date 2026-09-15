@@ -15,7 +15,7 @@ import galenikaLogo from "@/assets/sponsors/Galenika.webp";
 
 const sponsorTiers = [
   {
-    title: "Platinum Sponsor",
+    title: "Platinium Sponsor",
     tierClass: "tier-platinum",
     cardCols: { cols: 12, sm: 12, md: 12 },
     imgHeight: 280,

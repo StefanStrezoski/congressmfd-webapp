@@ -84,7 +84,7 @@ const activeTab = ref(0)
 const tabs = [
   { label: 'Home', icon: 'mdi-home', route: 'SymposiumPage' },
   { label: 'Commitees', icon: 'mdi-account-group', route: 'OrganizationPage' },
-  { label: 'Programme', icon: 'mdi-calendar-text', route: 'ProgramPage' },
+  { label: 'Invited Speakers', icon: 'mdi-account-voice', route: 'ProgramPage' },
   { label: 'Oral/Poster Presentation Submission', icon: 'mdi-file-presentation-box', route: 'PresentationSubmissionPage' },
   { label: 'Registration', icon: 'mdi-account-plus', route: 'FeePage' },
   { label: 'Sponsors', icon: 'mdi-hand-heart', route: 'PresentationPage' },

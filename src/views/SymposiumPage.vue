@@ -71,6 +71,25 @@
         </v-row>
       </base-card>
       <v-card rounded="xl" class="mt-10 mb-3 pa-1 text-center title-card-secondary">
+        <v-card-text class="text-h6 font-weight-bold">Macedonian Pharmaceutical Bulletin and Program</v-card-text>
+      </v-card>
+      <base-card class="mt-3 pa-4 pa-sm-6">
+        <v-row class="align-center" justify="center">
+          <v-col cols="12" md="6">
+            <small-card class="overflow-hidden">
+              <div class="iframe-container" v-html="embededCode"></div>
+            </small-card>
+          </v-col>
+          <v-col cols="12" md="6" class="d-flex justify-center align-center">
+            <a href="https://bulletin.mfd.org.mk/72_3_2026-8cpm/" target="_blank" rel="noopener noreferrer"
+              class="bulletin-link w-100 d-flex justify-center">
+              <v-img :src="Naslovna" rounded="xl" width="100%" max-height="600" class="elevation-4 bulletin-img"
+                alt="Macedonian Pharmaceutical Bulletin"></v-img>
+            </a>
+          </v-col>
+        </v-row>
+      </base-card>
+      <v-card rounded="xl" class="mt-10 mb-3 pa-1 text-center title-card-secondary">
         <v-card-text class="text-h6 font-weight-bold">Key Dates</v-card-text>
       </v-card>
       <small-card>
@@ -146,6 +165,11 @@ import twoSignature from "@/assets/potpis2.webp";
 import ffLogo from "@/assets/FFlogo.webp";
 import mfdLogo from "@/assets/mfdlogo.webp";
 import homeimg from "@/assets/dates.webp"
+import { ref } from "vue";
+import Naslovna from "@/assets/naslovna.webp"
+
+const embededCode = ref(`
+<iframe style="width:100%;height:550px;border-radius:12px;" src="https://online.anyflip.com/ujmxk/elxt/index.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>`)
 </script>
 
 <style scoped>
@@ -190,5 +214,40 @@ import homeimg from "@/assets/dates.webp"
 
 .list-title {
   font-size: 1.2rem;
+}
+
+.iframe-container :deep(iframe) {
+  width: 100%;
+  height: 550px;
+  border-radius: 12px;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .iframe-container :deep(iframe) {
+    height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .iframe-container :deep(iframe) {
+    height: 340px;
+  }
+}
+
+.bulletin-link {
+  display: block;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  text-decoration: none;
+}
+
+.bulletin-link:hover {
+  transform: translateY(-4px);
+  opacity: 0.95;
+}
+
+.bulletin-img {
+  max-height: 600px;
+  object-fit: contain;
 }
 </style>
