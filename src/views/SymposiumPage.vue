@@ -70,10 +70,7 @@
           </v-col>
         </v-row>
       </base-card>
-      <v-card rounded="xl" class="mt-10 mb-3 pa-1 text-center title-card-secondary">
-        <v-card-text class="text-h6 font-weight-bold">Macedonian Pharmaceutical Bulletin and Program</v-card-text>
-      </v-card>
-      <base-card class="mt-3 pa-4 pa-sm-6">
+      <base-card class="mt-5 pa-4 pa-sm-6">
         <v-row class="align-center" justify="center">
           <v-col cols="12" md="6">
             <small-card class="overflow-hidden">
@@ -82,9 +79,12 @@
           </v-col>
           <v-col cols="12" md="6" class="d-flex justify-center align-center">
             <a href="https://bulletin.mfd.org.mk/72_3_2026-8cpm/" target="_blank" rel="noopener noreferrer"
-              class="bulletin-link w-100 d-flex justify-center">
+              class="bulletin-link w-100 d-flex flex-column align-center">
               <v-img :src="Naslovna" rounded="xl" width="100%" max-height="600" class="elevation-4 bulletin-img"
                 alt="Macedonian Pharmaceutical Bulletin"></v-img>
+              <div class="bulletin-title text-center font-weight-bold mt-3">
+                Congress Supplement Issue – Macedonian Pharmaceutical Bulletin
+              </div>
             </a>
           </v-col>
         </v-row>
@@ -249,5 +249,11 @@ const embededCode = ref(`
 .bulletin-img {
   max-height: 600px;
   object-fit: contain;
+}
+
+.bulletin-title {
+  color: #1c5a6d;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 </style>
