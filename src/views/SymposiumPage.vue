@@ -71,21 +71,21 @@
         </v-row>
       </base-card>
       <base-card class="mt-5 pa-4 pa-sm-6">
-        <v-row class="align-center" justify="center">
-          <v-col cols="12" md="6" class="d-flex justify-center align-center">
+        <v-row class="align-start" justify="center">
+          <v-col cols="12" md="6" class="d-flex justify-center">
             <router-link :to="{ name: 'FlipbookPage' }" class="bulletin-link w-100 d-flex flex-column align-center">
-              <v-img :src="ProgramaNaslovna" rounded="xl" width="100%" max-height="600" class="elevation-4 bulletin-img"
-                alt="Congress Final Programme"></v-img>
+              <v-img :src="ProgramaNaslovna" :aspect-ratio="1 / 1.414" cover rounded="xl" width="100%" max-width="360"
+                class="elevation-4 bulletin-img" alt="Congress Final Programme"></v-img>
               <div class="bulletin-title text-center font-weight-bold mt-3">
                 8th Congress Final Programme
               </div>
             </router-link>
           </v-col>
-          <v-col cols="12" md="6" class="d-flex justify-center align-center">
+          <v-col cols="12" md="6" class="d-flex justify-center">
             <a href="https://bulletin.mfd.org.mk/72_3_2026-8cpm/" target="_blank" rel="noopener noreferrer"
               class="bulletin-link w-100 d-flex flex-column align-center">
-              <v-img :src="Naslovna" rounded="xl" width="100%" max-height="600" class="elevation-4 bulletin-img"
-                alt="Macedonian Pharmaceutical Bulletin"></v-img>
+              <v-img :src="Naslovna" :aspect-ratio="1 / 1.414" cover rounded="xl" width="100%" max-width="360"
+                class="elevation-4 bulletin-img" alt="Macedonian Pharmaceutical Bulletin"></v-img>
               <div class="bulletin-title text-center font-weight-bold mt-3">
                 Congress Supplement Issue – Macedonian Pharmaceutical Bulletin
               </div>
@@ -250,8 +250,8 @@ import ProgramaNaslovna from "@/assets/ProgramaNaslovna.webp"
 }
 
 .bulletin-img {
-  max-height: 600px;
-  object-fit: contain;
+  width: 100%;
+  max-width: 360px;
 }
 
 .bulletin-title {
