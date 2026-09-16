@@ -74,7 +74,7 @@
         <v-row class="align-start" justify="center">
           <v-col cols="12" md="6" class="d-flex justify-center">
             <router-link :to="{ name: 'FlipbookPage' }" class="bulletin-link w-100 d-flex flex-column align-center">
-              <v-img :src="ProgramaNaslovna" :aspect-ratio="1 / 1.414" cover rounded="xl" width="100%" max-width="360"
+              <v-img :src="ProgramaNaslovna" :aspect-ratio="1 / 1.414" cover rounded="xl" width="100%" max-width="288"
                 class="elevation-4 bulletin-img" alt="Congress Final Programme"></v-img>
               <div class="bulletin-title text-center font-weight-bold mt-3">
                 8th Congress Final Programme
@@ -84,7 +84,7 @@
           <v-col cols="12" md="6" class="d-flex justify-center">
             <a href="https://bulletin.mfd.org.mk/72_3_2026-8cpm/" target="_blank" rel="noopener noreferrer"
               class="bulletin-link w-100 d-flex flex-column align-center">
-              <v-img :src="Naslovna" :aspect-ratio="1 / 1.414" cover rounded="xl" width="100%" max-width="360"
+              <v-img :src="Naslovna" :aspect-ratio="1 / 1.414" cover rounded="xl" width="100%" max-width="288"
                 class="elevation-4 bulletin-img" alt="Macedonian Pharmaceutical Bulletin"></v-img>
               <div class="bulletin-title text-center font-weight-bold mt-3">
                 Congress Supplement Issue – Macedonian Pharmaceutical Bulletin
@@ -251,7 +251,7 @@ import ProgramaNaslovna from "@/assets/ProgramaNaslovna.webp"
 
 .bulletin-img {
   width: 100%;
-  max-width: 360px;
+  max-width: 288px;
 }
 
 .bulletin-title {
