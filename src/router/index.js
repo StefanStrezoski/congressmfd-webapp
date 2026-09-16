@@ -4,6 +4,7 @@ import OrganizationPage from "@/views/OrganizationPage.vue";
 import FeePage from "@/views/FeePage.vue";
 import HotelPage from "@/views/HotelPage.vue";
 import ProgramPage from '@/views/ProgramPage.vue';
+import FlipbookPage from '@/views/FlipbookPage.vue';
 import PresentationSubmissionPage from '@/views/PresentationSubmissionPage.vue';
 import PresentationPage from '@/views/PresentationPage.vue';
 import ContactPage from '@/views/ContactPage.vue';
@@ -23,9 +24,14 @@ const router = createRouter({
       component: OrganizationPage
     },
     {
-      path: '/programme',
+      path: '/speakers',
       name: 'ProgramPage',
       component: ProgramPage
+    },
+    {
+      path: '/programme',
+      name: 'FlipbookPage',
+      component: FlipbookPage
     },
     {
       path: '/presentation-submission',

@@ -72,10 +72,14 @@
       </base-card>
       <base-card class="mt-5 pa-4 pa-sm-6">
         <v-row class="align-center" justify="center">
-          <v-col cols="12" md="6">
-            <small-card class="overflow-hidden">
-              <div class="iframe-container" v-html="embededCode"></div>
-            </small-card>
+          <v-col cols="12" md="6" class="d-flex justify-center align-center">
+            <router-link :to="{ name: 'FlipbookPage' }" class="bulletin-link w-100 d-flex flex-column align-center">
+              <v-img :src="ProgramaNaslovna" rounded="xl" width="100%" max-height="600" class="elevation-4 bulletin-img"
+                alt="Congress Final Programme"></v-img>
+              <div class="bulletin-title text-center font-weight-bold mt-3">
+                8th Congress Final Programme
+              </div>
+            </router-link>
           </v-col>
           <v-col cols="12" md="6" class="d-flex justify-center align-center">
             <a href="https://bulletin.mfd.org.mk/72_3_2026-8cpm/" target="_blank" rel="noopener noreferrer"
@@ -167,6 +171,7 @@ import mfdLogo from "@/assets/mfdlogo.webp";
 import homeimg from "@/assets/dates.webp"
 import { ref } from "vue";
 import Naslovna from "@/assets/naslovna.webp"
+import ProgramaNaslovna from "@/assets/ProgramaNaslovna.webp"
 
 const embededCode = ref(`
 <iframe style="width:100%;height:550px;border-radius:12px;" src="https://online.anyflip.com/ujmxk/elxt/index.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>`)
