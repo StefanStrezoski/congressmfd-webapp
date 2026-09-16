@@ -1,6 +1,5 @@
 <script setup>
 import BaseCard from '@/components/BaseCard.vue';
-import SmallCard from '@/components/SmallCard.vue';
 import BaseContainer from '@/components/BaseContainer.vue';
 
 const embededCode = `

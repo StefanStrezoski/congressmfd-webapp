@@ -169,12 +169,10 @@ import twoSignature from "@/assets/potpis2.webp";
 import ffLogo from "@/assets/FFlogo.webp";
 import mfdLogo from "@/assets/mfdlogo.webp";
 import homeimg from "@/assets/dates.webp"
-import { ref } from "vue";
 import Naslovna from "@/assets/naslovna.webp"
 import ProgramaNaslovna from "@/assets/ProgramaNaslovna.webp"
 
-const embededCode = ref(`
-<iframe style="width:100%;height:550px;border-radius:12px;" src="https://online.anyflip.com/ujmxk/elxt/index.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>`)
+
 </script>
 
 <style scoped>
