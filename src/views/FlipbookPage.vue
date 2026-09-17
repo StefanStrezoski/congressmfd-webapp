@@ -11,7 +11,7 @@ const embededCode = `
       <div class="iframe-container" v-html="embededCode"></div>
       <div class="d-flex justify-center mt-4">
         <v-btn color="orange-darken-1" prepend-icon="mdi-file-pdf-box"
-          href="/files/8%20Kongres%20MFD%20Programa%20F.pdf" target="_blank" download="8 Kongres MFD Programa F.pdf"
+          href="/files/8%20Kongres%20MFD%20Programa%20Final.pdf" target="_blank" download="8 Kongres MFD Programa Final.pdf"
           variant="elevated" rounded="pill" size="large" class="text-white font-weight-bold">
           Download PDF Programme
         </v-btn>
